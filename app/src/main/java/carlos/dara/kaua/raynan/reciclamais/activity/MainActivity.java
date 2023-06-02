@@ -1,8 +1,10 @@
-package carlos.dara.kaua.raynan.reciclamais;
+package carlos.dara.kaua.raynan.reciclamais.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import carlos.dara.kaua.raynan.reciclamais.R;
 
 public class MainActivity extends AppCompatActivity {
 
