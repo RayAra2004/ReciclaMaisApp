@@ -12,6 +12,36 @@
         android:theme="@style/Theme.ReciclaMais"
         tools:targetApi="31">
         <activity
+            android:name=".InformacoesMaterialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstePontoExisteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostagemMaterialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdicionarPontoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MudarDadosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapaPontoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DescricaoPontoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AjudaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AprendaReciclarActivity"
+            android:exported="false" />
+        <activity
             android:name=".CadastroActivity"
             android:exported="false" />
         <activity
