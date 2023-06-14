@@ -4,55 +4,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".activity.AprendaReciclarActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+        android:orientation="vertical"
+        android:paddingEnd="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QUAL  DOS ITENS ABAIXO DESEJA APRENDER A RECICLAR?"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
+                android:id="@+id/button"
+                android:layout_width="36dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
                 android:layout_weight="1"
-                android:text="Button" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
+                android:backgroundTint="@color/background_button"
+                android:text="VIDROS" />
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="wrap_content"
+                android:layout_width="36dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
                 android:layout_weight="1"
-                android:text="Button" />
-        </LinearLayout>
-    </LinearLayout>
+                android:backgroundTint="@color/background_button"
+                android:text="METAIS" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/background_button"
+                android:text="PLÁSTICO" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/background_button"
+                android:text="PAPÉIS E PAPELÕES" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/background_button"
+                android:text="MADEIRAS" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/background_button"
+                android:text="LIXO ORGÂNIGO" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/background_button"
+                android:text="PILHAS E BATERIAS" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="36dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/background_button"
+                android:text="LIXO HOSPITALAR" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
