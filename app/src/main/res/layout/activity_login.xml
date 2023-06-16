@@ -19,7 +19,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="373dp">
+            android:layout_height="373dp"
+            android:background="@drawable/painel_bg">
 
             <Button
                 android:id="@+id/button"
@@ -91,10 +92,11 @@
 
             <EditText
                 android:id="@+id/editTextTextEmailAddress2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="288dp"
+                android:layout_height="41dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
+                android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:inputType="textEmailAddress"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -102,14 +104,15 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.375" />
+                app:layout_constraintVertical_bias="0.668" />
 
             <EditText
                 android:id="@+id/editTextTextPassword2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="286dp"
+                android:layout_height="41dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
+                android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:inputType="textPassword"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -117,7 +120,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.679" />
+                app:layout_constraintVertical_bias="0.372" />
 
             <TextView
                 android:id="@+id/textView6"
