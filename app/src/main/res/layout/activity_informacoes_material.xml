@@ -4,6 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".activity.InformacoesMaterialActivity">
 
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reciclagem de plástico:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="329dp"
+        android:layout_height="58dp"
+        android:text="Verifique o símbolo de reciclagem na embalagem. Existem sete tipos diferentes de plásticos e nem todos podem ser reciclados da mesma maneira."
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="122dp" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="319dp"
+        android:layout_height="69dp"
+        android:text="Limpe bem os recipientes de plástico antes de reciclá-los. Isso ajuda a evitar a contaminação e garante que o material possa ser reciclado corretamente."
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="339dp"
+        android:layout_height="37dp"
+        android:text="Separe os plásticos por tipo e coloque-os em um saco ou recipiente de reciclagem separado."
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="341dp"
+        android:layout_height="100dp"
+        android:text="Verifique as diretrizes de reciclagem da sua cidade ou região para saber onde descartar corretamente os plásticos recicláveis. Algumas comunidades oferecem coleta de reciclagem porta-a-porta, enquanto outras têm pontos de coleta designados."
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="347dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
