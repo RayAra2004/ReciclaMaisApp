@@ -38,11 +38,11 @@
         android:id="@+id/textView11"
         android:layout_width="314dp"
         android:layout_height="53dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="260dp"
         android:text="O app de reciclagem é uma ferramenta tecnológica que ajuda os usuários a reciclar de forma mais fácil e eficiente."
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,7 +65,8 @@
         android:layout_height="56dp"
         android:text="Isso depende do app que você está usando. Alguns apps de reciclagem são projetados para funcionar em uma região ou país específico."
         android:textColor="@color/text_color"
-        tools:layout_editor_absoluteX="61dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="373dp" />
 
     <TextView
@@ -75,8 +76,10 @@
         android:text="O app de reciclagem é gratuito? "
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="460dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="461dp" />
 
     <TextView
         android:id="@+id/textView15"
@@ -84,6 +87,30 @@
         android:layout_height="38dp"
         android:text="A maioria dos apps de reciclagem são gratuitos para baixar e usar."
         android:textColor="@color/text_color"
-        tools:layout_editor_absoluteX="61dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="490dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        android:text="EMAIL DE SUPORTE"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reciclamaissuporte@gmail.com"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="642dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
