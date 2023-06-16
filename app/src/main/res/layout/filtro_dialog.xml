@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color">
@@ -20,7 +21,9 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Materiais que você vai descartar:" />
+                android:text="Materiais que você vai descartar:"
+                android:textColor="@color/text_color"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -33,12 +36,14 @@
 
                 <CheckBox
                     android:id="@+id/checkBox"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@android:drawable/presence_invisible"
                     android:checked="true"
+                    android:paddingStart="10dp"
                     android:text="VIDRO"
+                    android:textAlignment="viewStart"
                     android:textColor="@color/white"
                     android:textColorHighlight="@color/text_color"
                     android:textColorLink="@color/text_color"
@@ -47,10 +52,11 @@
 
                 <CheckBox
                     android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@android:drawable/presence_invisible"
+                    android:paddingStart="10dp"
                     android:text="METAIS"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -62,20 +68,22 @@
 
                 <CheckBox
                     android:id="@+id/checkBox"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@android:drawable/presence_invisible"
                     android:checked="true"
+                    android:paddingStart="10dp"
                     android:text="PLÁSTICO"
                     android:textColor="@color/white" />
 
                 <CheckBox
                     android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@android:drawable/presence_invisible"
+                    android:paddingStart="10dp"
                     android:text="PAPEL"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -87,19 +95,21 @@
 
                 <CheckBox
                     android:id="@+id/checkBox"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@android:drawable/presence_invisible"
+                    android:paddingStart="10dp"
                     android:text="MADEIRA"
                     android:textColor="@color/white" />
 
                 <CheckBox
                     android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@android:drawable/presence_invisible"
+                    android:paddingStart="10dp"
                     android:text="ORGÂNICO"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -111,23 +121,118 @@
 
                 <CheckBox
                     android:id="@+id/checkBox"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@android:drawable/presence_invisible"
+                    android:paddingStart="10dp"
                     android:text="ELETRÔNICOS"
                     android:textColor="@color/white" />
 
                 <CheckBox
                     android:id="@+id/checkBox2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@android:drawable/presence_invisible"
+                    android:paddingStart="10dp"
                     android:text="HOSPITALAR"
                     android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DISTÂNCIA DO PONTO DE COLETA"
+                    android:textColor="@color/text_color"
+                    android:textSize="20sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@android:drawable/presence_invisible"
+                        android:paddingStart="10dp"
+                        android:text="até 3KM"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@android:drawable/presence_invisible"
+                        android:paddingStart="10dp"
+                        android:text="até 7KM"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@android:drawable/presence_invisible"
+                        android:paddingStart="10dp"
+                        android:text="até 12KM"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@android:drawable/presence_invisible"
+                        android:paddingStart="10dp"
+                        android:text="+12KM"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
