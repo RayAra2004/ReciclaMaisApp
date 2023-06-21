@@ -4,6 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".activity.EsqueceuSenhaActivity">
 
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALTERAR SENHA"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="61dp" />
+
+    <FrameLayout
+        android:layout_width="313dp"
+        android:layout_height="133dp"
+        android:background="@drawable/painel_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="140dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="284dp"
+                android:layout_height="39dp"
+                android:gravity="center"
+                android:text="Te enviamos um código de confirmação no seu email para alterar a senha!"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="7dp" />
+
+            <EditText
+                android:id="@+id/editTextNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Digite "
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="66dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
