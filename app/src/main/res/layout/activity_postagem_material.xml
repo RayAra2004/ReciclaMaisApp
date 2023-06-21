@@ -4,6 +4,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".activity.PostagemMaterialActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="346dp"
+        android:layout_height="658dp"
+        android:background="@drawable/painel_bg"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="35dp">
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/edit_text_bg"
+            android:ems="10"
+            android:hint="Digite seu nome"
+            android:inputType="textPersonName"
+            android:padding="3dp"
+            android:textColor="@color/white"
+            android:textColorHint="#99FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="211dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/edit_text_bg"
+            android:ems="10"
+            android:hint="Digite aqui"
+            android:inputType="textPassword"
+            android:padding="3dp"
+            android:textColorHint="#99FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="387dp" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edit_text_bg"
+            android:ems="10"
+            android:hint="Digite seu telefone"
+            android:inputType="textEmailAddress"
+            android:padding="3dp"
+            android:textColorHint="#99FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword2"
+            android:layout_width="293dp"
+            android:layout_height="136dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/edit_text_bg"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="Adicione a descrição"
+            android:inputType="textPassword"
+            android:padding="3dp"
+            android:textColorHint="#99FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="491dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Digite seu primeiro nome"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="176dp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefone de contato"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="263dp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantidade em KG"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="348dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descrição do material"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="12dp"
+            tools:layout_editor_absoluteY="450dp" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adicione a imagem do material"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="158dp"
+            android:layout_height="118dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_crop"
+            tools:layout_editor_absoluteY="46dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
