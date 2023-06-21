@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/painel_bg"
+    android:background="@color/background_color"
     tools:context=".activity.DescricaoPontoActivity">
 
     <TextView
@@ -20,8 +20,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:foregroundGravity="center"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,15 +46,16 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <FrameLayout
-                android:layout_width="match_parent"
+                android:layout_width="350dp"
                 android:layout_height="159dp"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/painel_bg"
                 android:backgroundTint="@color/background_button"
                 android:hapticFeedbackEnabled="false">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="175dp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -61,26 +64,74 @@
                         android:id="@+id/textView26"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="NOME:" />
+                        android:text="NOME:"
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/textView27"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="MARCA AMBIENTAL" />
+                        android:text="MARCA AMBIENTAL"
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/textView28"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="ENDEREÇO"
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/textView29"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="RUA ESPERANÇA, 23 - ANDRÉ, CARI - 21554789"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TELEFONE:"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textView31"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4002-8922"
+                        android:textColor="@color/white" />
+
                 </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="250dp"
+                android:layout_height="123dp"
+                android:background="@drawable/edit_text_bg"
+                android:backgroundTint="@color/background_button">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AVALIE O PONTO"
+                        android:textColor="@color/green" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
             </FrameLayout>
 
         </LinearLayout>
