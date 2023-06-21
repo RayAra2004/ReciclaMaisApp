@@ -57,6 +57,7 @@
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="64dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 
@@ -138,4 +139,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="571dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
