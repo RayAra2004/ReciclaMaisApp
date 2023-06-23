@@ -134,6 +134,39 @@
 
             </FrameLayout>
 
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="ADICIONE UM COMENTÁRIO"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:ems="10"
+                android:hint="ADICIONE UM COMENTÁRIO"
+                android:inputType="textPersonName" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/green"
+                android:text="ABRIR TRAGETÓRIA ATÉ O PONTO"
+                android:textColor="@color/black" />
+
         </LinearLayout>
     </ScrollView>
 
