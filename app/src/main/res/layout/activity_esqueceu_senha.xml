@@ -46,14 +46,98 @@
 
             <EditText
                 android:id="@+id/editTextNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="236dp"
+                android:layout_height="44dp"
+                android:background="@drawable/edit_text_bg"
                 android:ems="10"
-                android:hint="Digite "
+                android:hint="Digite o código"
                 android:inputType="number"
+                android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="66dp" />
+                tools:layout_editor_absoluteY="64dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="311dp"
+        android:layout_height="193dp"
+        android:background="@drawable/painel_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="330dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senha nova"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.129"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirme senha"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.141"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="101dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword4"
+                android:layout_width="236dp"
+                android:layout_height="44dp"
+                android:background="@drawable/edit_text_bg"
+                android:ems="10"
+                android:hint="Digite sua nova senha"
+                android:inputType="textPassword"
+                android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.396"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="35dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword5"
+                android:layout_width="236dp"
+                android:layout_height="44dp"
+                android:background="@drawable/edit_text_bg"
+                android:ems="10"
+                android:hint="Confirme sua nova senha"
+                android:inputType="textPassword"
+                android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.396"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="120dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="182dp"
+        android:layout_height="53dp"
+        android:backgroundTint="@color/text_color"
+        android:text="FINALIZAR"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="571dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
