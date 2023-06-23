@@ -104,6 +104,7 @@
                         android:textColor="@color/white" />
 
                 </LinearLayout>
+
             </FrameLayout>
 
             <FrameLayout
