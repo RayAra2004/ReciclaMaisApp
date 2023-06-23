@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="316dp"
-        android:layout_height="553dp"
+        android:layout_height="573dp"
         android:layout_marginStart="47dp"
         android:layout_marginTop="47dp"
         android:background="@drawable/painel_bg"
@@ -32,11 +32,9 @@
 
         <EditText
             android:id="@+id/editTextTextPersonName"
-            android:layout_width="0dp"
+            android:layout_width="285dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
             android:autoText="false"
             android:background="@drawable/edit_text_bg"
             android:ems="10"
@@ -44,11 +42,9 @@
             android:inputType="textPersonName"
             android:padding="3dp"
             android:textColorHint="#99FFFFFF"
-            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <TextView
             android:id="@+id/textView5"
@@ -65,14 +61,14 @@
         <Spinner
             android:id="@+id/spinner3"
             android:layout_width="67dp"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             tools:layout_editor_absoluteX="15dp"
             tools:layout_editor_absoluteY="130dp" />
 
         <Spinner
             android:id="@+id/spinner2"
             android:layout_width="67dp"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             app:layout_constraintEnd_toStartOf="@+id/spinner4"
             app:layout_constraintStart_toEndOf="@+id/spinner3"
             tools:layout_editor_absoluteY="130dp" />
@@ -80,7 +76,7 @@
         <Spinner
             android:id="@+id/spinner4"
             android:layout_width="67dp"
-            android:layout_height="30dp"
+            android:layout_height="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteY="130dp" />
 
@@ -98,10 +94,9 @@
 
         <EditText
             android:id="@+id/editTextTextPersonName2"
-            android:layout_width="wrap_content"
+            android:layout_width="285dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/edit_text_bg"
             android:ems="10"
             android:hint="Digite seu telefone "
@@ -109,7 +104,7 @@
             android:padding="3dp"
             android:textColor="@color/white"
             android:textColorHint="#99FFFFFF"
-            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -127,22 +122,18 @@
 
         <EditText
             android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="wrap_content"
+            android:layout_width="285dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/edit_text_bg"
             android:ems="10"
             android:hint="Digite seu email"
             android:inputType="textEmailAddress"
             android:padding="3dp"
             android:textColorHint="#99FFFFFF"
-            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
         <TextView
             android:id="@+id/textView12"
@@ -158,9 +149,8 @@
 
         <EditText
             android:id="@+id/editTextTextPassword"
-            android:layout_width="wrap_content"
+            android:layout_width="285dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/edit_text_bg"
             android:ems="10"
@@ -168,7 +158,7 @@
             android:inputType="textPassword"
             android:padding="3dp"
             android:textColorHint="#99FFFFFF"
-            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -186,17 +176,17 @@
 
         <EditText
             android:id="@+id/editTextTextPassword2"
-            android:layout_width="wrap_content"
+            android:layout_width="285dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/edit_text_bg"
             android:ems="10"
             android:hint="Confirme sua senha"
             android:inputType="textPassword"
             android:padding="3dp"
             android:textColorHint="#99FFFFFF"
-            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -204,11 +194,11 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="51dp"
         android:layout_marginTop="51dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/text_color"
         android:text="ATUALIZAR"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"

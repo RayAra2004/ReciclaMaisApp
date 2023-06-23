@@ -21,7 +21,7 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Materiais que você vai descartar:"
+                android:text="MATERIAIS QUE VOCÊ VAI DESCARTAR:"
                 android:textColor="@color/text_color"
                 android:textSize="20sp" />
 
@@ -154,7 +154,7 @@
                     android:id="@+id/textView16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="DISTÂNCIA DO PONTO DE COLETA"
+                    android:text="DISTÂNCIA DO PONTO DE COLETA:"
                     android:textColor="@color/text_color"
                     android:textSize="20sp" />
 

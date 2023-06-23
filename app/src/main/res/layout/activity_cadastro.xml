@@ -21,8 +21,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="329dp"
-            android:layout_height="643dp"
+            android:layout_width="313dp"
+            android:layout_height="620dp"
             android:background="@drawable/painel_bg">
 
             <TextView
@@ -39,7 +39,7 @@
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
-                android:layout_width="0dp"
+                android:layout_width="285dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="44dp"
@@ -50,7 +50,6 @@
                 android:inputType="textPersonName"
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
-                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Data de nascimento"
                 android:textColor="@color/white"
                 android:textSize="16sp"
@@ -107,10 +106,10 @@
 
             <EditText
                 android:id="@+id/editTextTextPersonName2"
-                android:layout_width="wrap_content"
+                android:layout_width="285dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite seu telefone "
@@ -118,7 +117,6 @@
                 android:padding="3dp"
                 android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
-                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -136,17 +134,16 @@
 
             <EditText
                 android:id="@+id/editTextTextEmailAddress"
-                android:layout_width="wrap_content"
+                android:layout_width="285dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite seu email"
                 android:inputType="textEmailAddress"
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
-                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -164,17 +161,16 @@
 
             <EditText
                 android:id="@+id/editTextTextPassword"
-                android:layout_width="wrap_content"
+                android:layout_width="285dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite sua senha"
                 android:inputType="textPassword"
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
-                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -192,17 +188,16 @@
 
             <EditText
                 android:id="@+id/editTextTextPassword2"
-                android:layout_width="wrap_content"
+                android:layout_width="285dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Confirme sua senha"
                 android:inputType="textPassword"
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
-                android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -212,10 +207,10 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="51dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/text_color"
         android:text="FINALIZAR"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
