@@ -11,21 +11,24 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:text="ALTERAR SENHA"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="61dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="313dp"
         android:layout_height="133dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/painel_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="140dp">
+        app:layout_constraintTop_toBottomOf="@+id/textView23">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -35,6 +38,7 @@
                 android:id="@+id/textView25"
                 android:layout_width="284dp"
                 android:layout_height="39dp"
+                android:layout_marginTop="6dp"
                 android:gravity="center"
                 android:text="Te enviamos um código de confirmação no seu email para alterar a senha!"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -42,33 +46,35 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.482"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="7dp" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/editTextNumber"
                 android:layout_width="236dp"
                 android:layout_height="44dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite o código"
                 android:inputType="number"
                 android:textColorHint="#99FFFFFF"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="64dp" />
+                app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/frameLayout3"
         android:layout_width="311dp"
         android:layout_height="193dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/painel_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="330dp">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -78,30 +84,33 @@
                 android:id="@+id/textView31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Senha nova"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.129"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="16dp" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView30"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
                 android:text="Confirme senha"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.141"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="101dp" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword4" />
 
             <EditText
                 android:id="@+id/editTextTextPassword4"
                 android:layout_width="236dp"
                 android:layout_height="44dp"
+                android:layout_marginTop="1dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite sua nova senha"
@@ -110,7 +119,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.396"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="35dp" />
+                app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
             <EditText
                 android:id="@+id/editTextTextPassword5"
@@ -124,7 +133,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.396"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="120dp" />
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 
@@ -132,12 +141,13 @@
         android:id="@+id/button8"
         android:layout_width="182dp"
         android:layout_height="53dp"
+        android:layout_marginTop="87dp"
         android:backgroundTint="@color/text_color"
         android:text="FINALIZAR"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="571dp" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
