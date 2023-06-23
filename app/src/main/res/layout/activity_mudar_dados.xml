@@ -11,9 +11,11 @@
         android:id="@+id/constraintLayout"
         android:layout_width="316dp"
         android:layout_height="553dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="47dp"
         android:background="@drawable/painel_bg"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="47dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView9"
@@ -31,7 +33,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="16dp"
@@ -97,7 +99,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/edit_text_bg"
@@ -126,7 +128,7 @@
         <EditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="16dp"
@@ -157,7 +159,7 @@
         <EditText
             android:id="@+id/editTextTextPassword"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/edit_text_bg"
@@ -185,7 +187,7 @@
         <EditText
             android:id="@+id/editTextTextPassword2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/edit_text_bg"
