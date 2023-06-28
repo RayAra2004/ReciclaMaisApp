@@ -44,6 +44,7 @@
                     android:paddingStart="10dp"
                     android:text="VIDRO"
                     android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/white"
                     android:textColorHighlight="@color/text_color"
                     android:textColorLink="@color/text_color"
@@ -58,6 +59,7 @@
                     android:button="@android:drawable/presence_invisible"
                     android:paddingStart="10dp"
                     android:text="METAIS"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/white" />
             </LinearLayout>
 
@@ -75,6 +77,7 @@
                     android:checked="true"
                     android:paddingStart="10dp"
                     android:text="PLÁSTICO"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/white" />
 
                 <CheckBox
@@ -85,6 +88,7 @@
                     android:button="@android:drawable/presence_invisible"
                     android:paddingStart="10dp"
                     android:text="PAPEL"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/white" />
             </LinearLayout>
 
@@ -101,6 +105,7 @@
                     android:button="@android:drawable/presence_invisible"
                     android:paddingStart="10dp"
                     android:text="MADEIRA"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/white" />
 
                 <CheckBox
@@ -111,6 +116,7 @@
                     android:button="@android:drawable/presence_invisible"
                     android:paddingStart="10dp"
                     android:text="ORGÂNICO"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/white" />
             </LinearLayout>
 
@@ -127,6 +133,7 @@
                     android:button="@android:drawable/presence_invisible"
                     android:paddingStart="10dp"
                     android:text="ELETRÔNICOS"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/white" />
 
                 <CheckBox
@@ -137,6 +144,7 @@
                     android:button="@android:drawable/presence_invisible"
                     android:paddingStart="10dp"
                     android:text="HOSPITALAR"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@color/white" />
 
             </LinearLayout>
@@ -175,6 +183,7 @@
                         android:button="@android:drawable/presence_invisible"
                         android:paddingStart="10dp"
                         android:text="até 3KM"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -192,6 +201,7 @@
                         android:button="@android:drawable/presence_invisible"
                         android:paddingStart="10dp"
                         android:text="até 7KM"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -209,6 +219,7 @@
                         android:button="@android:drawable/presence_invisible"
                         android:paddingStart="10dp"
                         android:text="até 12KM"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -227,6 +238,7 @@
                         android:button="@android:drawable/presence_invisible"
                         android:paddingStart="10dp"
                         android:text="+12KM"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
