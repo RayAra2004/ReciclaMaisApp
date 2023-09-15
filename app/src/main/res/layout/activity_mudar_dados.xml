@@ -7,202 +7,145 @@
     android:background="@color/background_color"
     tools:context=".activity.MudarDadosActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="316dp"
-        android:layout_height="573dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="47dp"
-        android:background="@drawable/painel_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Nome"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.056"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="285dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:autoText="false"
-            android:background="@drawable/edit_text_bg"
-            android:ems="10"
-            android:hint="Digite seu nome"
-            android:inputType="textPersonName"
-            android:padding="3dp"
-            android:textColorHint="#99FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Nome"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Data de nascimento"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/spinner3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:autoText="false"
+                android:background="@drawable/edit_text_bg"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Digite seu nome"
+                android:inputType="textPersonName"
+                android:textColorHint="#99FFFFFF" />
 
-        <Spinner
-            android:id="@+id/spinner3"
-            android:layout_width="67dp"
-            android:layout_height="50dp"
-            tools:layout_editor_absoluteX="15dp"
-            tools:layout_editor_absoluteY="130dp" />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data de nascimento"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="67dp"
-            android:layout_height="50dp"
-            app:layout_constraintEnd_toStartOf="@+id/spinner4"
-            app:layout_constraintStart_toEndOf="@+id/spinner3"
-            tools:layout_editor_absoluteY="130dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-        <Spinner
-            android:id="@+id/spinner4"
-            android:layout_width="67dp"
-            android:layout_height="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="130dp" />
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="67dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="20dp" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:text="Telefone"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="67dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="20dp" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="285dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/edit_text_bg"
-            android:ems="10"
-            android:hint="Digite seu telefone "
-            android:inputType="textPersonName"
-            android:padding="3dp"
-            android:textColor="@color/white"
-            android:textColorHint="#99FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                <Spinner
+                    android:id="@+id/spinner4"
+                    android:layout_width="67dp"
+                    android:layout_height="50dp" />
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:text="Email"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Telefone"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="285dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/edit_text_bg"
-            android:ems="10"
-            android:hint="Digite seu email"
-            android:inputType="textEmailAddress"
-            android:padding="3dp"
-            android:textColorHint="#99FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_bg"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Digite seu telefone "
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="#99FFFFFF" />
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:text="Senha"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Senha"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="285dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/edit_text_bg"
-            android:ems="10"
-            android:hint="Digite sua senha"
-            android:inputType="textPassword"
-            android:padding="3dp"
-            android:textColorHint="#99FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_bg"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Digite sua senha"
+                android:inputType="textPassword"
+                android:textColorHint="#99FFFFFF" />
 
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:text="Confirme sua senha"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Confirme sua senha"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/editTextTextPassword2"
-            android:layout_width="285dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/edit_text_bg"
-            android:ems="10"
-            android:hint="Confirme sua senha"
-            android:inputType="textPassword"
-            android:padding="3dp"
-            android:textColorHint="#99FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_bg"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Confirme sua senha"
+                android:inputType="textPassword"
+                android:textColorHint="#99FFFFFF" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="175dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/text_color"
+                android:text="ATUALIZAR"
+                android:textColor="@color/black" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="175dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/text_color"
-        android:text="ATUALIZAR"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

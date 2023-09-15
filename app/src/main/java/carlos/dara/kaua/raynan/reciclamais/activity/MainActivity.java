@@ -2,7 +2,6 @@ package carlos.dara.kaua.raynan.reciclamais.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.SupportMenuInflater;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu){
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_activity_tb,menu);
+        inflater.inflate(R.menu.main_activity_bnv,menu);
         return true;
     };
 
