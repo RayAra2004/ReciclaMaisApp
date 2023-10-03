@@ -20,12 +20,12 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@drawable/logo_tool_bar_background"
                 android:layout_gravity="center_horizontal"
-                />
+                android:src="@drawable/logo_tool_bar_background" />
         </FrameLayout>
 
     </androidx.appcompat.widget.Toolbar>

@@ -40,7 +40,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_vidro_aprenda_reciclar"
                 android:layout_width="36dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="30dp"
@@ -49,7 +49,7 @@
                 android:text="VIDROS" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btn_metal_aprenda_reciclar"
                 android:layout_width="36dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="30dp"
@@ -66,7 +66,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_plastico_aprenda_reciclar"
                 android:layout_width="36dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="30dp"
@@ -75,14 +75,14 @@
                 android:text="PLÁSTICO" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btn_papel_aprenda_reciclar"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="-6dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"
-                android:text="PAPÉIS E PAPELÕES" />
+                android:text="PAPEL" />
 
         </LinearLayout>
 
@@ -93,7 +93,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_madeira_aprenda_reciclar"
                 android:layout_width="36dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="30dp"
@@ -102,7 +102,7 @@
                 android:text="MADEIRAS" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btn_lixo_organico_aprenda_reciclar"
                 android:layout_width="36dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="30dp"
@@ -118,16 +118,16 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_lixo_eletronico_aprenda_reciclar"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"
-                android:text="PILHAS E BATERIAS" />
+                android:text="LIXO ELETRÔNICO" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btn_lixo_hospitalar_aprenda_reciclar"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"

@@ -7,7 +7,7 @@
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/adicionar"
+        android:icon="@drawable/point_menu"
         android:title="" />
     <item
         android:icon="@drawable/baseline_recycling_24"
