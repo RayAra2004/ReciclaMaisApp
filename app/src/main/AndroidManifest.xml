@@ -24,13 +24,7 @@
             android:name=".EstePontoExisteActivity"
             android:exported="false" />
         <activity
-            android:name=".AdicionarPontoActivity"
-            android:exported="false" />
-        <activity
             android:name=".MudarDadosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MapaPontoActivity"
             android:exported="false" />
         <activity
             android:name=".DescricaoPontoActivity"
