@@ -39,10 +39,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.198"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+                    app:layout_constraintTop_toBottomOf="@+id/editText_nome_cadastro" />
 
                 <EditText
-                    android:id="@+id/editTextTextPassword"
+                    android:id="@+id/editText_senha_cadastro"
                     android:layout_width="285dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
@@ -67,7 +67,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.197"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+                    app:layout_constraintTop_toBottomOf="@+id/editText_senha_cadastro" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
@@ -124,10 +124,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.14"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+                    app:layout_constraintTop_toBottomOf="@+id/editText_telefone_cadastro" />
 
                 <EditText
-                    android:id="@+id/editTextTextPassword2"
+                    android:id="@+id/editText_confirme_sua_senha_cadastro"
                     android:layout_width="285dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
@@ -155,7 +155,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btn_atualizar_mudar_dados"
                     android:layout_width="175dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="16dp"
@@ -164,10 +164,10 @@
                     android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+                    app:layout_constraintTop_toBottomOf="@+id/editText_confirme_sua_senha_cadastro" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/editText_nome_cadastro"
                     android:layout_width="285dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
@@ -183,7 +183,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+                    android:id="@+id/editText_telefone_cadastro"
                     android:layout_width="285dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"

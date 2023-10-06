@@ -2,18 +2,21 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/homeOP"
         android:icon="@drawable/baseline_home_24"
         android:title="" />
     <item
+        android:id="@+id/adicionarpontoOP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/point_menu"
         android:title="" />
     <item
+        android:id="@+id/postarmaterialOP"
         android:icon="@drawable/baseline_recycling_24"
-        android:title=""/>
+        android:title="" />
     <item
+        android:id="@+id/perfilOP"
         android:icon="@drawable/baseline_person_24"
-        android:title=""
-        />
+        android:title="" />
 </menu>
