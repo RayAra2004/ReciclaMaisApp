@@ -82,7 +82,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
                         <Button
-                            android:id="@+id/button9"
+                            android:id="@+id/btn_solicitar_coleta_postagem_material"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/text_color"
@@ -173,7 +173,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName4"
+                            android:id="@+id/editText_adicionar_cometario_descricao_ponto"
                             android:layout_width="285dp"
                             android:layout_height="50dp"
                             android:layout_marginTop="8dp"
@@ -212,7 +212,7 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.112"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+                            app:layout_constraintTop_toBottomOf="@+id/editText_adicionar_cometario_descricao_ponto" />
 
                         <Spinner
                             android:id="@+id/spinner5"
@@ -294,7 +294,7 @@
                 </FrameLayout>
 
                 <Button
-                    android:id="@+id/button14"
+                    android:id="@+id/btn_adicionar_ponto_de_coleta_adicionar_ponto"
                     android:layout_width="286dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"

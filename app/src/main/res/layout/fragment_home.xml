@@ -7,6 +7,7 @@
     tools:context=".fragments.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_pontos_de_coleta_home"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
