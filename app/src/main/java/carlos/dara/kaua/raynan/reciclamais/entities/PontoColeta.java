@@ -11,11 +11,11 @@ public class PontoColeta {
     Double lat, lon;
 
     BigInteger telefone;
-    ArrayList<String> materiasReciclados;
+    ArrayList<TipoMaterial> materiasReciclados;
 
     Endereco endereco;
 
-    public PontoColeta(String nome, int imagem, Double nota, Double lat, Double lon, BigInteger telefone, ArrayList<String> materiasReciclados, Endereco endereco) {
+    public PontoColeta(String nome, int imagem, Double nota, Double lat, Double lon, BigInteger telefone, ArrayList<TipoMaterial> materiasReciclados, Endereco endereco) {
         this.nome = nome;
         this.imagem = imagem;
         this.nota = nota;
