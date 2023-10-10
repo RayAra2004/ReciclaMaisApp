@@ -14,8 +14,9 @@ public class PontoColeta {
     ArrayList<TipoMaterial> materiasReciclados;
 
     Endereco endereco;
+    ArrayList<Comentario> comentarios;
 
-    public PontoColeta(String nome, int imagem, Double nota, Double lat, Double lon, BigInteger telefone, ArrayList<TipoMaterial> materiasReciclados, Endereco endereco) {
+    public PontoColeta(String nome, int imagem, Double nota, Double lat, Double lon, BigInteger telefone, ArrayList<TipoMaterial> materiasReciclados, Endereco endereco, ArrayList<Comentario> comentarios) {
         this.nome = nome;
         this.imagem = imagem;
         this.nota = nota;
@@ -24,5 +25,6 @@ public class PontoColeta {
         this.telefone = telefone;
         this.materiasReciclados = materiasReciclados;
         this.endereco = endereco;
+        this.comentarios = comentarios;
     }
 }
