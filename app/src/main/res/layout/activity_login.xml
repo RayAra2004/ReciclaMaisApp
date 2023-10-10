@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tv_data_de_nascimento_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -98,7 +98,7 @@
                 android:inputType="textEmailAddress"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
 
             <TextView
                 android:id="@+id/textView6"

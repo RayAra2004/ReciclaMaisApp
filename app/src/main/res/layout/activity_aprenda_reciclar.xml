@@ -20,7 +20,7 @@
             android:layout_height="20dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_qual_item_deseja_reciclar_aprenda_reciclar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="QUAL DOS ITENS ABAIXO DESEJA APRENDER A RECICLAR?"
@@ -42,7 +42,7 @@
             <Button
                 android:id="@+id/btn_vidro_aprenda_reciclar"
                 android:layout_width="36dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"
@@ -51,7 +51,7 @@
             <Button
                 android:id="@+id/btn_metal_aprenda_reciclar"
                 android:layout_width="36dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"
@@ -61,14 +61,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginBottom="30dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_plastico_aprenda_reciclar"
                 android:layout_width="36dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"
@@ -77,9 +77,8 @@
             <Button
                 android:id="@+id/btn_papel_aprenda_reciclar"
                 android:layout_width="36dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="-6dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"
                 android:text="PAPEL" />
@@ -95,7 +94,7 @@
             <Button
                 android:id="@+id/btn_madeira_aprenda_reciclar"
                 android:layout_width="36dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"
@@ -104,7 +103,7 @@
             <Button
                 android:id="@+id/btn_lixo_organico_aprenda_reciclar"
                 android:layout_width="36dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"
@@ -120,7 +119,7 @@
             <Button
                 android:id="@+id/btn_lixo_eletronico_aprenda_reciclar"
                 android:layout_width="36dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"
@@ -129,7 +128,7 @@
             <Button
                 android:id="@+id/btn_lixo_hospitalar_aprenda_reciclar"
                 android:layout_width="36dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/background_button"

@@ -8,7 +8,7 @@
     tools:context=".activity.InformacoesMaterialActivity">
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/tv_info_ponto_selecionado_descricao_ponto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_ponto_selecionado_descricao_ponto" />
 
     <TextView
         android:id="@+id/textView21"

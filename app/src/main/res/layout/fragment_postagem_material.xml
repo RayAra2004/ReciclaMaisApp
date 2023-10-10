@@ -53,7 +53,7 @@
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tv_telefone_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -78,7 +78,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tv_email_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -102,7 +102,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/tv_senha_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -126,7 +126,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/tv_confirme_sua_senha_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"

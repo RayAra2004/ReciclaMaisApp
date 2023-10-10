@@ -8,7 +8,7 @@
     tools:context=".activity.AjudaActivity">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tv_nome_cadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tv_telefone_cadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="232dp"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tv_email_cadastro"
         android:layout_width="314dp"
         android:layout_height="56dp"
         android:layout_marginTop="260dp"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/tv_senha_cadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="344dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tv_confirme_sua_senha_cadastro"
         android:layout_width="314dp"
         android:layout_height="56dp"
         android:layout_marginTop="10dp"
@@ -68,10 +68,10 @@
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_senha_cadastro" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/tv_pergunta3_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -81,10 +81,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_confirme_sua_senha_cadastro" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/tv_resposta3_ajuda"
         android:layout_width="313dp"
         android:layout_height="38dp"
         android:layout_marginTop="18dp"
@@ -92,10 +92,10 @@
         android:textColor="@color/text_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pergunta3_ajuda" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tv_email_suporte_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="EMAIL DE SUPORTE"
@@ -104,10 +104,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_resposta3_ajuda" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/tv_reciclamaissuporte_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -116,5 +116,5 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_suporte_ajuda" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/tv_info_ponto_selecionado_descricao_ponto"
         android:layout_width="349dp"
         android:layout_height="40dp"
         android:layout_marginStart="28dp"
@@ -55,6 +55,6 @@
         android:textColor="@color/text_color"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_ponto_selecionado_descricao_ponto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
