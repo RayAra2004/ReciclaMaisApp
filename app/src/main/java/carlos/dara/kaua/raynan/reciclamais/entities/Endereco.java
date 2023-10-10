@@ -6,7 +6,7 @@ public class Endereco {
     BigInteger cep;
     String tp_logradouro;
     String logradouro;
-    int numero;
+    Integer numero;
     String estado;
     String cidade;
     String bairro;
