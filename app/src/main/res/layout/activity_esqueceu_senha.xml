@@ -8,7 +8,7 @@
     tools:context=".activity.EsqueceuSenhaActivity">
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/tv_alterar_senha_esqueceu_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
@@ -28,23 +28,22 @@
         android:background="@drawable/painel_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23">
+        app:layout_constraintTop_toBottomOf="@+id/tv_alterar_senha_esqueceu_senha">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/tv_confirmacao_codigo_esqueceu_senha"
                 android:layout_width="284dp"
                 android:layout_height="39dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text="Te enviamos um código de confirmação no seu email para alterar a senha!"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.482"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,14 +52,14 @@
                 android:layout_width="285dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite o código"
                 android:inputType="number"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView25" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_confirmacao_codigo_esqueceu_senha" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
@@ -81,28 +80,26 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView31"
+                android:id="@+id/tv_senha_nova_esqueceu_senha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="Senha nova"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.046"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_telefone_descricao_ponto"
+                android:id="@+id/tv_confirme_senha_esqueceu_senha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:text="Confirme senha"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.052"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_senha_nova_esqueceu_senha" />
 
@@ -110,30 +107,27 @@
                 android:id="@+id/editText_senha_nova_esqueceu_senha"
                 android:layout_width="285dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="1dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite sua nova senha"
                 android:inputType="textPassword"
                 android:textColorHint="#99FFFFFF"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.396"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView31" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_senha_nova_esqueceu_senha" />
 
             <EditText
                 android:id="@+id/editText_confirme_senha_esqueceu_senha"
                 android:layout_width="285dp"
                 android:layout_height="50dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Confirme sua nova senha"
                 android:inputType="textPassword"
                 android:textColorHint="#99FFFFFF"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.384"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_telefone_descricao_ponto" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_confirme_senha_esqueceu_senha" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 
@@ -146,7 +140,6 @@
         android:text="FINALIZAR"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout3" />
 

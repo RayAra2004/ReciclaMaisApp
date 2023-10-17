@@ -141,7 +141,7 @@
                                 app:layout_constraintStart_toStartOf="parent" />
 
                             <TextView
-                                android:id="@+id/textView31"
+                                android:id="@+id/tv_telefone_ponto_selecionado_descricao_ponto"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="28dp"
@@ -151,17 +151,11 @@
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.644"
-                                app:layout_constraintStart_toStartOf="parent" />
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:ignore="DuplicateIds" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -180,7 +174,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView32"
+                        android:id="@+id/tv_avalie_o_ponto_descricao_ponto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AVALIE O PONTO"
@@ -188,7 +182,7 @@
                         android:textColor="@color/text_color" />
 
                     <RatingBar
-                        android:id="@+id/ratingBar3"
+                        android:id="@+id/rb_avaliacao_em_estrela_descricao_ponto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -197,7 +191,7 @@
             </FrameLayout>
 
             <TextView
-                android:id="@+id/textView36"
+                android:id="@+id/tv_adicione_um_comentario_descricao_ponto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
