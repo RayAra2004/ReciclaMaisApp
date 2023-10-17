@@ -1,4 +1,4 @@
 package carlos.dara.kaua.raynan.reciclamais.fragments;
 
-public class AdidcionarPontoFragment {
+public class AdicionarPontoFragment {
 }

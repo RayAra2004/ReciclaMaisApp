@@ -6,7 +6,7 @@ public class Endereco {
     BigInteger cep;
     String tp_logradouro;
     String logradouro;
-    int numero;
+    Integer numero;
     String estado;
     String cidade;
     String bairro;
@@ -23,5 +23,41 @@ public class Endereco {
         this.bairro = bairro;
         this.lat = lat;
         this.lon = lon;
+    }
+
+    public BigInteger getCep() {
+        return cep;
+    }
+
+    public String getTp_logradouro() {
+        return tp_logradouro;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public Double getLon() {
+        return lon;
     }
 }
