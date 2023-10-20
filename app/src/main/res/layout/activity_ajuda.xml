@@ -8,113 +8,107 @@
     tools:context=".activity.AjudaActivity">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tv_perguntas_frequentes_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="52dp"
         android:text="PERGUNTAS FREQUENTES"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tv_pergunta1_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="36dp"
         android:text="O que é esse app de reciclagem? "
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_perguntas_frequentes_ajuda" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tv_resposta1_ajuda"
         android:layout_width="314dp"
         android:layout_height="56dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:text="O app de reciclagem é uma ferramenta tecnológica que ajuda os usuários a reciclar de forma mais fácil e eficiente."
         android:textColor="@color/text_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pergunta1_ajuda" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/tv_pergunta2_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="344dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:text="Posso usar o app em qualquer lugar? "
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_resposta3_ajuda" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tv_reposta2_ajuda"
         android:layout_width="314dp"
         android:layout_height="56dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:text="Isso depende do app que você está usando. Alguns apps de reciclagem são projetados para funcionar em uma região ou país específico."
         android:textColor="@color/text_color"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pergunta2_ajuda" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/tv_pergunta3_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:text="O app de reciclagem é gratuito? "
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_resposta1_ajuda" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/tv_resposta3_ajuda"
         android:layout_width="313dp"
         android:layout_height="38dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:text="A maioria dos apps de reciclagem são gratuitos para baixar e usar."
         android:textColor="@color/text_color"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_pergunta3_ajuda" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tv_email_suporte_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
         android:text="EMAIL DE SUPORTE"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/text_color"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_reposta2_ajuda" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/tv_reciclamaissuporte_ajuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:text="reciclamaissuporte@gmail.com"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_suporte_ajuda" />
 </androidx.constraintlayout.widget.ConstraintLayout>

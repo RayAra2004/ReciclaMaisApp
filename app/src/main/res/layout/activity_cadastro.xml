@@ -25,7 +25,7 @@
             android:background="@drawable/painel_bg">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tv_nome_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -53,7 +53,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tv_data_de_nascimento_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -65,34 +65,34 @@
                 app:layout_constraintTop_toBottomOf="@+id/editText_nome_cadastro" />
 
             <Spinner
-                android:id="@+id/spinner3"
+                android:id="@+id/sp_dia_data_de_nascimento_cadastro"
                 android:layout_width="67dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/sp_mes_data_de_nascimento_cadastro"
                 android:layout_width="67dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintStart_toEndOf="@+id/spinner3"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintStart_toEndOf="@+id/sp_dia_data_de_nascimento_cadastro"
+                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
 
             <Spinner
-                android:id="@+id/spinner4"
+                android:id="@+id/sp_ano_data_de_nascimento_cadastro"
                 android:layout_width="67dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintStart_toEndOf="@+id/spinner2"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintStart_toEndOf="@+id/sp_mes_data_de_nascimento_cadastro"
+                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tv_telefone_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -101,7 +101,7 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+                app:layout_constraintTop_toBottomOf="@+id/sp_dia_data_de_nascimento_cadastro" />
 
             <EditText
                 android:id="@+id/editText_telefone_cadastro"
@@ -117,10 +117,10 @@
                 android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_telefone_cadastro" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tv_email_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -144,10 +144,10 @@
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_email_cadastro" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/tv_senha_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -171,10 +171,10 @@
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_senha_cadastro" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/tv_confirme_sua_senha_cadastro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -198,10 +198,10 @@
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_confirme_sua_senha_cadastro" />
 
             <Button
-                android:id="@+id/btn_mudar_dados_perfil"
+                android:id="@+id/btn_cadastrar_cadastro"
                 android:layout_width="175dp"
                 android:layout_height="51dp"
                 android:layout_marginStart="68dp"
