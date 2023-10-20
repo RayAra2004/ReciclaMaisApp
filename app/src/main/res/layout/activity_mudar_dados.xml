@@ -8,8 +8,9 @@
     tools:context=".activity.MudarDadosActivity">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="450dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/painel_bg"
@@ -26,75 +27,70 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="450dp">
 
                 <TextView
-                    android:id="@+id/tv_data_de_nascimento_cadastro"
+                    android:id="@+id/tv_data_de_nascimento_mudar_dados"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
                     android:layout_marginTop="8dp"
                     android:text="Data de nascimento"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.198"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText_nome_cadastro" />
+                    app:layout_constraintTop_toBottomOf="@+id/editText_nome_mudar_dados" />
 
                 <EditText
-                    android:id="@+id/editText_senha_cadastro"
+                    android:id="@+id/editText_senha_mudar_dados"
                     android:layout_width="285dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="44dp"
                     android:background="@drawable/edit_text_bg"
                     android:ems="10"
                     android:gravity="center"
                     android:hint="Digite sua senha"
                     android:inputType="textPassword"
                     android:textColorHint="#99FFFFFF"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_senha_cadastro" />
 
                 <TextView
-                    android:id="@+id/tv_confirme_sua_senha_cadastro"
+                    android:id="@+id/tv_confirme_sua_senha_mudar_dados"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
                     android:layout_marginTop="12dp"
                     android:text="Confirme sua senha"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.197"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText_senha_cadastro" />
+                    app:layout_constraintTop_toBottomOf="@+id/editText_senha_mudar_dados" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="44dp"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.496"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro">
+                    app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_mudar_dados">
 
                     <Spinner
-                        android:id="@+id/sp_dia_data_de_nascimento_cadastro"
+                        android:id="@+id/sp_dia_data_de_nascimento_mudar_dados"
                         android:layout_width="67dp"
                         android:layout_height="50dp"
                         android:layout_marginEnd="20dp" />
 
                     <Spinner
-                        android:id="@+id/sp_mes_data_de_nascimento_cadastro"
+                        android:id="@+id/sp_mes_data_de_nascimento_mudar_dados"
                         android:layout_width="67dp"
                         android:layout_height="50dp"
                         android:layout_marginEnd="20dp" />
 
                     <Spinner
-                        android:id="@+id/sp_ano_data_de_nascimento_cadastro"
+                        android:id="@+id/sp_ano_data_de_nascimento_mudar_dados"
                         android:layout_width="67dp"
                         android:layout_height="50dp" />
                 </LinearLayout>
@@ -103,12 +99,11 @@
                     android:id="@+id/tv_telefone_cadastro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="8dp"
                     android:text="Telefone"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.147"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -116,61 +111,46 @@
                     android:id="@+id/tv_senha_cadastro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:text="Senha"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.14"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText_telefone_cadastro" />
+                    app:layout_constraintTop_toBottomOf="@+id/editText_telefone_mudar_dados" />
 
                 <EditText
-                    android:id="@+id/editText_confirme_sua_senha_cadastro"
+                    android:id="@+id/editText_confirme_sua_senha_mudar_dados"
                     android:layout_width="285dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="44dp"
                     android:background="@drawable/edit_text_bg"
                     android:ems="10"
                     android:gravity="center"
                     android:hint="Confirme sua senha"
                     android:inputType="textPassword"
                     android:textColorHint="#99FFFFFF"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_confirme_sua_senha_cadastro" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_confirme_sua_senha_mudar_dados" />
 
                 <TextView
                     android:id="@+id/tv_nome_cadastro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="16dp"
                     android:text="Nome"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.139"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
-                    android:id="@+id/btn_atualizar_mudar_dados"
-                    android:layout_width="175dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
-                    android:backgroundTint="@color/text_color"
-                    android:text="ATUALIZAR"
-                    android:textColor="@color/black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText_confirme_sua_senha_cadastro" />
-
                 <EditText
-                    android:id="@+id/editText_nome_cadastro"
+                    android:id="@+id/editText_nome_mudar_dados"
                     android:layout_width="285dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="44dp"
                     android:autoText="false"
                     android:background="@drawable/edit_text_bg"
                     android:ems="10"
@@ -178,15 +158,14 @@
                     android:hint="Digite seu nome"
                     android:inputType="textPersonName"
                     android:textColorHint="#99FFFFFF"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_nome_cadastro" />
 
                 <EditText
-                    android:id="@+id/editText_telefone_cadastro"
+                    android:id="@+id/editText_telefone_mudar_dados"
                     android:layout_width="285dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="44dp"
                     android:background="@drawable/edit_text_bg"
                     android:ems="10"
                     android:gravity="center"
@@ -194,12 +173,23 @@
                     android:inputType="textPersonName"
                     android:textColor="@color/white"
                     android:textColorHint="#99FFFFFF"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_telefone_cadastro" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/btn_atualizar_mudar_dados"
+        android:layout_width="175dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/text_color"
+        android:text="ATUALIZAR"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
