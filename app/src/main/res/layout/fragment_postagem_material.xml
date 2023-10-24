@@ -8,13 +8,8 @@
     >
 
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/painel_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,144 +17,177 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="vertical"
-            android:paddingLeft="20dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_alterar_senha_esqueceu_senha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="8dp"
-                android:text="Adicione a imagem do material"
-                android:textColor="@color/white" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="158dp"
-                android:layout_height="118dp"
-                android:layout_marginTop="9dp"
-                app:srcCompat="@android:drawable/ic_menu_crop" />
+                <FrameLayout
+                    android:id="@+id/frameLayout4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/painel_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/btn_finalizar_esqueceu_senha"
-                android:layout_width="245dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="@color/text_color"
-                android:text="ADICIONE A IMAGEM"
-                android:textColor="@color/black" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_telefone_cadastro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
-                android:text="Digite seu primeiro nome"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                        <ImageView
+                            android:id="@+id/imv_foto_material_postagem_material"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="108dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView4"
+                            tools:srcCompat="@tools:sample/avatars" />
 
-            <EditText
-                android:id="@+id/editText_telefone_cadastro"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/edit_text_bg"
-                android:ems="10"
-                android:hint="Digite seu nome"
-                android:inputType="textPersonName"
-                android:padding="3dp"
-                android:textColor="@color/white"
-                android:textColorHint="#99FFFFFF"
-                android:textSize="24sp" />
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="12dp"
+                            android:text="Digite um título para seu anúncio"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/btn_adicionar_foto_material_postagem_material" />
 
-            <TextView
-                android:id="@+id/tv_email_cadastro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:text="Telefone de contato"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Quantidade em KG"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/editText_telefone_postagem_material" />
 
-            <EditText
-                android:id="@+id/editText_email_cadastro"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/edit_text_bg"
-                android:ems="10"
-                android:hint="Digite seu telefone"
-                android:inputType="textEmailAddress"
-                android:padding="3dp"
-                android:textColorHint="#99FFFFFF"
-                android:textSize="24sp" />
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Descrição do material"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/editText_peso_material_postagem_material" />
 
-            <TextView
-                android:id="@+id/tv_senha_cadastro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:text="Quantidade em KG"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="76dp"
+                            android:layout_marginTop="16dp"
+                            android:text="Adicione a imagem do material"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/editText_senha_cadastro"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/edit_text_bg"
-                android:ems="10"
-                android:hint="Digite aqui"
-                android:inputType="textPassword"
-                android:padding="3dp"
-                android:textColorHint="#99FFFFFF"
-                android:textSize="24sp" />
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Telefone de contato"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/editText_titulo_anuncio_postagem_material" />
 
-            <TextView
-                android:id="@+id/tv_confirme_sua_senha_cadastro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                android:text="Descrição do material"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                        <Button
+                            android:id="@+id/btn_adicionar_foto_material_postagem_material"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="76dp"
+                            android:layout_marginTop="8dp"
+                            android:backgroundTint="@color/text_color"
+                            android:text="ADICIONE A IMAGEM"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imv_foto_material_postagem_material" />
 
-            <EditText
-                android:id="@+id/editText_confirme_sua_senha_cadastro"
-                android:layout_width="293dp"
-                android:layout_height="136dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/edit_text_bg"
-                android:ems="10"
-                android:gravity="top"
-                android:hint="Adicione a descrição"
-                android:inputType="textPassword"
-                android:padding="3dp"
-                android:textColorHint="#99FFFFFF"
-                android:textSize="24sp" />
+                        <EditText
+                            android:id="@+id/editText_titulo_anuncio_postagem_material"
+                            android:layout_width="285dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="28dp"
+                            android:background="@drawable/edit_text_bg"
+                            android:ems="10"
+                            android:hint="Digite o título"
+                            android:inputType="textPersonName"
+                            android:textColorHint="#88FFFFFF"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <Button
-                android:id="@+id/btn_solicitar_coleta_postagem_material"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/text_color"
-                android:text="SOLICITAR COLETA"
-                android:textColor="@color/black" />
+                        <EditText
+                            android:id="@+id/editText_telefone_postagem_material"
+                            android:layout_width="285dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="28dp"
+                            android:background="@drawable/edit_text_bg"
+                            android:ems="10"
+                            android:hint="Digite seu telefone"
+                            android:inputType="textPersonName"
+                            android:textColorHint="#87FFFFFF"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                        <EditText
+                            android:id="@+id/editText_peso_material_postagem_material"
+                            android:layout_width="285dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="28dp"
+                            android:background="@drawable/edit_text_bg"
+                            android:ems="10"
+                            android:hint="Digite aqui"
+                            android:inputType="textPersonName"
+                            android:textColorHint="#87FFFFFF"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                        <EditText
+                            android:id="@+id/editText_descricao_postagem_material"
+                            android:layout_width="285dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="28dp"
+                            android:background="@drawable/edit_text_bg"
+                            android:ems="10"
+                            android:hint="Adicione a descrição"
+                            android:inputType="textPersonName"
+                            android:textColorHint="#87FFFFFF"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/btn_solicitar_coleta_postagem_material"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="116dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/text_color"
+                    android:text="SOLICITAR COLETA"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
