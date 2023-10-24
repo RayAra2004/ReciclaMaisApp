@@ -32,4 +32,13 @@ public class PontoColeta {
         this.distancia = distancia;
         this.id = id;
     }
+
+    public PontoColeta(Double nota, String URLimagem, String nome, Endereco endereco, BigInteger telefone, ArrayList<Comentario> comentarios){
+        this.nota = nota;
+        this.URLimagem = URLimagem;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.comentarios = comentarios;
+    }
 }

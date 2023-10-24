@@ -3,6 +3,8 @@ package carlos.dara.kaua.raynan.reciclamais.repository;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,6 +16,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+import carlos.dara.kaua.raynan.reciclamais.entities.Comentario;
 import carlos.dara.kaua.raynan.reciclamais.entities.Endereco;
 import carlos.dara.kaua.raynan.reciclamais.entities.PontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.entities.TipoMaterial;
@@ -38,8 +41,7 @@ public class PontoColetaRepository {
      * @return true se o produto foi cadastrado junto ao servidor, false caso contrário
      */
     public boolean addPontoColeta(String nome, String nota, BigInteger telefone, ArrayList<TipoMaterial> materiaisReciclados,
-                              Endereco endereco, String imgLocation) {
-
+                                  @NonNull Endereco endereco, String imgLocation) {
         // Para cadastrar um produto, é preciso estar logado. Então primeiro otemos o login e senha
         // salvos na app.
         String login = Config.getLogin(context);
@@ -125,13 +127,6 @@ public class PontoColetaRepository {
         List<PontoColeta> pontosColetaList = new ArrayList<>();
         ArrayList<TipoMaterial> tipoMateriais = new ArrayList<>();
 
-        // Para obter a lista de produtos é preciso estar logado. Então primeiro otemos o login e senha
-        // salvos na app.
-
-        /*
-        String login = Config.getLogin(context);
-        String password = Config.getPassword(context);
-        */
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
         HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL +"pegar_pontos_coleta.php", "GET", "UTF-8");
@@ -158,8 +153,9 @@ public class PontoColetaRepository {
             //
             // {"sucesso":1,
             //  "pontos":[
-            //          {"id":"7", "nome":"produto 1", "nota":"10.00",d "img":"www.imgur.com/img1.jpg", "distancia": "1.8",  "materiais": [{"id" :"2", "nome": "vidro"}, "b"}},
-            //          {"id":"8", "nome":"produto 2", "preco":"20.00", "img":"www.imgur.com/img2.jpg"}
+            //          {"id":"7", "nome":"zé recicla", "nota":"10.00", "img":"www.imgur.com/img1.jpg",
+            //          "distancia": "1.8",  "materiais": [{"id" :"2", "nome": "vidro"}, {"id" :"3", "nome": "plastico"}]},
+            //
             //       ]
             // }
             //
@@ -231,4 +227,96 @@ public class PontoColetaRepository {
         return pontosColetaList;
     }
 
+    /**
+     * Método que cria uma requisição HTTP para obter os detalhes de um produto junto ao servidor web.
+     * @param id id do produto que se deseja obter os detalhes
+     * @return objeto do tipo product contendo os detalhes do produto
+     */
+    public PontoColeta loadPontoColetaDetail(String id) {
+
+        // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
+        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "pegar_detalhes_produto.php", "GET", "UTF-8");
+        httpRequest.addParam("id", id);
+
+        ArrayList<Comentario> comentarios = new ArrayList<>();
+
+        String result = "";
+        try {
+            // Executa a requisição HTTP. É neste momento que o servidor web é contactado. Ao executar
+            // a requisição é aberto um fluxo de dados entre o servidor e a app (InputStream is).
+            InputStream is = httpRequest.execute();
+
+            // Obtém a resposta fornecida pelo servidor. O InputStream é convertido em uma String. Essa
+            // String é a resposta do servidor web em formato JSON.
+            //
+            // Em caso de sucesso, será retornada uma String JSON no formato:
+            //
+            // {"sucesso":1,"nome":"produto 1","preco":"10.00", "img":"www.imgur.com/img1.jpg", "descricao":"produto 1","criado_em":"2022-10-03 19:43:31.42905","criado_por":"daniel"}
+            //
+            // Em caso de falha, será retornada uma String JSON no formato:
+            //
+            // {"sucesso":0,"erro":"Erro ao obter detalhes do produto"}
+            result = Util.inputStream2String(is, "UTF-8");
+
+            // Fecha a conexão com o servidor web.
+            httpRequest.finish();
+
+            Log.i("HTTP DETAILS RESULT", result);
+
+            // A classe JSONObject recebe como parâmetro do construtor uma String no formato JSON e
+            // monta internamente uma estrutura de dados similar ao dicionário em python.
+            JSONObject jsonObject = new JSONObject(result);
+
+            // obtem o valor da chave sucesso para verificar se a ação ocorreu da forma esperada ou não.
+            int success = jsonObject.getInt("sucesso");
+
+            // Se sucesso igual a 1, os detalhes do produto são obtidos da String JSON e um objeto
+            // do tipo Product é criado para guardar esses dados
+            if(success == 1) {
+
+                Double notaPonto = Double.parseDouble(jsonObject.getString("notaPonto"));
+                String img = jsonObject.getString("img");
+                String nome = jsonObject.getString("nome");
+
+                BigInteger cep = new BigInteger(jsonObject.getString("cep"));
+
+                String tp_logadouro = jsonObject.getString("tp_logadouro");
+                String logradouro = jsonObject.getString("logradouro");
+                Integer numero = Integer.parseInt(jsonObject.getString("numero"));
+                String estado = jsonObject.getString("estado");
+                String cidade = jsonObject.getString("cidade");
+                String bairro = jsonObject.getString("bairro");
+                Double latitude = Double.parseDouble(jsonObject.getString("latitude"));
+                Double longitude = Double.parseDouble(jsonObject.getString("longitude"));
+
+                BigInteger telefone = new BigInteger(jsonObject.getString("telefone"));
+
+
+                JSONArray jsonArray = jsonObject.getJSONArray("comentarios");
+                for(int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jComentario = jsonArray.getJSONObject(i);
+
+                    int cid = Integer.parseInt(jComentario.getString("id"));
+                    String nomeUsuario = jComentario.getString("nomeUsuario");
+                    Integer nota = Integer.parseInt(jComentario.getString("nota"));
+                    String descricao = jComentario.getString("descricao");
+
+                    Comentario comentario = new Comentario(cid, nomeUsuario, nota, descricao);
+
+                    comentarios.add(comentario);
+                }
+                // Cria um objeto PontoColeta e guarda os detalhes do produto dentro dele.
+
+                Endereco enderecoPonto = new Endereco(cep, tp_logadouro, logradouro, numero, estado, cidade, bairro, latitude, longitude);
+                PontoColeta pontoColeta = new PontoColeta(notaPonto, img, nome, enderecoPonto, telefone, comentarios);
+
+                return pontoColeta;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
