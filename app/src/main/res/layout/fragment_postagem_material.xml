@@ -165,6 +165,7 @@
                             android:layout_marginStart="28dp"
                             android:background="@drawable/edit_text_bg"
                             android:ems="10"
+                            android:gravity="top"
                             android:hint="Adicione a descrição"
                             android:inputType="textPersonName"
                             android:textColorHint="#87FFFFFF"
