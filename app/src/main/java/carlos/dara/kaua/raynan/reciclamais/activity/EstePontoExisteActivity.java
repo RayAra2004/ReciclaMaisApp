@@ -11,6 +11,6 @@ public class EstePontoExisteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_este_ponto_existe);
+        setContentView(R.layout.dialog_este_ponto_existe);
     }
 }

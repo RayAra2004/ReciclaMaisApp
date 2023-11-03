@@ -56,18 +56,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_login_login" />
 
             <EditText
-                android:id="@+id/editText_digite_seu_email_login"
+                android:id="@+id/editText_digite_sua_senha_login"
                 android:layout_width="286dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
-                android:hint="Digite seu email"
+                android:hint="Digite sua senha"
                 android:inputType="textPassword"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_email_login" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_senha_login" />
 
             <TextView
                 android:id="@+id/tv_senha_login"
@@ -82,18 +82,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/editText_digite_seu_email_login" />
 
             <EditText
-                android:id="@+id/editText_digite_sua_senha_login"
+                android:id="@+id/editText_digite_seu_email_login"
                 android:layout_width="288dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
-                android:hint="Digite sua senha"
+                android:hint="Digite seu email"
                 android:inputType="textEmailAddress"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_senha_login" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_email_login" />
 
             <TextView
                 android:id="@+id/tv_esqueceu_senha_login"
@@ -112,6 +111,7 @@
                 android:layout_width="214dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="48dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="@color/text_color"
                 android:text="LOGIN"
                 android:textColor="@color/black"
