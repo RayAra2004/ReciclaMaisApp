@@ -60,8 +60,6 @@ public class PontoColetaRepository {
         httpRequest.addParam("estado", endereco.getEstado());
         httpRequest.addParam("cidade", endereco.getCidade());
         httpRequest.addParam("bairro", endereco.getBairro());
-        httpRequest.addParam("latitude", String.valueOf(endereco.getLat()));
-        httpRequest.addParam("longitude", String.valueOf(endereco.getLon()));
         httpRequest.addFile("img", new File(imgLocation));
 
         // Para esta ação, é preciso estar logado. Então na requisição HTTP setamos o login e senha do

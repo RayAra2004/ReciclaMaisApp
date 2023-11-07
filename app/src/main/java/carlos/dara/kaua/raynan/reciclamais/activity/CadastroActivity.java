@@ -16,14 +16,14 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        EditText editTextNome = findViewById(R.id.editText_nome_cadastro);
-        Spinner spinnerDiaNascimento = findViewById(R.id.sp_dia_data_de_nascimento_cadastro);
-        Spinner spinnerMesNascimento = findViewById(R.id.sp_mes_data_de_nascimento_cadastro);
-        Spinner spinnerAnoNascimento = findViewById(R.id.sp_ano_data_de_nascimento_cadastro);
-        EditText editTextTelefone = findViewById(R.id.editText_telefone_cadastro);
-        EditText editTextEmail = findViewById(R.id.editText_email_cadastro);
-        EditText editTextSenha = findViewById(R.id.editText_senha_cadastro);
-        EditText editTextConfirmarSenha = findViewById(R.id.editText_confirme_sua_senha_cadastro);
+        EditText etNome = findViewById(R.id.editText_nome_cadastro);
+        Spinner spDiaNascimento = findViewById(R.id.sp_dia_data_de_nascimento_cadastro);
+        Spinner spMesNascimento = findViewById(R.id.sp_mes_data_de_nascimento_cadastro);
+        Spinner spAnoNascimento = findViewById(R.id.sp_ano_data_de_nascimento_cadastro);
+        EditText etTelefone = findViewById(R.id.editText_telefone_cadastro);
+        EditText etEmail = findViewById(R.id.editText_email_cadastro);
+        EditText etSenha = findViewById(R.id.editText_senha_cadastro);
+        EditText etConfirmarSenha = findViewById(R.id.editText_confirme_sua_senha_cadastro);
         Button botaoFinalizar = findViewById(R.id.btn_cadastrar_cadastro);
 
 
