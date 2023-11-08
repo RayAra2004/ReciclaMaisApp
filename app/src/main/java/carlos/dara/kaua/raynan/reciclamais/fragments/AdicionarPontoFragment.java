@@ -9,7 +9,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
 
@@ -72,6 +75,17 @@ public class AdicionarPontoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        ImageView imvFotoPonto = view.findViewById(R.id.imv_foto_ponto_adicionar_ponto);
+        Button botaoAdicionarFoto = view.findViewById(R.id.btn_adicionar_foto_ponto_adicionar_ponto);
         EditText etNome = view.findViewById(R.id.editText_nome_adicionar_ponto);
+        EditText etCep = view.findViewById(R.id.editText_CEP_adicionar_ponto);
+        Spinner spTipoLogradouro = view.findViewById(R.id.sp_tipo_logradouro_adicionar_ponto);
+        EditText etLogradouro = view.findViewById(R.id.editText_logradouro_adicionar_ponto);
+        EditText etNumero = view.findViewById(R.id.editText_numero_adicionar_ponto);
+        Spinner spEstado = view.findViewById(R.id.sp_estado_adicionar_ponto);
+        EditText etCidade = view.findViewById(R.id.editText_cidade_adicionar_ponto);
+        EditText etBairro = view.findViewById(R.id.editText_bairro_adicionar_ponto);
+        Button botaoAdicionarPontoColeta = view.findViewById(R.id.btn_adicionar_ponto_de_coleta_adicionar_ponto);
+
     }
 }

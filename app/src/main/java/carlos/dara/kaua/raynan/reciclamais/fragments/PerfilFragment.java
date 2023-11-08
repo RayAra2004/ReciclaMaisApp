@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -56,13 +57,16 @@ public class PerfilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_adicionar_ponto, container, false);
+        return inflater.inflate(R.layout.fragment_perfil, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //view.findViewById();
+        Button botaoMudarDados = view.findViewById(R.id.btn_mudar_dados_perfil);
+        Button botaoAprendaReciclar = view.findViewById(R.id.btn_aprenda_a_reciclar_perfil);
+        Button botaoMateriaisPostados = view.findViewById(R.id.btn_materiais_postados_perfil);
+        Button botaoAjuda = view.findViewById(R.id.btn_ajuda_perfil);
     }
 }
