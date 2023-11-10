@@ -3,6 +3,8 @@ package carlos.dara.kaua.raynan.reciclamais.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -25,6 +27,40 @@ public class CadastroActivity extends AppCompatActivity {
         EditText etSenha = findViewById(R.id.editText_senha_cadastro);
         EditText etConfirmarSenha = findViewById(R.id.editText_confirme_sua_senha_cadastro);
         Button botaoFinalizar = findViewById(R.id.btn_cadastrar_cadastro);
+
+        // TESTANDO VALIDAÇÃO SIMPLES
+        botaoFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nome = etNome.getText().toString();
+                String telefone = etTelefone.getText().toString();
+                String email = etEmail.getText().toString();
+                String senha = etSenha.getText().toString();
+                String confimarSenha = etConfirmarSenha.getText().toString();
+
+                if (nome.isEmpty()){
+                    etNome.setError("Campo nome é obrigatório");
+                    return;
+                }
+                if (telefone.isEmpty() || telefone.length() < 10){
+                    etTelefone.setError("Telefone inválido");
+                    return;
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    etEmail.setError("Email inválido");
+                    return;
+                }
+                if (senha.isEmpty() || senha.length() < 6){
+                    etSenha.setError("A senha deve conter pelo menos 6 caracteres");
+                    return;
+                }
+                if (!senha.equals(confimarSenha)){
+                    etConfirmarSenha.setError("As senhas não coincidem");
+                    return;
+                }
+            }
+        });
+        // FIM DO TESTE DA VALIDAÇÃO SIMPLES
 
 
     }

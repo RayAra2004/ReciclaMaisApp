@@ -6,8 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import org.w3c.dom.Comment;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
 
