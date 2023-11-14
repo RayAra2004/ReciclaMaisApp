@@ -4,9 +4,11 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
 
+import carlos.dara.kaua.raynan.reciclamais.R;
 import carlos.dara.kaua.raynan.reciclamais.entities.PontoColeta;
 
 public class MainViewModel extends ViewModel {
+    int navigationOpSelected = R.id.homeOP;
     ArrayList<PontoColeta> pontos = new ArrayList<>();
     PontoColeta pontoColeta;
     public ArrayList<PontoColeta> getPontos() {
@@ -17,5 +19,13 @@ public class MainViewModel extends ViewModel {
 
     public void setPontos(ArrayList<PontoColeta> pontos) {
         this.pontos = pontos;
+    }
+
+    public int getNavigationOpSelected(){
+        return navigationOpSelected;
+    }
+
+    public void setNavigationOpSelected(int navigationopSelected) {
+        this.navigationOpSelected = navigationopSelected;
     }
 }
