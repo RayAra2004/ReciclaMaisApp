@@ -50,8 +50,8 @@ public class CadastroActivity extends AppCompatActivity {
                     etEmail.setError("Email inválido");
                     return;
                 }
-                if (senha.isEmpty() || senha.length() < 6){
-                    etSenha.setError("A senha deve conter pelo menos 6 caracteres");
+                if (senha.isEmpty() || senha.length() < 8){
+                    etSenha.setError("A senha deve conter pelo menos 8 caracteres");
                     return;
                 }
                 if (!senha.equals(confimarSenha)){
