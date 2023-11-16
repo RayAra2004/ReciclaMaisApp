@@ -3,11 +3,13 @@ package carlos.dara.kaua.raynan.reciclamais.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
 
@@ -34,9 +36,16 @@ public class MudarDadosActivity extends AppCompatActivity {
                 String telefone = editTextTelefone.getText().toString();
                 String senha = editTextSenha.getText().toString();
                 String confimarSenha = editTextConfirmeSenha.getText().toString();
+                String diaSelecionado = spinnerDiaNascimento.getSelectedItem().toString();
+                String mesSelecionado = spinnerMesNascimento.getSelectedItem().toString();
+                String anoSelecinado = spinnerAnoNascimento.getSelectedItem().toString();
 
                 if (nome.isEmpty()){
                     editTextNome.setError("Campo nome é obrigatório");
+                    return;
+                }
+                if (TextUtils.isEmpty(diaSelecionado) || TextUtils.isEmpty(mesSelecionado) || TextUtils.isEmpty(anoSelecinado)){
+                    Toast.makeText(getApplicationContext(),"Por favor, selecione a data de nascimento completa", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (telefone.isEmpty() || telefone.length() < 10){

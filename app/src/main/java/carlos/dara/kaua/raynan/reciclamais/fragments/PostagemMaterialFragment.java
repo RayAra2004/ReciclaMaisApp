@@ -6,12 +6,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
 import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
@@ -56,5 +58,32 @@ public class PostagemMaterialFragment extends Fragment {
         EditText etPeso = view.findViewById(R.id.editText_peso_material_postagem_material);
         EditText etDescricaoMaterial = view.findViewById(R.id.editText_descricao_postagem_material);
         Button botaoSolicitarColeta = view.findViewById(R.id.btn_solicitar_coleta_postagem_material);
+
+        botaoSolicitarColeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String titulo = etTitulo.getText().toString();
+                String telefone = etTelefone.getText().toString();
+                String peso = etPeso.getText().toString();
+                String descricaoMaterial = etDescricaoMaterial.getText().toString();
+
+                if (TextUtils.isEmpty(titulo)){
+                    Toast.makeText(getContext(),"Por favor, preencha o campo de título", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(telefone)){
+                    Toast.makeText(getContext(),"Por favor, preencha o campo de telefone", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(peso)){
+                    Toast.makeText(getContext(),"Por favor, preencha o campo de peso", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(descricaoMaterial)){
+                    Toast.makeText(getContext(),"Por favor, preencha o campo de descricao do material", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        });
     }
 }

@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
 import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
@@ -62,6 +64,54 @@ public class AdicionarPontoFragment extends Fragment {
         EditText etCidade = view.findViewById(R.id.editText_cidade_adicionar_ponto);
         EditText etBairro = view.findViewById(R.id.editText_bairro_adicionar_ponto);
         Button botaoAdicionarPontoColeta = view.findViewById(R.id.btn_adicionar_ponto_de_coleta_adicionar_ponto);
+
+        botaoAdicionarPontoColeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nome = etNome.getText().toString();
+                String cep = etCep.getText().toString();
+                String tipoLogradouro = spTipoLogradouro.getSelectedItem().toString();
+                String logradouro = etLogradouro.getText().toString();
+                String numero = etNumero.getText().toString();
+                String estado = spEstado.getSelectedItem().toString();
+                String cidade = etCidade.getText().toString();
+                String bairro = etBairro.getText().toString();
+
+                if (TextUtils.isEmpty(nome)){
+                    Toast.makeText(getContext(), "Por favor, preencha o campo nome", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(cep)){
+                    Toast.makeText(getContext(), "Por favor, preencha o campo CEP", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(tipoLogradouro)){
+                    Toast.makeText(getContext(), "Por favor, selecione o tipo de logradouro", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(logradouro)){
+                    Toast.makeText(getContext(), "Por favor, preencha o campo logradouro", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(numero)){
+                    Toast.makeText(getContext(), "Por favor, preencha o campo numero", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(estado)){
+                    Toast.makeText(getContext(), "Por favor, selecione o estado", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(cidade)){
+                    Toast.makeText(getContext(), "Por favor, preencha o campo cidade", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(bairro)){
+                    Toast.makeText(getContext(), "Por favor, preencha o campo bairro", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+            }
+        });
 
     }
 }
