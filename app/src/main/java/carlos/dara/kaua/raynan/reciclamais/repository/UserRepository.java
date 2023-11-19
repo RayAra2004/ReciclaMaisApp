@@ -29,11 +29,11 @@ public class UserRepository {
      * @param telefone o telefone do usuário
      * @return true se o usuário foi cadastrado e false caso contrário
      */
-    public boolean register(String newLogin, String newPassword, String nome, String dia, String mes, String ano, String telefone) {
+    public boolean signUp(String newLogin, String newPassword, String nome, String dia, String mes, String ano, String telefone) {
 
         String data = ano + "-" + dia + "-" + mes;
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "registrar.php", "POST", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "signUpPessoaFisica.php", "POST", "UTF-8");
         httpRequest.addParam("novo_login", newLogin);
         httpRequest.addParam("nova_senha", newPassword);
         httpRequest.addParam("data", data);
@@ -68,7 +68,7 @@ public class UserRepository {
             JSONObject jsonObject = new JSONObject(result);
 
             // obtem o valor da chave sucesso para verificar se a ação ocorreu da forma esperada ou não.
-            int success = jsonObject.getInt("sucesso");
+            int success = jsonObject.getInt("status");
 
             // Se sucesso igual a 1, significa que o usuário foi registrado com sucesso.
             if(success == 1) {
@@ -93,7 +93,7 @@ public class UserRepository {
     public boolean login(String login, String password) {
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "login.php", "POST", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "signIn.php", "POST", "UTF-8");
         httpRequest.setBasicAuth(login, password);
 
         String result = "";
@@ -124,7 +124,7 @@ public class UserRepository {
             JSONObject jsonObject = new JSONObject(result);
 
             // obtem o valor da chave sucesso para verificar se a ação ocorreu da forma esperada ou não.
-            int success = jsonObject.getInt("sucesso");
+            int success = jsonObject.getInt("status");
 
             // Se sucesso igual a 1, significa que o usuário foi autenticado com sucesso.
             if(success == 1) {

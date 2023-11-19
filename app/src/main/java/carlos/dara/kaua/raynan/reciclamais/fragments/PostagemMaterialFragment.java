@@ -1,5 +1,6 @@
 package carlos.dara.kaua.raynan.reciclamais.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
+import carlos.dara.kaua.raynan.reciclamais.activity.LoginActivity;
+import carlos.dara.kaua.raynan.reciclamais.util.Config;
 import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
 
 /**
@@ -50,6 +53,12 @@ public class PostagemMaterialFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        if(Config.getLogin(requireActivity()).isEmpty()){
+            Intent i = new Intent(requireActivity(), LoginActivity.class);
+            startActivity(i);
+            requireActivity().finish();
+        }
 
         ImageView imvFotoMaterial = view.findViewById(R.id.imv_foto_material_postagem_material);
         Button botaoAdicionarFotoMaterial = view.findViewById(R.id.btn_adicionar_foto_material_postagem_material);

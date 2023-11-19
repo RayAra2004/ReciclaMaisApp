@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#201b2c"
+    android:visibility="visible"
     tools:context=".activity.CadastroActivity">
 
     <FrameLayout
@@ -71,7 +72,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro"/>
 
             <Spinner
                 android:id="@+id/sp_mes_data_de_nascimento_cadastro"
@@ -112,7 +113,7 @@
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite seu telefone "
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:padding="3dp"
                 android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"

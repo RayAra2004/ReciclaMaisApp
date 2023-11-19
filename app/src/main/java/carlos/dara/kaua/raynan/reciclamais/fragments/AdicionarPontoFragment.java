@@ -59,6 +59,7 @@ public class AdicionarPontoFragment extends Fragment {
 
         if(Config.getLogin(requireActivity()).isEmpty()){
             Intent i = new Intent(requireActivity(), LoginActivity.class);
+            i.putExtra("fragment", "adicionarPonto");
             startActivity(i);
             requireActivity().finish();
         }
