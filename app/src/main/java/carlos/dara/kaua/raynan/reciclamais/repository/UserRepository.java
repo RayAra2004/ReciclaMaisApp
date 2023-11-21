@@ -22,16 +22,15 @@ public class UserRepository {
      * Método que cria uma requisição HTTP para registrar um novo usuário junto ao servidor web.
      * @param newLogin o login do novo usuário
      * @param newPassword a senha do novo usuário
-     * @param ano o ano de nascimento do usuário
-     * @param mes o mes de nascimento do usuário
-     * @param dia o dia de nascimento do usuário
+     * @param dataNascimento a data de nascimento do usuário
      * @param nome o nome do usuário
      * @param telefone o telefone do usuário
      * @return true se o usuário foi cadastrado e false caso contrário
      */
-    public boolean signUp(String newLogin, String newPassword, String nome, String dia, String mes, String ano, String telefone) {
+    public boolean signUp(String newLogin, String newPassword, String nome, String dataNascimento, String telefone) {
 
-        String data = ano + "-" + dia + "-" + mes;
+        String[] dataRecortada = dataNascimento.split("/");
+        String data = dataRecortada[2] + "-" + dataRecortada[0] + "-" + dataRecortada[1];
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
         HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "signUpPessoaFisica.php", "POST", "UTF-8");
         httpRequest.addParam("novo_login", newLogin);

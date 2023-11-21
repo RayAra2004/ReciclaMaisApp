@@ -39,10 +39,11 @@
 
             <EditText
                 android:id="@+id/editText_nome_cadastro"
-                android:layout_width="285dp"
-                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="44dp"
+                android:layout_marginEnd="16dp"
                 android:autoText="false"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
@@ -50,6 +51,7 @@
                 android:inputType="textPersonName"
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,33 +67,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_nome_cadastro" />
 
-            <Spinner
-                android:id="@+id/sp_dia_data_de_nascimento_cadastro"
-                android:layout_width="67dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
-
-            <Spinner
-                android:id="@+id/sp_mes_data_de_nascimento_cadastro"
-                android:layout_width="67dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toEndOf="@+id/sp_dia_data_de_nascimento_cadastro"
-                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
-
-            <Spinner
-                android:id="@+id/sp_ano_data_de_nascimento_cadastro"
-                android:layout_width="67dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toEndOf="@+id/sp_mes_data_de_nascimento_cadastro"
-                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
-
             <TextView
                 android:id="@+id/tv_telefone_cadastro"
                 android:layout_width="wrap_content"
@@ -102,14 +77,14 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sp_dia_data_de_nascimento_cadastro" />
+                app:layout_constraintTop_toBottomOf="@+id/etDataNascimento" />
 
             <EditText
                 android:id="@+id/editText_telefone_cadastro"
-                android:layout_width="285dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite seu telefone "
@@ -117,6 +92,7 @@
                 android:padding="3dp"
                 android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_telefone_cadastro" />
 
@@ -134,9 +110,8 @@
 
             <EditText
                 android:id="@+id/editText_email_cadastro"
-                android:layout_width="285dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
@@ -144,6 +119,7 @@
                 android:inputType="textEmailAddress"
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_email_cadastro" />
 
@@ -161,9 +137,8 @@
 
             <EditText
                 android:id="@+id/editText_senha_cadastro"
-                android:layout_width="285dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
@@ -171,6 +146,7 @@
                 android:inputType="textPassword"
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_senha_cadastro" />
 
@@ -188,9 +164,8 @@
 
             <EditText
                 android:id="@+id/editText_confirme_sua_senha_cadastro"
-                android:layout_width="285dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
@@ -198,6 +173,7 @@
                 android:inputType="textPassword"
                 android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_confirme_sua_senha_cadastro" />
 
@@ -212,6 +188,31 @@
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_confirme_sua_senha_cadastro" />
+
+            <EditText
+                android:id="@+id/etDataNascimento"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_bg"
+                android:ems="10"
+                android:hint="dd/mm/aaaa"
+                android:inputType="date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
+
+            <ImageButton
+                android:id="@+id/imbDataNascimento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/etDataNascimento"
+                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro"
+                app:srcCompat="@drawable/baseline_date_range_24" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -24,7 +24,7 @@ public class CadastroViewModel extends AndroidViewModel {
      * @param senha senha do usuário
      * @return um LiveData que vai conter a resposta do servidor quando esta estiver disponível
      */
-    public LiveData<Boolean> signUp(String nome, String email, String senha, String telefone, String dia, String mes, String ano) {
+    public LiveData<Boolean> signUp(String nome, String email, String senha, String telefone, String dataNascimento) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Boolean> result = new MutableLiveData<>();
@@ -51,7 +51,7 @@ public class CadastroViewModel extends AndroidViewModel {
                 // O método login envia os dados de novo usuário ao servidor. Ele retorna
                 // um booleano indicando true caso o cadastro de novo usuário tenha sido feito com sucesso e false
                 // em caso contrário
-                boolean b = userRepository.signUp(email, senha, nome, dia, mes, ano, telefone);
+                boolean b = userRepository.signUp(email, senha, nome, dataNascimento, telefone);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.
