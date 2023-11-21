@@ -9,26 +9,27 @@
 
     <ImageView
         android:id="@+id/imv_logo_reciclamais_login"
-        android:layout_width="376dp"
-        android:layout_height="138dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="357dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_recicla_" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/painel_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imv_logo_reciclamais_login">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@drawable/painel_bg">
 
             <TextView
@@ -125,11 +126,11 @@
         android:id="@+id/tv_ainda_nao_possui_cadastro_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
         android:layout_marginTop="16dp"
         android:text="Ainda não possui cadastro ?"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
@@ -137,11 +138,11 @@
         android:id="@+id/btn_cadastrar_login"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginStart="128dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/text_color"
         android:text="CADASTRE-SE"
         android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_ainda_nao_possui_cadastro_login" />
 

@@ -12,10 +12,10 @@
         android:layout_width="313dp"
         android:layout_height="620dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/edit_text_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -72,7 +72,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_cadastro" />
 
             <Spinner
                 android:id="@+id/sp_mes_data_de_nascimento_cadastro"
