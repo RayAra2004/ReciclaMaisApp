@@ -37,9 +37,13 @@ public class CadastroActivity extends AppCompatActivity {
 
         cadastroViewModel = new ViewModelProvider(this).get(CadastroViewModel.class);
 
-
+        EditText etNome = findViewById(R.id.editText_nome_cadastro);
+        EditText etTelefone = findViewById(R.id.editText_telefone_cadastro);
+        EditText etEmail = findViewById(R.id.editText_email_cadastro);
+        EditText etSenha = findViewById(R.id.editText_senha_cadastro);
+        EditText etConfirmarSenha = findViewById(R.id.editText_confirme_sua_senha_cadastro);
+        Button botaoFinalizar = findViewById(R.id.btn_cadastrar_cadastro);
         EditText etDataNascimento = findViewById(R.id.etDataNascimento);
-
         ImageButton imbDataNascimento = findViewById(R.id.imbDataNascimento);
         imbDataNascimento.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +52,19 @@ public class CadastroActivity extends AppCompatActivity {
                 datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
-                        String date = String.valueOf(dia) + " / " + String.valueOf(mes + 1) + " / "  + String.valueOf(ano);
+                        String diaStr = "", mesStr = "";
+                        if(dia < 10){
+                            diaStr = "0" + dia;
+                        }else{
+                            diaStr = String.valueOf(dia);
+                        }
+                        if(mes < 10){
+                            mesStr = "0" + (mes + 1);
+                        }else{
+                            mesStr = String.valueOf(mes + 1);
+                        }
+
+                        String date = diaStr + "/" + mesStr + "/"  + ano;
                         etDataNascimento.setText(date);
                     }
                 });
@@ -56,18 +72,7 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
 
-        EditText etNome = findViewById(R.id.editText_nome_cadastro);
-        EditText etTelefone = findViewById(R.id.editText_telefone_cadastro);
-        EditText etEmail = findViewById(R.id.editText_email_cadastro);
-        EditText etSenha = findViewById(R.id.editText_senha_cadastro);
-        EditText etConfirmarSenha = findViewById(R.id.editText_confirme_sua_senha_cadastro);
-        Button botaoFinalizar = findViewById(R.id.btn_cadastrar_cadastro);
-
-
-
-
-
-        // TESTANDO VALIDAÇÃO SIMPLES
+    // TESTANDO VALIDAÇÃO SIMPLES
         botaoFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
