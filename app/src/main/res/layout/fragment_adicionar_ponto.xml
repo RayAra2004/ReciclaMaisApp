@@ -263,6 +263,79 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView41" />
 
+                        <HorizontalScrollView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/editText_bairro_adicionar_ponto">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btn_vidro_adicionar_ponto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Vidro" />
+
+                                <Button
+                                    android:id="@+id/btn_madeira_adicionar_ponto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Madeira" />
+
+                                <Button
+                                    android:id="@+id/btn_papel_adicionar_ponto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Papel" />
+
+                                <Button
+                                    android:id="@+id/btn_plastico_adicionar_ponto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Plástico" />
+
+                                <Button
+                                    android:id="@+id/btn_organico_adicionar_ponto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Orgânico" />
+
+                                <Button
+                                    android:id="@+id/btn_metal_adicionar_ponto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Metal" />
+
+                                <Button
+                                    android:id="@+id/btn_hospitalar_adicionar_ponto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Hospitalar" />
+
+                                <Button
+                                    android:id="@+id/btn_eletronicos_adicionar_ponto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Eletrônicos" />
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </FrameLayout>
 
