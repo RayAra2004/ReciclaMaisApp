@@ -9,7 +9,7 @@
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/imfv_foto_ponto_este_ponto_existe"
         android:layout_width="0dp"
-        android:layout_height="181dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,41 +18,45 @@
 
     <TextView
         android:id="@+id/tv_nome_ponto_este_ponto_existe"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="NOME: MARCA AMBIENTAL"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imfv_foto_ponto_este_ponto_existe" />
 
     <TextView
         android:id="@+id/tv_info_endereco_ponto_este_ponto_existe"
-        android:layout_width="349dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="Rod. Gov. Mário Covas, 1864 - Padre Mathias, Cariacica - ES, 29157-100"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_nome_ponto_este_ponto_existe" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="253dp"
+        android:layout_width="0dp"
         android:layout_height="35dp"
-        android:layout_marginStart="76dp"
         android:layout_marginTop="24dp"
+        android:gravity="center"
         android:text="ESTE PONTO EXISTE?"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/text_color"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_info_endereco_ponto_este_ponto_existe" />
 
