@@ -46,7 +46,7 @@ public class PostagemMaterialFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        view = inflater.inflate(R.layout.fragment_home, container, false);
+        view = inflater.inflate(R.layout.fragment_postagem_material, container, false);
         return view;
     }
 
@@ -90,7 +90,6 @@ public class PostagemMaterialFragment extends Fragment {
                 }
                 if (TextUtils.isEmpty(descricaoMaterial)){
                     Toast.makeText(getContext(),"Por favor, preencha o campo de descricao do material", Toast.LENGTH_SHORT).show();
-                    return;
                 }
             }
         });

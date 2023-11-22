@@ -30,7 +30,7 @@ public class UserRepository {
     public boolean signUp(String newLogin, String newPassword, String nome, String dataNascimento, String telefone) {
 
         String[] dataRecortada = dataNascimento.split("/");
-        System.out.println(dataRecortada);
+
         String data = dataRecortada[2] + "-" + dataRecortada[0] + "-" + dataRecortada[1];
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
         HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "signUpPessoaFisica.php", "POST", "UTF-8");
