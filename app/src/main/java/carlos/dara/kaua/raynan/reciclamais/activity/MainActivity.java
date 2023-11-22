@@ -70,18 +70,22 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.adicionarpontoOP:
                         AdicionarPontoFragment adicionarPontoFragment = AdicionarPontoFragment.newInstance();
                         setFragment(adicionarPontoFragment);
+                        break;
 
                     case R.id.homeOP:
                         HomeFragment homeFragment = HomeFragment.newInstance();
                         setFragment(homeFragment);
+                        break;
 
                     case R.id.perfilOP:
                         PerfilFragment perfilFragment = PerfilFragment.newInstance();
                         setFragment(perfilFragment);
+                        break;
 
                     case R.id.postarmaterialOP:
                         PostagemMaterialFragment postagemMaterialFragment = PostagemMaterialFragment.newInstance();
                         setFragment(postagemMaterialFragment);
+                        break;
                 }
                 return false;
             }
