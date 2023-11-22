@@ -86,12 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                             // exibe uma mensagem indicando que o login deu certo
                             Toast.makeText(LoginActivity.this, "Login realizado com sucesso", Toast.LENGTH_LONG).show();
 
-                            // Navega para tela que chamou o login
-                            switch (fragmentRetorno){
-                                case "adicionarPonto":
-                                    Intent i = new Intent(LoginActivity.this, AdicionarPontoFragment.class);
-                                    startActivity(i);
-                            }
+                            finish();
 
                         }
                         else {
