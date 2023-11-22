@@ -9,9 +9,10 @@
 
     <TextView
         android:id="@+id/tv_alterar_senha_esqueceu_senha"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
         android:text="ALTERAR SENHA"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/white"
@@ -22,13 +23,15 @@
 
     <FrameLayout
         android:id="@+id/frameLayout2"
-        android:layout_width="313dp"
-        android:layout_height="133dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/painel_bg"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_alterar_senha_esqueceu_senha">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -36,28 +39,35 @@
 
             <TextView
                 android:id="@+id/tv_confirmacao_codigo_esqueceu_senha"
-                android:layout_width="284dp"
-                android:layout_height="39dp"
-                android:layout_marginStart="12dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:gravity="center"
                 android:text="Te enviamos um código de confirmação no seu email para alterar a senha!"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/editText_digite_o_codigo_esqueceu_senha"
-                android:layout_width="285dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="12dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite o código"
                 android:inputType="number"
+                android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_confirmacao_codigo_esqueceu_senha" />
 
@@ -66,14 +76,16 @@
 
     <FrameLayout
         android:id="@+id/frameLayout3"
-        android:layout_width="311dp"
-        android:layout_height="193dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/painel_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -81,51 +93,63 @@
 
             <TextView
                 android:id="@+id/tv_senha_nova_esqueceu_senha"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="Senha nova"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_confirme_senha_esqueceu_senha"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="Confirme senha"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_senha_nova_esqueceu_senha" />
 
             <EditText
                 android:id="@+id/editText_senha_nova_esqueceu_senha"
-                android:layout_width="285dp"
-                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite sua nova senha"
                 android:inputType="textPassword"
+                android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_senha_nova_esqueceu_senha" />
 
             <EditText
                 android:id="@+id/editText_confirme_senha_esqueceu_senha"
-                android:layout_width="285dp"
-                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Confirme sua nova senha"
                 android:inputType="textPassword"
+                android:padding="3dp"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_confirme_senha_esqueceu_senha" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -135,7 +159,7 @@
         android:id="@+id/btn_finalizar_esqueceu_senha"
         android:layout_width="182dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/text_color"
         android:text="FINALIZAR"
         android:textColor="@color/black"

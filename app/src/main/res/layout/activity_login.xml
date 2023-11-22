@@ -9,9 +9,13 @@
 
     <ImageView
         android:id="@+id/imv_logo_reciclamais_login"
-        android:layout_width="357dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,8 +23,10 @@
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="320dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/painel_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,11 +42,11 @@
                 android:id="@+id/tv_login_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="104dp"
                 android:layout_marginTop="16dp"
                 android:text="LOGIN"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@color/text_color"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +54,7 @@
                 android:id="@+id/tv_email_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="12dp"
                 android:text="Email"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
@@ -58,15 +64,18 @@
 
             <EditText
                 android:id="@+id/editText_digite_sua_senha_login"
-                android:layout_width="286dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite sua senha"
                 android:inputType="textPassword"
+                android:paddingLeft="14dp"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_senha_login" />
 
@@ -74,8 +83,8 @@
                 android:id="@+id/tv_senha_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
                 android:text="Senha"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
@@ -84,14 +93,18 @@
 
             <EditText
                 android:id="@+id/editText_digite_seu_email_login"
-                android:layout_width="288dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite seu email"
                 android:inputType="textEmailAddress"
+                android:paddingLeft="14dp"
                 android:textColorHint="#99FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_email_login" />
 
@@ -99,7 +112,7 @@
                 android:id="@+id/tv_esqueceu_senha_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:text="Esqueceu senha?"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -109,13 +122,17 @@
 
             <Button
                 android:id="@+id/btn_login_login"
-                android:layout_width="214dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="48dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
                 android:backgroundTint="@color/text_color"
                 android:text="LOGIN"
                 android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_esqueceu_senha_login" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -136,9 +153,11 @@
 
     <Button
         android:id="@+id/btn_cadastrar_login"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/text_color"
         android:text="CADASTRE-SE"
         android:textColor="@color/black"
