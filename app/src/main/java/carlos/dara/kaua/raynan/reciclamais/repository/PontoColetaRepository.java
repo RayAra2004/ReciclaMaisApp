@@ -47,12 +47,24 @@ public class PontoColetaRepository {
         String login = Config.getLogin(context);
         String password = Config.getPassword(context);
 
+        StringBuilder stringBuilder = new StringBuilder("[");
+        for (int i = 0; i < materiaisReciclados.size(); i++) {
+            stringBuilder.append("'").append(materiaisReciclados.get(i)).append("'");
+            if (i < materiaisReciclados.size() - 1) {
+                stringBuilder.append(", ");
+            }
+        }
+        stringBuilder.append("]");
+
+        // Convertendo o StringBuilder para String
+        String stringMateriaisReciclados = stringBuilder.toString();
+
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
         HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "criar_ponto_coleta.php", "POST", "UTF-8");
         httpRequest.addParam("nome", nome);
         httpRequest.addParam("nota", nota);
         httpRequest.addParam("telefone", String.valueOf(telefone));
-        httpRequest.addParam("materiais", String.valueOf(materiaisReciclados));
+        httpRequest.addParam("materiais", stringMateriaisReciclados);
         httpRequest.addParam("cep", String.valueOf(endereco.getCep()));
         httpRequest.addParam("tp_logadouro", endereco.getTp_logradouro());
         httpRequest.addParam("logradouro", endereco.getLogradouro());

@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Environment;
@@ -56,10 +57,11 @@ import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
  */
 public class AdicionarPontoFragment extends Fragment {
 
+    static int RESULT_TAKE_PICTURE = 1;
     private MainViewModel mViewModel;
     private View view;
     private ArrayList<String> materiaisSelecionados = new ArrayList<>();
-    static int RESULT_TAKE_PICTURE = 1;
+
     EditText etCidade, etBairro, etNumero, etLogradouro, etCep, etEstado, etTipoLogradouro;
 
     public AdicionarPontoFragment() {
@@ -314,6 +316,8 @@ public class AdicionarPontoFragment extends Fragment {
                     e.printStackTrace();
                     return;
                 }
+
+                LiveData<Boolean> resultLD = mainViewModel.
             }
         });
     }
@@ -379,14 +383,14 @@ public class AdicionarPontoFragment extends Fragment {
      * Esse método exibe um pequeno menu de opções que permite que o usuário escolha de onde virá
      * a imagem do produto: câmera ou galeria.
      */
-    private void dispatchGalleryOrCameraIntent() {
+    public void dispatchGalleryOrCameraIntent() {
 
         // Primeiro, criamos o arquivo que irá guardar a imagem.
         File f = null;
         try {
             f = createImageFile();
         } catch (IOException e) {
-            Toast.makeText(getContext(), "Não foi possível criar o arquivo", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Não foi possível criar o arquivo", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -399,7 +403,7 @@ public class AdicionarPontoFragment extends Fragment {
 
             // Criamos e configuramos o INTENT que dispara a câmera
             Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            Uri fUri = FileProvider.getUriForFile(requireContext(), "carlos.dara.kaua.raynan.reciclamais.fileprovider", f);
+            Uri fUri = FileProvider.getUriForFile(getActivity(), "carlos.dara.kaua.raynan.reciclamais.fileprovider", f);
             cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, fUri);
 
             // Criamos e configuramos o INTENT que dispara a escolha de imagem via galeria
@@ -413,7 +417,7 @@ public class AdicionarPontoFragment extends Fragment {
             startActivityForResult(chooserIntent, RESULT_TAKE_PICTURE);
         }
         else {
-            Toast.makeText(getContext(), "Não foi possível criar o arquivo", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Não foi possível criar o arquivo", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -454,8 +458,9 @@ public class AdicionarPontoFragment extends Fragment {
                 // se o usuário escolheu a câmera, então quando esse método é chamado, a foto tirada
                 // já está salva dentro do arquivo currentPhotoPath. Entretanto, se o usuário
                 // escolheu uma foto da galeria, temos que obter o URI da foto escolhida:
-                Uri selectedPhoto = data.getData();
-                if(selectedPhoto != null) {
+
+                if(data != null) {
+                    Uri selectedPhoto = data.getData();
                     try {
                         // carregamos a foto escolhida em um bitmap
                         Bitmap bitmap = Util.getBitmap(requireActivity(), selectedPhoto);
