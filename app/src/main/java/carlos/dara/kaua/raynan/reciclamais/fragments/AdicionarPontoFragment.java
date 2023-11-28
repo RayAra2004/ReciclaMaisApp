@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Environment;
@@ -36,6 +37,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -317,7 +319,32 @@ public class AdicionarPontoFragment extends Fragment {
                     return;
                 }
 
-                LiveData<Boolean> resultLD = mainViewModel.
+                LiveData<Boolean> resultLD = mainViewModel.addPontoColeta(nome, new BigInteger(cep), tipoLogradouro, logradouro, Integer.parseInt(numero), estado, cidade, bairro, materiaisSelecionados, currentPhotoPath);
+                resultLD.observe(getActivity(), new Observer<Boolean>() {
+                    @Override
+                    public void onChanged(Boolean aBoolean) {
+                        // aBoolean contém o resultado do cadastro do produto. Se aBoolean for true, significa
+                        // que o cadastro do produto foi feito corretamente. Indicamos isso ao usuário
+                        // através de uma mensagem do tipo toast e finalizamos a Activity. Quando
+                        // finalizamos a Activity, voltamos para a tela home, que mostra a lista de
+                        // produtos.
+                        if(aBoolean == true) {
+                            Toast.makeText(getActivity(), "Produto adicionado com sucesso", Toast.LENGTH_LONG).show();
+                            // indica que a Activity terminou com resultado positivo e a finaliza
+                            getActivity().setResult(RESULT_OK);
+
+                        }
+                        else {
+                            // Se o cadastro não deu certo, apenas continuamos na tela de cadastro e
+                            // indicamos com uma mensagem ao usuário que o cadastro não deu certo.
+                            // Reabilitamos também o botão de adicionar, para permitir que o usuário
+                            // tente realizar uma nova adição de produto.
+                            view.setEnabled(true);
+                            Toast.makeText(getActivity(), "Ocorreu um erro ao adicionar o produto", Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+                });
             }
         });
     }

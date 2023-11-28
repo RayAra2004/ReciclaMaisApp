@@ -33,14 +33,12 @@ public class PontoColetaRepository {
     /**
      * Método que cria uma requisição HTTP para cadastrar um novo produto junto ao servidor web.
      * @param nome nome do ponto de coleta
-     * @param nota nota que o ponto possui
-     * @param telefone telefone do ponto
      * @param materiaisReciclados materiais que o ponto recicla
      * @param endereco endereco do ponto
      * @param imgLocation endereço do arquivo que contém a imagem do produto
      * @return true se o produto foi cadastrado junto ao servidor, false caso contrário
      */
-    public boolean addPontoColeta(String nome, String nota, BigInteger telefone, ArrayList<TipoMaterial> materiaisReciclados,
+    public boolean addPontoColeta(String nome, ArrayList<String> materiaisReciclados,
                                   @NonNull Endereco endereco, String imgLocation) {
         // Para cadastrar um produto, é preciso estar logado. Então primeiro otemos o login e senha
         // salvos na app.
@@ -60,10 +58,8 @@ public class PontoColetaRepository {
         String stringMateriaisReciclados = stringBuilder.toString();
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "criar_ponto_coleta.php", "POST", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "postPontoColeta.php", "POST", "UTF-8");
         httpRequest.addParam("nome", nome);
-        httpRequest.addParam("nota", nota);
-        httpRequest.addParam("telefone", String.valueOf(telefone));
         httpRequest.addParam("materiais", stringMateriaisReciclados);
         httpRequest.addParam("cep", String.valueOf(endereco.getCep()));
         httpRequest.addParam("tp_logadouro", endereco.getTp_logradouro());

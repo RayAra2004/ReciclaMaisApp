@@ -25,6 +25,16 @@ public class Endereco {
         this.lon = lon;
     }
 
+    public Endereco(BigInteger cep, String tp_logradouro, String logradouro, int numero, String estado, String cidade, String bairro) {
+        this.cep = cep;
+        this.tp_logradouro = tp_logradouro;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.bairro = bairro;
+    }
+
     public BigInteger getCep() {
         return cep;
     }
