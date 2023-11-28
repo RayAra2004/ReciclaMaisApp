@@ -43,8 +43,8 @@
 
                         <ImageView
                             android:id="@+id/imv_foto_ponto_adicionar_ponto"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="@dimen/thumb_width"
+                            android:layout_height="@dimen/thumb_height"
                             android:layout_marginStart="108dp"
                             android:layout_marginTop="4dp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -126,6 +126,18 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/editText_nome_adicionar_ponto" />
 
+                        <EditText
+                            android:id="@+id/editText_tpLogradouro_adicionar_ponto"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Digite seu tipo de logradouro"
+                            android:inputType="text"
+                            android:text="Name"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
                         <TextView
                             android:id="@+id/textView35"
                             android:layout_width="wrap_content"
@@ -138,25 +150,15 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/editText_CEP_adicionar_ponto" />
 
-                        <Spinner
-                            android:id="@+id/sp_tipo_logradouro_adicionar_ponto"
-                            android:layout_width="285dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="28dp"
-                            android:background="@drawable/edit_text_bg"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView35" />
-
                         <TextView
                             android:id="@+id/tv_adicione_um_comentario_descricao_ponto"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="28dp"
-                            android:layout_marginTop="8dp"
                             android:text="Logradouro"
                             android:textColor="#FFFFFF"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/sp_tipo_logradouro_adicionar_ponto" />
+                            app:layout_constraintTop_toBottomOf="@+id/editText_tpLogradouro_adicionar_ponto" />
 
                         <EditText
                             android:id="@+id/editText_logradouro_adicionar_ponto"
@@ -179,10 +181,10 @@
                             android:background="@drawable/edit_text_bg"
                             android:ems="10"
                             android:inputType="number"
-                            android:text="Digite o número"
                             android:textColor="#99FFFFFF"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView37" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView37"
+                            android:autofillHints="Digite o logradouro" />
 
                         <TextView
                             android:id="@+id/textView37"
@@ -195,15 +197,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/editText_logradouro_adicionar_ponto" />
 
-                        <Spinner
-                            android:id="@+id/sp_estado_adicionar_ponto"
-                            android:layout_width="285dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="28dp"
-                            android:background="@drawable/edit_text_bg"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView39" />
-
                         <TextView
                             android:id="@+id/textView39"
                             android:layout_width="wrap_content"
@@ -215,16 +208,26 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/editText_numero_adicionar_ponto" />
 
+                        <EditText
+                            android:id="@+id/editText_estado_adicionar_ponto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:text="Name"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
                         <TextView
                             android:id="@+id/textView40"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="28dp"
-                            android:layout_marginTop="8dp"
                             android:text="Cidade"
                             android:textColor="@color/white"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/sp_estado_adicionar_ponto" />
+                            tools:layout_editor_absoluteY="683dp" />
 
                         <EditText
                             android:id="@+id/editText_cidade_adicionar_ponto"
