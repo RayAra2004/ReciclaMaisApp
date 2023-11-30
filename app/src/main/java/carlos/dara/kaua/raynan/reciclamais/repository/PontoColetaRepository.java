@@ -57,6 +57,18 @@ public class PontoColetaRepository {
         // Convertendo o StringBuilder para String
         String stringMateriaisReciclados = stringBuilder.toString();
 
+        System.out.println(nome);
+        System.out.println(stringMateriaisReciclados);
+        System.out.println(String.valueOf(endereco.getCep()));
+        System.out.println(endereco.getTp_logradouro());
+        System.out.println(endereco.getLogradouro());
+        System.out.println(String.valueOf(endereco.getNumero()));
+        System.out.println(endereco.getEstado());
+        System.out.println(endereco.getCidade());
+        System.out.println(endereco.getBairro());
+        System.out.println(new File(imgLocation));
+
+
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
         HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "postPontoColeta.php", "POST", "UTF-8");
         httpRequest.addParam("nome", nome);

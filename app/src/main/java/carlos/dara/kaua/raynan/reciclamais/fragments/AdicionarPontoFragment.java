@@ -139,6 +139,7 @@ public class AdicionarPontoFragment extends Fragment {
             public void afterTextChanged(Editable editable) {
                 String cep = editable.toString();
                 if (cep.length() == 8) {
+                    System.out.println(cep);
                     new ConsultaCEPTask().execute(cep);
                 }
             }
@@ -381,6 +382,7 @@ public class AdicionarPontoFragment extends Fragment {
 
         @Override
         protected void onPostExecute(JSONObject dados) {
+            System.out.println(dados);
             if (dados != null) {
                 preencherCampos(dados);
             }
@@ -390,6 +392,7 @@ public class AdicionarPontoFragment extends Fragment {
     private void preencherCampos(JSONObject dados) {
         try {
             String street = dados.getString("street");
+            System.out.println(dados);
 
             // Dividir a string em duas partes no primeiro espaço encontrado
             int primeiroEspacoIndex = street.indexOf(" ");
