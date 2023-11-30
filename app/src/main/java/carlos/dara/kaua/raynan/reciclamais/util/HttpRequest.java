@@ -29,7 +29,7 @@ public class HttpRequest {
     String user = "";
     String password = "";
 
-    int timeout = 3000;
+    int timeout = 10000;
 
     private String boundary;
     private static final String LINE_FEED = "\r\n";
@@ -94,9 +94,9 @@ public class HttpRequest {
         httpConn.setDoInput(true);
 
         // Timeout for reading InputStream arbitrarily set to 3000ms.
-        httpConn.setReadTimeout(3000);
+        httpConn.setReadTimeout(10000);
         // Timeout for connection.connect() arbitrarily set to 3000ms.
-        httpConn.setConnectTimeout(3000);
+        httpConn.setConnectTimeout(10000);
         // GET or POST
         httpConn.setRequestMethod(method);
 
