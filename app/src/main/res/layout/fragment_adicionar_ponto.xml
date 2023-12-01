@@ -22,17 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Adicione a imagem do ponto de coleta"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/imv_foto_ponto_adicionar_ponto"
                 android:layout_width="@dimen/thumb_width"
@@ -42,7 +31,7 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <Button
@@ -66,6 +55,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Nome"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_adicionar_foto_ponto_adicionar_ponto" />
@@ -80,7 +70,7 @@
                 android:ems="10"
                 android:hint="Digite seu nome"
                 android:inputType="text"
-                android:paddingLeft="4dp"
+                android:paddingLeft="14dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +83,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="CEP"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_nome_adicionar_ponto" />
@@ -100,13 +91,14 @@
             <EditText
                 android:id="@+id/editText_CEP_adicionar_ponto"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite seu cep"
                 android:inputType="number"
+                android:paddingLeft="14dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -119,6 +111,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Tipo logradouro"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_CEP_adicionar_ponto" />
@@ -130,6 +123,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Logradouro"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sp_tpLogradouro_adicionar_ponto" />
@@ -137,13 +131,14 @@
             <EditText
                 android:id="@+id/editText_logradouro_adicionar_ponto"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite o Logradouro"
                 android:inputType="text"
+                android:paddingLeft="14dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -152,12 +147,13 @@
             <Spinner
                 android:id="@+id/sp_tpLogradouro_adicionar_ponto"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
                 android:dropDownWidth="match_parent"
                 android:entries="@array/tp_logradouro"
+                android:paddingLeft="14dp"
                 android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -170,6 +166,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Número"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_logradouro_adicionar_ponto" />
@@ -177,13 +174,14 @@
             <EditText
                 android:id="@+id/editText_numero_adicionar_ponto"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite o número"
                 android:inputType="number"
+                android:paddingLeft="14dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -196,6 +194,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Estado"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_numero_adicionar_ponto" />
@@ -203,11 +202,12 @@
             <Spinner
                 android:id="@+id/sp_estado_adicionar_ponto"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
                 android:entries="@array/uf"
+                android:paddingLeft="14dp"
                 android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -220,6 +220,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Cidade"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sp_estado_adicionar_ponto" />
@@ -227,13 +228,14 @@
             <EditText
                 android:id="@+id/editText_cidade_adicionar_ponto"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite a cidade"
                 android:inputType="text"
+                android:paddingLeft="14dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -246,6 +248,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Bairro"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_cidade_adicionar_ponto" />
@@ -253,13 +256,14 @@
             <EditText
                 android:id="@+id/editText_bairro_adicionar_ponto"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite o bairro"
                 android:inputType="text"
+                android:paddingLeft="14dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -272,17 +276,17 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Quais materiais o ponto recicla?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_bairro_adicionar_ponto" />
 
             <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView22">
@@ -366,24 +370,25 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
+            <Button
+                android:id="@+id/btn_adicionar_ponto_de_coleta_adicionar_ponto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/text_color"
+                android:text="ADICIONAR PONTO DE COLETA"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/btn_adicionar_ponto_de_coleta_adicionar_ponto"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/text_color"
-        android:text="ADICIONAR PONTO DE COLETA"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
