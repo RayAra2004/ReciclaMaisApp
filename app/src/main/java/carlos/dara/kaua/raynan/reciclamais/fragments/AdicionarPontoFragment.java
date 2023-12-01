@@ -64,7 +64,7 @@ public class AdicionarPontoFragment extends Fragment {
     private View view;
     private ArrayList<String> materiaisSelecionados = new ArrayList<>();
 
-    EditText etCidade, etBairro, etNumero, etLogradouro, etCep, etEstado, etTipoLogradouro;
+    EditText etCidade, etBairro, etNumero, etLogradouro, etCep, spEstado, spTipoLogradouro;
 
     public AdicionarPontoFragment() {
         // Required empty public constructor
@@ -117,10 +117,10 @@ public class AdicionarPontoFragment extends Fragment {
         EditText etNome = view.findViewById(R.id.editText_nome_adicionar_ponto);
 
         etCep = view.findViewById(R.id.editText_CEP_adicionar_ponto);
-        etTipoLogradouro = view.findViewById(R.id.editText_tpLogradouro_adicionar_ponto);
+        spTipoLogradouro = view.findViewById(R.id.sp_tpLogradouro_adicionar_ponto);
         etLogradouro = view.findViewById(R.id.editText_logradouro_adicionar_ponto);
         etNumero = view.findViewById(R.id.editText_numero_adicionar_ponto);
-        etEstado = view.findViewById(R.id.editText_estado_adicionar_ponto);
+        spEstado = view.findViewById(R.id.sp_estado_adicionar_ponto);
         etCidade = view.findViewById(R.id.editText_cidade_adicionar_ponto);
         etBairro = view.findViewById(R.id.editText_bairro_adicionar_ponto);
 
@@ -249,10 +249,10 @@ public class AdicionarPontoFragment extends Fragment {
             public void onClick(View view) {
                 String nome = etNome.getText().toString();
                 String cep = etCep.getText().toString();
-                String tipoLogradouro = etTipoLogradouro.getText().toString();
+                String tipoLogradouro = spTipoLogradouro.getText().toString();
                 String logradouro = etLogradouro.getText().toString();
                 String numero = etNumero.getText().toString();
-                String estado = etEstado.getText().toString();
+                String estado = spEstado.getText().toString();
                 String cidade = etCidade.getText().toString();
                 String bairro = etBairro.getText().toString();
 
@@ -401,9 +401,9 @@ public class AdicionarPontoFragment extends Fragment {
 
             etCidade.setText(dados.getString("city"));
             etLogradouro.setText(logradouro);
-            etTipoLogradouro.setText(tpLogradouro);
+            spTipoLogradouro.setText(tpLogradouro);
             etBairro.setText(dados.getString("neighborhood"));
-            etEstado.setText(dados.getString("state"));
+            spEstado.setText(dados.getString("state"));
         } catch (Exception e) {
             e.printStackTrace();
         }

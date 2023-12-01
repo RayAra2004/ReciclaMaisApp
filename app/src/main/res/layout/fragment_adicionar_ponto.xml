@@ -34,19 +34,19 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imv_foto_ponto_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:src="@tools:sample/avatars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_adicionar_foto_ponto_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -57,7 +57,7 @@
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/imv_foto_ponto_adicionar_ponto" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -68,10 +68,10 @@
                 android:text="Nome"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_adicionar_foto_ponto_adicionar_ponto" />
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/editText_nome_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -94,10 +94,10 @@
                 android:text="CEP"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_nome_adicionar_ponto" />
 
             <EditText
-                android:id="@+id/editTextText3"
+                android:id="@+id/editText_CEP_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -120,20 +120,21 @@
                 android:text="Tipo logradouro"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_CEP_adicionar_ponto" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:text="Logradouro"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="398dp" />
+                app:layout_constraintTop_toBottomOf="@+id/sp_tpLogradouro_adicionar_ponto" />
 
             <EditText
-                android:id="@+id/editTextText6"
+                android:id="@+id/editText_logradouro_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -148,7 +149,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/sp_tpLogradouro_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -167,10 +168,10 @@
                 android:text="Número"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_logradouro_adicionar_ponto" />
 
             <EditText
-                android:id="@+id/editTextText8"
+                android:id="@+id/editText_numero_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -193,10 +194,10 @@
                 android:text="Estado"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_numero_adicionar_ponto" />
 
             <Spinner
-                android:id="@+id/spinner3"
+                android:id="@+id/sp_estado_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -215,10 +216,10 @@
                 android:text="Cidade"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+                app:layout_constraintTop_toBottomOf="@+id/sp_estado_adicionar_ponto" />
 
             <EditText
-                android:id="@+id/editTextText10"
+                android:id="@+id/editText_cidade_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -241,10 +242,10 @@
                 android:text="Bairro"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText10" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_cidade_adicionar_ponto" />
 
             <EditText
-                android:id="@+id/editTextText11"
+                android:id="@+id/editText_bairro_adicionar_ponto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -267,24 +268,96 @@
                 android:text="Quais materiais o ponto recicla?"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText11" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_bairro_adicionar_ponto" />
 
             <HorizontalScrollView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView22">
 
-                <Button
-                    android:id="@+id/button14"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Button" />
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_vidro_adicionar_ponto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#514869"
+                        android:text="VIDRO" />
+
+                    <Button
+                        android:id="@+id/btn_metal_adicionar_ponto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#514869"
+                        android:text="METAL" />
+
+                    <Button
+                        android:id="@+id/btn_plastico_adicionar_ponto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#514869"
+                        android:text="PLASTICO" />
+
+                    <Button
+                        android:id="@+id/btn_papel_adicionar_ponto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#514869"
+                        android:text="PAPEL" />
+
+                    <Button
+                        android:id="@+id/btn_hospitalar_adicionar_ponto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#514869"
+                        android:text="HOSPITALAR" />
+
+                    <Button
+                        android:id="@+id/btn_eletronicos_adicionar_ponto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#514869"
+                        android:text="ELETRONICOS" />
+
+                    <Button
+                        android:id="@+id/btn_madeira_adicionar_ponto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#514869"
+                        android:text="MADEIRA" />
+
+                    <Button
+                        android:id="@+id/btn_organico_adicionar_ponto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#514869"
+                        android:text="ORGANICO" />
+                </LinearLayout>
             </HorizontalScrollView>
 
 
@@ -293,14 +366,14 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_adicionar_ponto_de_coleta_adicionar_ponto"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/text_color"
-        android:text="Button"
+        android:text="ADICIONAR PONTO DE COLETA"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
