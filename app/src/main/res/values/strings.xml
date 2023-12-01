@@ -3,6 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="tp_logradouro">
+        <item>Selecionar Tipo Logradouro</item>
         <item>Aeroporto</item>
         <item>Alameda</item>
         <item>Área</item>
@@ -47,6 +48,7 @@
 
     </string-array>
     <string-array name="uf">
+        <item>Selecionar estado</item>
         <item>ES</item>
         <item>AC</item>
         <item>AL</item>

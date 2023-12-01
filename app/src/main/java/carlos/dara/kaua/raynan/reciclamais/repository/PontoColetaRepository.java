@@ -74,7 +74,7 @@ public class PontoColetaRepository {
         httpRequest.addParam("nome", nome);
         httpRequest.addParam("materiais", stringMateriaisReciclados);
         httpRequest.addParam("cep", String.valueOf(endereco.getCep()));
-        httpRequest.addParam("tp_logradouro", endereco.getTp_logradouro());
+        httpRequest.addParam("tp_logradouro", endereco.getTp_logradouro().toLowerCase());
         httpRequest.addParam("logradouro", endereco.getLogradouro());
         httpRequest.addParam("numero", String.valueOf(endereco.getNumero()));
         httpRequest.addParam("estado", endereco.getEstado());
