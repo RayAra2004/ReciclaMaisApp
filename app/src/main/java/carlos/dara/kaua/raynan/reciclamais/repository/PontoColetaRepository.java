@@ -74,7 +74,7 @@ public class PontoColetaRepository {
         httpRequest.addParam("nome", nome);
         httpRequest.addParam("materiais", stringMateriaisReciclados);
         httpRequest.addParam("cep", String.valueOf(endereco.getCep()));
-        httpRequest.addParam("tp_logadouro", endereco.getTp_logradouro());
+        httpRequest.addParam("tp_logradouro", endereco.getTp_logradouro());
         httpRequest.addParam("logradouro", endereco.getLogradouro());
         httpRequest.addParam("numero", String.valueOf(endereco.getNumero()));
         httpRequest.addParam("estado", endereco.getEstado());
@@ -118,7 +118,7 @@ public class PontoColetaRepository {
             JSONObject jsonObject = new JSONObject(result);
 
             // obtem o valor da chave sucesso para verificar se a ação ocorreu da forma esperada ou não.
-            int success = jsonObject.getInt("sucesso");
+            int success = jsonObject.getInt("status");
 
             // Se sucesso igual a 1, significa que o produto foi adicionado com sucesso.
             if(success == 1) {

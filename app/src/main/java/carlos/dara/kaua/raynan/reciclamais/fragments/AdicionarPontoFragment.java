@@ -64,7 +64,8 @@ public class AdicionarPontoFragment extends Fragment {
     private View view;
     private ArrayList<String> materiaisSelecionados = new ArrayList<>();
 
-    EditText etCidade, etBairro, etNumero, etLogradouro, etCep, spEstado, spTipoLogradouro;
+    EditText etCidade, etBairro, etNumero, etLogradouro, etCep;
+    Spinner spEstado, spTipoLogradouro;
 
     public AdicionarPontoFragment() {
         // Required empty public constructor
@@ -149,10 +150,10 @@ public class AdicionarPontoFragment extends Fragment {
         botaoVidro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains(botaoVidro.getText())){
-                    materiaisSelecionados.remove(botaoVidro.getText());
+                if(materiaisSelecionados.contains("Vidro")){
+                    materiaisSelecionados.remove("Vidro");
                 }else{
-                    materiaisSelecionados.add(botaoVidro.getText().toString());
+                    materiaisSelecionados.add("Vidro");
                 }
             }
         });
@@ -161,10 +162,10 @@ public class AdicionarPontoFragment extends Fragment {
         botaoPlastico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains(botaoPlastico.getText())){
-                    materiaisSelecionados.remove(botaoPlastico.getText());
+                if(materiaisSelecionados.contains("Plástico")){
+                    materiaisSelecionados.remove("Plástico");
                 }else{
-                    materiaisSelecionados.add(botaoPlastico.getText().toString());
+                    materiaisSelecionados.add("Plástico");
                 }
             }
         });
@@ -173,10 +174,10 @@ public class AdicionarPontoFragment extends Fragment {
         botaoMadeira.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains(botaoMadeira.getText())){
-                    materiaisSelecionados.remove(botaoMadeira.getText());
+                if(materiaisSelecionados.contains("Madeira")){
+                    materiaisSelecionados.remove("Madeira");
                 }else{
-                    materiaisSelecionados.add(botaoMadeira.getText().toString());
+                    materiaisSelecionados.add("Madeira");
                 }
             }
         });
@@ -185,10 +186,10 @@ public class AdicionarPontoFragment extends Fragment {
         botaoMetal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains(botaoMetal.getText())){
-                    materiaisSelecionados.remove(botaoMetal.getText());
+                if(materiaisSelecionados.contains("Metal")){
+                    materiaisSelecionados.remove("Metal");
                 }else{
-                    materiaisSelecionados.add(botaoMetal.getText().toString());
+                    materiaisSelecionados.add("Metal");
                 }
             }
         });
@@ -197,10 +198,10 @@ public class AdicionarPontoFragment extends Fragment {
         botaoHospitalar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains(botaoHospitalar.getText())){
-                    materiaisSelecionados.remove(botaoHospitalar.getText());
+                if(materiaisSelecionados.contains("Hospitalar")){
+                    materiaisSelecionados.remove("Hospitalar");
                 }else{
-                    materiaisSelecionados.add(botaoHospitalar.getText().toString());
+                    materiaisSelecionados.add("Hospitalar");
                 }
             }
         });
@@ -209,10 +210,10 @@ public class AdicionarPontoFragment extends Fragment {
         botaoOrganico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains(botaoOrganico.getText())){
-                    materiaisSelecionados.remove(botaoOrganico.getText());
+                if(materiaisSelecionados.contains("Orgânico")){
+                    materiaisSelecionados.remove("Orgânico");
                 }else{
-                    materiaisSelecionados.add(botaoOrganico.getText().toString());
+                    materiaisSelecionados.add("Orgânico");
                 }
             }
         });
@@ -221,10 +222,10 @@ public class AdicionarPontoFragment extends Fragment {
         botaoPapel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains(botaoPapel.getText())){
-                    materiaisSelecionados.remove(botaoPapel.getText());
+                if(materiaisSelecionados.contains("Papel")){
+                    materiaisSelecionados.remove("Papel");
                 }else{
-                    materiaisSelecionados.add(botaoPapel.getText().toString());
+                    materiaisSelecionados.add("Papel");
                 }
             }
         });
@@ -233,10 +234,10 @@ public class AdicionarPontoFragment extends Fragment {
         botaoEletronico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains(botaoEletronico.getText())){
-                    materiaisSelecionados.remove(botaoEletronico.getText());
+                if(materiaisSelecionados.contains("Eletrônico")){
+                    materiaisSelecionados.remove("Eletrônico");
                 }else{
-                    materiaisSelecionados.add(botaoEletronico.getText().toString());
+                    materiaisSelecionados.add("Eletrônico");
                 }
             }
         });
@@ -249,10 +250,10 @@ public class AdicionarPontoFragment extends Fragment {
             public void onClick(View view) {
                 String nome = etNome.getText().toString();
                 String cep = etCep.getText().toString();
-                String tipoLogradouro = spTipoLogradouro.getText().toString();
+                String tipoLogradouro = spTipoLogradouro.getSelectedItem().toString();
                 String logradouro = etLogradouro.getText().toString();
                 String numero = etNumero.getText().toString();
-                String estado = spEstado.getText().toString();
+                String estado = spEstado.getSelectedItem().toString();
                 String cidade = etCidade.getText().toString();
                 String bairro = etBairro.getText().toString();
 
@@ -401,9 +402,9 @@ public class AdicionarPontoFragment extends Fragment {
 
             etCidade.setText(dados.getString("city"));
             etLogradouro.setText(logradouro);
-            spTipoLogradouro.setText(tpLogradouro);
+            //spTipoLogradouro.setText(tpLogradouro);
             etBairro.setText(dados.getString("neighborhood"));
-            spEstado.setText(dados.getString("state"));
+            //spEstado.setText(dados.getString("state"));
         } catch (Exception e) {
             e.printStackTrace();
         }

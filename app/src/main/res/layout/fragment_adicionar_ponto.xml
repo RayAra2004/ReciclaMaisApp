@@ -35,8 +35,8 @@
 
             <ImageView
                 android:id="@+id/imv_foto_ponto_adicionar_ponto"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/thumb_width"
+                android:layout_height="@dimen/thumb_height"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
@@ -151,10 +151,13 @@
             <Spinner
                 android:id="@+id/sp_tpLogradouro_adicionar_ponto"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
+                android:dropDownWidth="match_parent"
+                android:entries="@array/tp_logradouro"
+                android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -199,10 +202,12 @@
             <Spinner
                 android:id="@+id/sp_estado_adicionar_ponto"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edit_text_bg"
+                android:entries="@array/uf"
+                android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView18" />
@@ -311,7 +316,7 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="PLASTICO" />
+                        android:text="PLÁSTICO" />
 
                     <Button
                         android:id="@+id/btn_papel_adicionar_ponto"
@@ -338,7 +343,7 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="ELETRONICOS" />
+                        android:text="ELETRÔNICOS" />
 
                     <Button
                         android:id="@+id/btn_madeira_adicionar_ponto"
@@ -356,7 +361,7 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="ORGANICO" />
+                        android:text="ORGÂNICO" />
                 </LinearLayout>
             </HorizontalScrollView>
 
