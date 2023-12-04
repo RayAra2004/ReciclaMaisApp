@@ -71,6 +71,7 @@
                 android:hint="Digite seu nome"
                 android:inputType="text"
                 android:paddingLeft="14dp"
+                android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -99,6 +100,7 @@
                 android:hint="Digite seu cep"
                 android:inputType="number"
                 android:paddingLeft="14dp"
+                android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -139,6 +141,7 @@
                 android:hint="Digite o Logradouro"
                 android:inputType="text"
                 android:paddingLeft="14dp"
+                android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -182,6 +185,7 @@
                 android:hint="Digite o número"
                 android:inputType="number"
                 android:paddingLeft="14dp"
+                android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -236,6 +240,7 @@
                 android:hint="Digite a cidade"
                 android:inputType="text"
                 android:paddingLeft="14dp"
+                android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -264,6 +269,7 @@
                 android:hint="Digite o bairro"
                 android:inputType="text"
                 android:paddingLeft="14dp"
+                android:textColor="@color/white"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -303,7 +309,8 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="VIDRO" />
+                        android:text="VIDRO"
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_metal_adicionar_ponto"
@@ -312,7 +319,8 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="METAL" />
+                        android:text="METAL"
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_plastico_adicionar_ponto"
@@ -321,7 +329,8 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="PLÁSTICO" />
+                        android:text="PLÁSTICO"
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_papel_adicionar_ponto"
@@ -330,7 +339,8 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="PAPEL" />
+                        android:text="PAPEL"
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_hospitalar_adicionar_ponto"
@@ -339,7 +349,8 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="HOSPITALAR" />
+                        android:text="HOSPITALAR"
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_eletronicos_adicionar_ponto"
@@ -348,7 +359,8 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="ELETRÔNICOS" />
+                        android:text="ELETRÔNICOS"
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_madeira_adicionar_ponto"
@@ -357,7 +369,8 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="MADEIRA" />
+                        android:text="MADEIRA"
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/btn_organico_adicionar_ponto"
@@ -366,7 +379,8 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="#514869"
-                        android:text="ORGÂNICO" />
+                        android:text="ORGÂNICO"
+                        android:textColor="@color/white" />
                 </LinearLayout>
             </HorizontalScrollView>
 
