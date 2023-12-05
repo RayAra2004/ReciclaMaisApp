@@ -14,5 +14,8 @@
     <color name="blue">#007aff</color>
     <color name="red">#ff0000</color>
     <color name="green">#02e351</color>
+    <color name="Cor_Hospitalar">#dbdbdb</color>
+    <color name="Cor_Organico">#925627</color>
+    <color name="Cor_eletronicos">#FF914D</color>
     <color name="back_comentarios">#514869</color>
 </resources>

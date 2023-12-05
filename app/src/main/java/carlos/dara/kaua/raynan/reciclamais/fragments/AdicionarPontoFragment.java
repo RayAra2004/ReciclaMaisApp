@@ -5,6 +5,7 @@ import static android.app.Activity.RESULT_OK;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -146,13 +147,48 @@ public class AdicionarPontoFragment extends Fragment {
             }
         });
 
+        /*
+        // Encontre o botão pelo ID
+            Button botaoVidro = view.findViewById(R.id.btn_vidro_adicionar_ponto);
+
+        // Defina a cor de fundo original do botão
+            final int originalColor = botaoVidro.getSolidColor();
+
+        // Defina um ouvinte de clique para o botão
+            botaoVidro.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                // Verifique se o botão já está selecionado
+                if (materiaisSelecionados.contains("Vidro")) {
+                    // Se o botão já estiver selecionado, volte à cor original
+                    botaoVidro.setBackgroundColor(originalColor);
+                    materiaisSelecionados.remove("Vidro");
+                } else {
+                     // Caso contrário, defina a cor de fundo para verde
+                    vidroButton.setBackgroundColor(Color.GREEN);
+                    materiaisSelecionados.add("Vidro");
+        }
+    }
+});
+        */
+
         Button botaoVidro = view.findViewById(R.id.btn_vidro_adicionar_ponto);
+
+        // Defina a cor de fundo original do botão
+        final int originalColor = botaoVidro.getSolidColor();
+
+        // Defina um ouvinte de clique para o botão
         botaoVidro.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(materiaisSelecionados.contains("Vidro")){
+            public void onClick(View v) {
+                // Verifique se o botão já está selecionado
+                if (materiaisSelecionados.contains("Vidro")) {
+                    // Se o botão já estiver selecionado, volte à cor original
+                    botaoVidro.setBackgroundColor(originalColor);
                     materiaisSelecionados.remove("Vidro");
-                }else{
+                } else {
+                    // Caso contrário, defina a cor de fundo para verde
+                    botaoVidro.setBackgroundColor(Color.GREEN);
                     materiaisSelecionados.add("Vidro");
                 }
             }
@@ -161,10 +197,12 @@ public class AdicionarPontoFragment extends Fragment {
         Button botaoPlastico = view.findViewById(R.id.btn_plastico_adicionar_ponto);
         botaoPlastico.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(materiaisSelecionados.contains("Plástico")){
+            public void onClick(View v) {
+                if (materiaisSelecionados.contains("Plástico")) {
+                    botaoPlastico.setBackgroundColor(originalColor);
                     materiaisSelecionados.remove("Plástico");
-                }else{
+                } else {
+                    botaoPlastico.setBackgroundColor(Color.RED);
                     materiaisSelecionados.add("Plástico");
                 }
             }
@@ -175,8 +213,10 @@ public class AdicionarPontoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(materiaisSelecionados.contains("Madeira")){
+                    botaoMadeira.setBackgroundColor(originalColor);
                     materiaisSelecionados.remove("Madeira");
                 }else{
+                    botaoMadeira.setBackgroundColor(Color.BLACK);
                     materiaisSelecionados.add("Madeira");
                 }
             }
@@ -187,32 +227,41 @@ public class AdicionarPontoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(materiaisSelecionados.contains("Metal")){
+                    botaoMetal.setBackgroundColor(originalColor);
                     materiaisSelecionados.remove("Metal");
                 }else{
+                    botaoMetal.setBackgroundColor(Color.YELLOW);
                     materiaisSelecionados.add("Metal");
                 }
             }
         });
 
         Button botaoHospitalar = view.findViewById(R.id.btn_hospitalar_adicionar_ponto);
+
+        final int cor_hospitalar = getResources().getColor(R.color.Cor_Hospitalar);
         botaoHospitalar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(materiaisSelecionados.contains("Hospitalar")){
+                    botaoHospitalar.setBackgroundColor(originalColor);
                     materiaisSelecionados.remove("Hospitalar");
                 }else{
+                    botaoHospitalar.setBackgroundColor(cor_hospitalar);
                     materiaisSelecionados.add("Hospitalar");
                 }
             }
         });
 
         Button botaoOrganico = view.findViewById(R.id.btn_organico_adicionar_ponto);
+        final int cor_organico = getResources().getColor(R.color.Cor_Organico);
         botaoOrganico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(materiaisSelecionados.contains("Orgânico")){
+                    botaoOrganico.setBackgroundColor(originalColor);
                     materiaisSelecionados.remove("Orgânico");
                 }else{
+                    botaoOrganico.setBackgroundColor(cor_organico);
                     materiaisSelecionados.add("Orgânico");
                 }
             }
@@ -223,20 +272,25 @@ public class AdicionarPontoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(materiaisSelecionados.contains("Papel")){
+                    botaoPapel.setBackgroundColor(originalColor);
                     materiaisSelecionados.remove("Papel");
                 }else{
+                    botaoPapel.setBackgroundColor(Color.BLUE);
                     materiaisSelecionados.add("Papel");
                 }
             }
         });
 
         Button botaoEletronico = view.findViewById(R.id.btn_eletronicos_adicionar_ponto);
+        final int cor_eletronicos = getResources().getColor(R.color.Cor_eletronicos);
         botaoEletronico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(materiaisSelecionados.contains("Eletrônico")){
+                    botaoEletronico.setBackgroundColor(originalColor);
                     materiaisSelecionados.remove("Eletrônico");
                 }else{
+                    botaoEletronico.setBackgroundColor(cor_eletronicos);
                     materiaisSelecionados.add("Eletrônico");
                 }
             }
