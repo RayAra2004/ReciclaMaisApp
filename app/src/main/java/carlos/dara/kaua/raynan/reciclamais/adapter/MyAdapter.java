@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.paging.PagingDataAdapter;
+
 import androidx.recyclerview.widget.DiffUtil;
 
 import carlos.dara.kaua.raynan.reciclamais.R;

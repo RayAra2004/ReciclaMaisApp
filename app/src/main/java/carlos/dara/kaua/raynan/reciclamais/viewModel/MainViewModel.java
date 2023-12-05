@@ -7,6 +7,11 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelKt;
+import androidx.paging.Pager;
+import androidx.paging.PagingConfig;
+import androidx.paging.PagingData;
+import androidx.paging.PagingLiveData;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -18,12 +23,27 @@ import carlos.dara.kaua.raynan.reciclamais.entities.Endereco;
 import carlos.dara.kaua.raynan.reciclamais.entities.PontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.entities.TipoMaterial;
 import carlos.dara.kaua.raynan.reciclamais.repository.PontoColetaRepository;
+import kotlinx.coroutines.CoroutineScope;
 
 public class MainViewModel extends AndroidViewModel {
     int navigationOpSelected = R.id.homeOP;
     String currentPhotoPath = "";
+    LiveData<PagingData<PontoColeta>> pontoColetaLD;
 
-    public MainViewModel(@NonNull Application application){ super(application);}
+    Double lat, lon;
+
+    public MainViewModel(@NonNull Application application){
+        super(application);
+
+        PontoColetaRepository pontoColetaRepository = new PontoColetaRepository(getApplication());
+        CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
+        Pager<Integer, PontoColeta> pager = new Pager(new PagingConfig(10), () -> new PontoColetaPagingSource(pontoColetaRepository, lat, lon));
+        pontoColetaLD = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
+    }
+
+    public LiveData<PagingData<PontoColeta>> getPontosColetaLd() {
+        return pontoColetaLD;
+    }
 
     /*ArrayList<PontoColeta> pontos = new ArrayList<>();
     PontoColeta pontoColeta;
