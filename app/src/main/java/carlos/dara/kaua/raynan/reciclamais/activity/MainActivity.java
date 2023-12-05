@@ -191,4 +191,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    /**
+     * Navega para a tela que mostra os detalhes de um produto cujo id é pid
+     * @param id id do produto que se quer mostrar em detalhes
+     */
+    public void startViewPontoColetaAcitivity(String id) {
+        Intent i = new Intent(this, DescricaoPontoActivity.class);
+        i.putExtra("id", id);
+        startActivity(i);
+    }
 }

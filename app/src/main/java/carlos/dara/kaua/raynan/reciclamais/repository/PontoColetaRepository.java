@@ -147,7 +147,7 @@ public class PontoColetaRepository {
 
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL +"pegar_pontos_coleta.php", "GET", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL +"getPontosColeta.php", "GET", "UTF-8");
         httpRequest.addParam("limit", limit.toString());
         httpRequest.addParam("offset", offSet.toString());
 
@@ -192,7 +192,7 @@ public class PontoColetaRepository {
             JSONObject jsonObject = new JSONObject(result);
 
             // obtem o valor da chave sucesso para verificar se a ação ocorreu da forma esperada ou não.
-            int success = jsonObject.getInt("sucesso");
+            int success = jsonObject.getInt("status");
 
             // Se sucesso igual a 1, os pontos de coleta são obtidos da String JSON e adicionados à lista de
             // produtos a ser retornada como resultado.
@@ -212,9 +212,9 @@ public class PontoColetaRepository {
                     int pid = Integer.parseInt(jPonto.getString("id"));
                     String nome = jPonto.getString("nome");
                     Double distancia = Double.parseDouble(jPonto.getString("distancia"));
-                    String img = jPonto.getString("img");
+                    String img = jPonto.getString("imagem");
 
-                    JSONArray jsonArrayMateriais = jPonto.getJSONArray("materiais");
+                    JSONArray jsonArrayMateriais = jPonto.getJSONArray("materiais_reciclados");
 
                     for(int j = 0; j < jsonArrayMateriais.length(); j++){
 
