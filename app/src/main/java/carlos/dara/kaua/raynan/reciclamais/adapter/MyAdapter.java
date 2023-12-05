@@ -30,7 +30,7 @@ public class MyAdapter extends PagingDataAdapter<PontoColeta, MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.component_ponto_coleta, parent, false);
+        View v = inflater.inflate(R.layout.component_ponto_coleta_2, parent, false);
         MyViewHolder viewHolder = new MyViewHolder(v);
         return viewHolder;
     }
@@ -43,23 +43,55 @@ public class MyAdapter extends PagingDataAdapter<PontoColeta, MyViewHolder> {
         PontoColeta pontoColeta = this.getItem(position);
 
         // preenche o campo de nome
-        TextView tvNameList = holder.itemView.findViewById(R.id.tv_nome_ponto_coleta_componente);
+        TextView tvNameList = holder.itemView.findViewById(R.id.tv_nome_ponto_coleta_componente_2);
         tvNameList.setText(pontoColeta.nome);
 
-        // preenche o campo de preço
-        TextView tvPiceList = holder.itemView.findViewById(R.id.tv_materiais_reciclados_componente);
-        tvPiceList.setText(pontoColeta.materiaisRecicladosBD);
+        String materiaisString = pontoColeta.materiaisRecicladosBD;
+        String[] materiaisArray = materiaisString.split(",");
+
+        for (int i = 0; i < materiaisArray.length; i++) {
+            materiaisArray[i] = materiaisArray[i].trim();
+
+            switch (materiaisArray[i]) {
+                case "Vidro":
+                    (holder.itemView.findViewById(R.id.tv_vidro_ponto_componente)).setVisibility(View.VISIBLE);
+                    break;
+                case "Plástico":
+                    (holder.itemView.findViewById(R.id.tv_plastico_ponto_componente)).setVisibility(View.VISIBLE);
+                    break;
+                case "Madeira":
+                    (holder.itemView.findViewById(R.id.tv_madeira_ponto_componente)).setVisibility(View.VISIBLE);
+                    break;
+                case "Metal":
+                    (holder.itemView.findViewById(R.id.tv_metal_ponto_componente)).setVisibility(View.VISIBLE);
+                    break;
+                case "Hospitalar":
+                    (holder.itemView.findViewById(R.id.tv_hospitalar_ponto_componente)).setVisibility(View.VISIBLE);
+                    break;
+                case "Orgânico":
+                    (holder.itemView.findViewById(R.id.tv_organico_ponto_componente)).setVisibility(View.VISIBLE);
+                    break;
+                case "Papel":
+                    (holder.itemView.findViewById(R.id.tv_papel_ponto_componente)).setVisibility(View.VISIBLE);
+                    break;
+                case "Eletrônico":
+                    (holder.itemView.findViewById(R.id.tv_eletronico_ponto_componente)).setVisibility(View.VISIBLE);
+                    break;
+            }
+        }
+
+        (holder.itemView.findViewById(R.id.tv_vidro_ponto_componente)).setVisibility(View.VISIBLE);
 
         // preenche o campo de foto
         int w = (int) mainActivity.getResources().getDimension(R.dimen.thumb_width);
         int h = (int) mainActivity.getResources().getDimension(R.dimen.thumb_height);
-        ImageView imvProductThumb = holder.itemView.findViewById(R.id.imv_foto_ponto_de_coleta_ponto_coleta);
+        ImageView imvProductThumb = holder.itemView.findViewById(R.id.imv_foto_ponto_de_coleta_ponto_coleta_2);
         // somente agora o a imagem é obtida do servidor. Caso a imagem já esteja salva no cache da app,
         // não baixamos ela de novo
         ImageCache.loadImageUrlToImageView(mainActivity, pontoColeta.URLimagem, imvProductThumb, w, h);
 
-        // ao clicar em um item da lista, navegamos para a tela que mostra os detalhes do produto
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        // ao clicar em um item da lista, navegamos para a tela que mostra os detalhes do ponto
+        (holder.itemView.findViewById(R.id.btn_detalhes_ponto_componente)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mainActivity.startViewPontoColetaAcitivity(String.valueOf(pontoColeta.id));
