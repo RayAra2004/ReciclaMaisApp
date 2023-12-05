@@ -140,7 +140,8 @@ public class PontoColetaRepository {
      * @return lista de produtos
      */
     public List<PontoColeta> loadPontosColeta(Integer limit, Integer offSet, Double lat, Double lon) {
-
+        System.out.println(limit);
+        System.out.println(offSet);
         // cria a lista de produtos incicialmente vazia, que será retornada como resultado
         List<PontoColeta> pontosColetaList = new ArrayList<>();
         ArrayList<TipoMaterial> tipoMateriais = new ArrayList<>();
@@ -213,22 +214,10 @@ public class PontoColetaRepository {
                     String nome = jPonto.getString("nome");
                     Double distancia = Double.parseDouble(jPonto.getString("distancia"));
                     String img = jPonto.getString("imagem");
-
-                    JSONArray jsonArrayMateriais = jPonto.getJSONArray("materiais_reciclados");
-
-                    for(int j = 0; j < jsonArrayMateriais.length(); j++){
-
-                        JSONObject jMaterial = jsonArrayMateriais.getJSONObject(j);
-
-                        int mid = Integer.parseInt(jMaterial.getString("id"));
-                        String nomeMaterial = jPonto.getString("nome");
-
-                        TipoMaterial tipoMaterial = new TipoMaterial(mid, nomeMaterial);
-                        tipoMateriais.add(tipoMaterial);
-                    }
+                    String materiais = jPonto.getString("materiais_reciclados");
 
                     // Criamo um objeto do tipo PontoColeta para guardar esses dados
-                    PontoColeta pontoColeta = new PontoColeta(img, tipoMateriais, distancia, pid);
+                    PontoColeta pontoColeta = new PontoColeta(pid, nome, img, distancia, materiais);
 
 
                     // Adicionamos o objeto product na lista de pontos

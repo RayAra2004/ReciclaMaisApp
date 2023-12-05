@@ -26,11 +26,11 @@ public class PontoColeta {
         this.comentarios = comentarios;
     }
 
-    public PontoColeta(int id, String nome, int imagem, Double nota, String materiasRecicladosBD) {
+    public PontoColeta(int id, String nome, String imagem, Double distancia, String materiasRecicladosBD) {
         this.id = id;
         this.nome = nome;
-        this.imagem = imagem;
-        this.nota = nota;
+        this.URLimagem = imagem;
+        this.distancia = distancia;
         this.materiaisRecicladosBD = materiasRecicladosBD;
     }
 

@@ -40,6 +40,7 @@ import java.util.Date;
 import java.util.List;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
+import carlos.dara.kaua.raynan.reciclamais.adapter.MyAdapter;
 import carlos.dara.kaua.raynan.reciclamais.fragments.AdicionarPontoFragment;
 import carlos.dara.kaua.raynan.reciclamais.fragments.HomeFragment;
 import carlos.dara.kaua.raynan.reciclamais.fragments.PerfilFragment;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     static int RESULT_REQUEST_PERMISSION = 3;
+    public MyAdapter myAdapter;
 
     void setFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -114,6 +116,9 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.main_activity_bnv,menu);
         return true;
     };
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){

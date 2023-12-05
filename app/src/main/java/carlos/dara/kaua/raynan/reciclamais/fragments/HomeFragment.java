@@ -49,6 +49,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         view = inflater.inflate(R.layout.fragment_home, container, false);
         return view;
+
+
     }
 
     @Override
@@ -66,7 +68,7 @@ public class HomeFragment extends Fragment {
         MainViewModel mainViewModel = new ViewModelProvider(getActivity()).get(MainViewModel.class);
         LiveData<PagingData<PontoColeta>> pontosColetaLD = mainViewModel.getPontosColetaLd();
 
-        pontosColetaLD.observe(getActivity(), new Observer<PagingData<PontoColeta>>() {
+        pontosColetaLD.observe(getViewLifecycleOwner(), new Observer<PagingData<PontoColeta>>() {
             /**
              * Esse método é chamado sempre que uma nova página de produtos é entregue à app pelo
              * servidor web.
@@ -80,25 +82,33 @@ public class HomeFragment extends Fragment {
                 myAdapter.submitData(getLifecycle(),pontoColetaPagingData);
             }
         });
+    }
 
-        /**
-         * Quando o usuário adiciona um novo produto com sucesso, ele volta para a tela HomeActivity.
-         * O método abaixo é chamado quando a tela de adição de novo produto finaliza. Neste momento,
-         * verificamos se o o produto foi adicionado com sucesso. Se sim, atualizamos o Adapter, que por
-         * sua vez irá recarregar a lista de produtos do servidor.
-         */
-        @Override
-        protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-            super.onActivityResult(requestCode, resultCode, data);
-            // Se estiver retornando da tela de adição de produtos
-            if(requestCode == ADD_HOME_ACTIVITY_RESULT) {
-                // Se a adição de produtos foi realizada com sucesso
-                if(resultCode == Activity.RESULT_OK) {
+    /**
+     * Quando o usuário adiciona um novo produto com sucesso, ele volta para a tela HomeActivity.
+     * O método abaixo é chamado quando a tela de adição de novo produto finaliza. Neste momento,
+     * verificamos se o o produto foi adicionado com sucesso. Se sim, atualizamos o Adapter, que por
+     * sua vez irá recarregar a lista de produtos do servidor.
+     */
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Se estiver retornando da tela de adição de produtos
+        if (requestCode == ADD_HOME_ACTIVITY_RESULT) {
+            // Se a adição de produtos foi realizada com sucesso
+            if (resultCode == Activity.RESULT_OK) {
+                // Obtém a referência para a MainActivity
+                MainActivity mainActivity = (MainActivity) getActivity();
+
+                // Verifica se a MainActivity não é nula e se o adaptador não é nulo
+                if (mainActivity != null && mainActivity.myAdapter != null) {
                     // O adapter é atualizado. Isso faz com que os dados atuais sejam invalidados e
                     // sejam pedidas novas páginas de produtos para o servidor web.
-                    myAdapter.refresh();
+                    mainActivity.myAdapter.refresh();
                 }
             }
         }
     }
+
 }

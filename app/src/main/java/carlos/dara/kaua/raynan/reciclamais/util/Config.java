@@ -7,7 +7,7 @@ public class Config {
     // endereço base do servidor web
 
     //TODO: Alterar URL
-    public static String CONECTDB_APP_URL = "http://172.19.18.51/ReciclaMais/sql/mobile/";
+    public static String CONECTDB_APP_URL = "http://192.168.0.106/ReciclaMais/sql/mobile/";
     //public static String CONECTDB_APP_URL = "https://reciclamais1-7q7a7l61.b4a.run/sql/mobile/";
 
     /**
