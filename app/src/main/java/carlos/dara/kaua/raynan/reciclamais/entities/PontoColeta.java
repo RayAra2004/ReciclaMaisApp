@@ -10,7 +10,7 @@ public class PontoColeta {
     public Double nota;
     public BigInteger telefone;
     ArrayList<TipoMaterial> materiasReciclados;
-    Endereco endereco;
+    public Endereco endereco;
     ArrayList<Comentario> comentarios;
     public String materiaisRecicladosBD;
     public Double distancia;

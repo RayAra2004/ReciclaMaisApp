@@ -275,7 +275,7 @@ public class PontoColetaRepository {
             JSONObject jsonObject = new JSONObject(result);
 
             // obtem o valor da chave sucesso para verificar se a ação ocorreu da forma esperada ou não.
-            int success = jsonObject.getInt("sucesso");
+            int success = jsonObject.getInt("status");
 
             // Se sucesso igual a 1, os detalhes do produto são obtidos da String JSON e um objeto
             // do tipo Product é criado para guardar esses dados

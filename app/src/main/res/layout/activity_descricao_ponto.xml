@@ -66,11 +66,10 @@
                         android:layout_height="match_parent">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/tv_telefone_ponto_selecionado_descricao_ponto"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            tools:layout_editor_absoluteX="0dp"
-                            tools:layout_editor_absoluteY="32dp">
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
                                 android:id="@+id/tv_nome_descricao_ponto"
@@ -128,7 +127,7 @@
                                 app:layout_constraintVertical_bias="0.564" />
 
                             <TextView
-                                android:id="@+id/TextView"
+                                android:id="@+id/tv_telefone_ponto_selecionado_descricao_ponto"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="28dp"
