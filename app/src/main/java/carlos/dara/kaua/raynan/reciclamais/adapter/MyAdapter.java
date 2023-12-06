@@ -80,7 +80,6 @@ public class MyAdapter extends PagingDataAdapter<PontoColeta, MyViewHolder> {
             }
         }
 
-        (holder.itemView.findViewById(R.id.tv_vidro_ponto_componente)).setVisibility(View.VISIBLE);
 
         // preenche o campo de foto
         int w = (int) mainActivity.getResources().getDimension(R.dimen.thumb_width);
