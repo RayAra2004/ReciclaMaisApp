@@ -177,13 +177,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AVALIE O PONTO"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/text_color" />
 
                     <RatingBar
                         android:id="@+id/rb_avaliacao_em_estrela_descricao_ponto"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:progressTint="@color/yellow"/>
 
                 </LinearLayout>
 
@@ -196,18 +197,22 @@
                 android:layout_marginTop="30dp"
                 android:text="ADICIONE UM COMENTÁRIO"
                 android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/text_color"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editText_adicionar_cometario_descricao_ponto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
+                android:background="@drawable/edit_text_bg"
                 android:ems="10"
-                android:hint="ADICIONE UM COMENTÁRIO"
-                android:inputType="textPersonName" />
+                android:hint="Adicione um comentário"
+                android:inputType="textPersonName"
+                android:paddingLeft="14dp"
+                android:textColorHint="#99FFFFFF" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_comentarios_descricao_ponto"
