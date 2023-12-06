@@ -74,7 +74,7 @@ public class MyAdapter extends PagingDataAdapter<PontoColeta, MyViewHolder> {
                 case "Papel":
                     (holder.itemView.findViewById(R.id.tv_papel_ponto_componente)).setVisibility(View.VISIBLE);
                     break;
-                case "Eletrônico":
+                case "Eletrônicos":
                     (holder.itemView.findViewById(R.id.tv_eletronico_ponto_componente)).setVisibility(View.VISIBLE);
                     break;
             }
