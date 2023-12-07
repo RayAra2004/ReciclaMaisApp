@@ -14,7 +14,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
+import carlos.dara.kaua.raynan.reciclamais.activity.AjudaActivity;
+import carlos.dara.kaua.raynan.reciclamais.activity.AprendaReciclarActivity;
 import carlos.dara.kaua.raynan.reciclamais.activity.LoginActivity;
+import carlos.dara.kaua.raynan.reciclamais.activity.MudarDadosActivity;
+import carlos.dara.kaua.raynan.reciclamais.activity.SeusMateriaisActivity;
 import carlos.dara.kaua.raynan.reciclamais.util.Config;
 import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
 
@@ -59,5 +63,33 @@ public class PerfilFragment extends Fragment {
         Button botaoAprendaReciclar = view.findViewById(R.id.btn_aprenda_a_reciclar_perfil);
         Button botaoMateriaisPostados = view.findViewById(R.id.btn_materiais_postados_perfil);
         Button botaoAjuda = view.findViewById(R.id.btn_ajuda_perfil);
+
+        botaoMudarDados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(requireActivity(), MudarDadosActivity.class));
+            }
+        });
+
+        botaoAprendaReciclar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(requireActivity(), AprendaReciclarActivity.class));
+            }
+        });
+
+        botaoMateriaisPostados.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(requireActivity(), SeusMateriaisActivity.class));
+            }
+        });
+
+        botaoAjuda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(requireActivity(), AjudaActivity.class));
+            }
+        });
     }
 }
