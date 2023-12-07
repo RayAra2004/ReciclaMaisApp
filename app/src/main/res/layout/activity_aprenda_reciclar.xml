@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
+                    android:backgroundTint="#514869"
                     android:text="LIXO ELETRÔNICO"
                     android:textColor="@color/white" />
 
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
+                    android:backgroundTint="#514869"
                     android:text="LIXO HOSPITALAR"
                     android:textColor="@color/white" />
 
@@ -85,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
+                    android:backgroundTint="#514869"
                     android:text="MADEIRAS"
                     android:textColor="@color/white" />
 
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
+                    android:backgroundTint="#514869"
                     android:text="LIXO ORGÂNIGO"
                     android:textColor="@color/white" />
 
@@ -117,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
+                    android:backgroundTint="#514869"
                     android:text="PLÁSTICO"
                     android:textColor="@color/white" />
 
@@ -127,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
+                    android:backgroundTint="#514869"
                     android:text="PAPEL"
                     android:textColor="@color/white" />
 
@@ -150,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
+                    android:backgroundTint="#514869"
                     android:text="VIDROS"
                     android:textColor="@color/white" />
 
@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
+                    android:backgroundTint="#514869"
                     android:text="METAIS"
                     android:textColor="@color/white" />
 
