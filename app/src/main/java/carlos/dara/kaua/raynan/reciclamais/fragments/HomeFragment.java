@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
 import carlos.dara.kaua.raynan.reciclamais.activity.MainActivity;
-import carlos.dara.kaua.raynan.reciclamais.adapter.MyAdapter;
+import carlos.dara.kaua.raynan.reciclamais.adapter.MyAdapterPontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.adapter.PontoColetaComparator;
 import carlos.dara.kaua.raynan.reciclamais.entities.PontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
@@ -33,7 +33,7 @@ import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
 public class HomeFragment extends Fragment {
     private MainViewModel mViewModel;
     private View view;
-    MyAdapter myAdapter;
+    MyAdapterPontoColeta myAdapterPontoColeta;
     static int ADD_HOME_ACTIVITY_RESULT = 1;
 
     private ArrayList<String> materiaisSelecionados = new ArrayList<>();
@@ -62,15 +62,15 @@ public class HomeFragment extends Fragment {
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
             rvPontosDeColeta.setLayoutManager(layoutManager);
 
-            myAdapter = new MyAdapter((MainActivity) getActivity(), new PontoColetaComparator());
-            rvPontosDeColeta.setAdapter(myAdapter);
+            myAdapterPontoColeta = new MyAdapterPontoColeta((MainActivity) getActivity(), new PontoColetaComparator());
+            rvPontosDeColeta.setAdapter(myAdapterPontoColeta);
 
             LiveData<PagingData<PontoColeta>> pontosColetaLD = mViewModel.getPontosColetaLd();
 
             pontosColetaLD.observe(getViewLifecycleOwner(), new Observer<PagingData<PontoColeta>>() {
                 @Override
                 public void onChanged(PagingData<PontoColeta> pontoColetaPagingData) {
-                    myAdapter.submitData(getLifecycle(), pontoColetaPagingData);
+                    myAdapterPontoColeta.submitData(getLifecycle(), pontoColetaPagingData);
                 }
             });
         }
@@ -214,8 +214,8 @@ public class HomeFragment extends Fragment {
 
         if (requestCode == ADD_HOME_ACTIVITY_RESULT && resultCode == Activity.RESULT_OK) {
             MainActivity mainActivity = (MainActivity) getActivity();
-            if (mainActivity != null && mainActivity.myAdapter != null) {
-                mainActivity.myAdapter.refresh();
+            if (mainActivity != null && mainActivity.myAdapterPontoColeta != null) {
+                mainActivity.myAdapterPontoColeta.refresh();
             }
         }
     }

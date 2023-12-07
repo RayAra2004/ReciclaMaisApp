@@ -16,9 +16,9 @@ import carlos.dara.kaua.raynan.reciclamais.activity.MainActivity;
 import carlos.dara.kaua.raynan.reciclamais.entities.PontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.util.ImageCache;
 
-public class MyAdapter extends PagingDataAdapter<PontoColeta, MyViewHolder> {
+public class MyAdapterPontoColeta extends PagingDataAdapter<PontoColeta, MyViewHolder> {
     MainActivity mainActivity;
-    public MyAdapter(MainActivity mainActivity, @NonNull DiffUtil.ItemCallback<PontoColeta> diffCallback) {
+    public MyAdapterPontoColeta(MainActivity mainActivity, @NonNull DiffUtil.ItemCallback<PontoColeta> diffCallback) {
         super(diffCallback);
         this.mainActivity = mainActivity;
     }

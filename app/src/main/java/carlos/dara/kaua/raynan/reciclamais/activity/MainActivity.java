@@ -1,51 +1,36 @@
 package carlos.dara.kaua.raynan.reciclamais.activity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
-import carlos.dara.kaua.raynan.reciclamais.adapter.MyAdapter;
+import carlos.dara.kaua.raynan.reciclamais.adapter.MyAdapterPontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.fragments.AdicionarPontoFragment;
 import carlos.dara.kaua.raynan.reciclamais.fragments.HomeFragment;
 import carlos.dara.kaua.raynan.reciclamais.fragments.PerfilFragment;
 import carlos.dara.kaua.raynan.reciclamais.fragments.PostagemMaterialFragment;
-import carlos.dara.kaua.raynan.reciclamais.util.Util;
 import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     static int RESULT_REQUEST_PERMISSION = 3;
-    public MyAdapter myAdapter;
+    public MyAdapterPontoColeta myAdapterPontoColeta;
 
     void setFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
