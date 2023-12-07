@@ -281,13 +281,13 @@ public class PontoColetaRepository {
             // do tipo Product é criado para guardar esses dados
             if(success == 1) {
 
-                Double notaPonto = Double.parseDouble(jsonObject.getString("notaPonto"));
-                String img = jsonObject.getString("img");
+                //Double notaPonto = Double.parseDouble(jsonObject.getString("notaPonto"));
+                String img = jsonObject.getString("imagem");
                 String nome = jsonObject.getString("nome");
 
                 BigInteger cep = new BigInteger(jsonObject.getString("cep"));
 
-                String tp_logadouro = jsonObject.getString("tp_logadouro");
+                String tp_logadouro = jsonObject.getString("tipo_logadouro");
                 String logradouro = jsonObject.getString("logradouro");
                 Integer numero = Integer.parseInt(jsonObject.getString("numero"));
                 String estado = jsonObject.getString("estado");
@@ -296,7 +296,7 @@ public class PontoColetaRepository {
                 Double latitude = Double.parseDouble(jsonObject.getString("latitude"));
                 Double longitude = Double.parseDouble(jsonObject.getString("longitude"));
 
-                BigInteger telefone = new BigInteger(jsonObject.getString("telefone"));
+                //BigInteger telefone = new BigInteger(jsonObject.getString("telefone"));
 
 
                 JSONArray jsonArray = jsonObject.getJSONArray("comentarios");
