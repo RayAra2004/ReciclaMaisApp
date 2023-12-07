@@ -242,7 +242,7 @@ public class PontoColetaRepository {
     public PontoColeta loadPontoColetaDetail(String id) {
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "pegar_detalhes_produto.php", "GET", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "getPontoColeta.php", "GET", "UTF-8");
         httpRequest.addParam("id", id);
 
         ArrayList<Comentario> comentarios = new ArrayList<>();
@@ -287,7 +287,7 @@ public class PontoColetaRepository {
 
                 BigInteger cep = new BigInteger(jsonObject.getString("cep"));
 
-                String tp_logadouro = jsonObject.getString("tipo_logadouro");
+                String tp_logadouro = jsonObject.getString("tipo_logradouro");
                 String logradouro = jsonObject.getString("logradouro");
                 Integer numero = Integer.parseInt(jsonObject.getString("numero"));
                 String estado = jsonObject.getString("estado");
@@ -295,9 +295,8 @@ public class PontoColetaRepository {
                 String bairro = jsonObject.getString("bairro");
                 Double latitude = Double.parseDouble(jsonObject.getString("latitude"));
                 Double longitude = Double.parseDouble(jsonObject.getString("longitude"));
-
-                //BigInteger telefone = new BigInteger(jsonObject.getString("telefone"));
-
+                BigInteger telefone = new BigInteger(jsonObject.getString("telefone"));
+                Double notaPonto = Double.parseDouble(jsonObject.getString("nota"));
 
                 JSONArray jsonArray = jsonObject.getJSONArray("comentarios");
                 for(int i = 0; i < jsonArray.length(); i++) {
@@ -306,7 +305,7 @@ public class PontoColetaRepository {
                     int cid = Integer.parseInt(jComentario.getString("id"));
                     String nomeUsuario = jComentario.getString("nomeUsuario");
                     Integer nota = Integer.parseInt(jComentario.getString("nota"));
-                    String descricao = jComentario.getString("descricao");
+                    String descricao = jComentario.getString("conteudo");
 
                     Comentario comentario = new Comentario(cid, nomeUsuario, nota, descricao);
 

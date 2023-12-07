@@ -46,13 +46,17 @@ public class DescricaoPontoActivity extends AppCompatActivity {
                     tvNomePontoSelecionado.setText(pontoColeta.nome);
 
                     TextView tvEnderecoPontoSelecionado = findViewById(R.id.tv_endereco_ponto_selecionado_descricao_ponto);
-                    String endereco = pontoColeta.endereco.getTp_logradouro() + pontoColeta.endereco.getLogradouro()
+                    String endereco = Character.toUpperCase(pontoColeta.endereco.getTp_logradouro().charAt(0)) +
+                            pontoColeta.endereco.getTp_logradouro().substring(1)
+                            + " " + pontoColeta.endereco.getLogradouro()
                             + ", " + pontoColeta.endereco.getNumero() + " - " + pontoColeta.endereco.getBairro() +
                             ", " + pontoColeta.endereco.getCidade() + " - " + pontoColeta.endereco.getCep();
                     tvEnderecoPontoSelecionado.setText(endereco);
 
                     TextView tvTelefonePontoSelecionado = findViewById(R.id.tv_telefone_ponto_selecionado_descricao_ponto);
                     tvTelefonePontoSelecionado.setText(pontoColeta.telefone.toString());
+
+                    RecyclerView rvComentariosPontoSelecionado = findViewById(R.id.rv_comentarios_descricao_ponto);
                 }else {
                     Toast.makeText(DescricaoPontoActivity.this, "Não foi possível obter os detalhes do produto", Toast.LENGTH_LONG).show();
                 }
@@ -64,7 +68,7 @@ public class DescricaoPontoActivity extends AppCompatActivity {
 
         RatingBar rbAvaliacaoPontoSelecionado = findViewById(R.id.rb_avaliacao_em_estrela_descricao_ponto);
         EditText etAdicionarComentarioPontoSelecionado = findViewById(R.id.editText_adicionar_cometario_descricao_ponto);
-        RecyclerView rvComentariosPontoSelecionado = findViewById(R.id.rv_comentarios_descricao_ponto);
+
         Button botaoAbrirTrajetoriaPontoSelecionado = findViewById(R.id.btn_abrir_trajetoria_descricao_ponto);
 
     }
