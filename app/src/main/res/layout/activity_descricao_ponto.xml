@@ -75,42 +75,39 @@
                                 android:id="@+id/tv_nome_descricao_ponto"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
                                 android:text="NOME:"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:textColor="@color/text_color"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.28"
+                                app:layout_constraintHorizontal_bias="0.312"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.102" />
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/tv_nome_ponto_selecionado_descricao_ponto"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
                                 android:text="MARCA AMBIENTAL"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                                 android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.654"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.102" />
+                                app:layout_constraintHorizontal_bias="0.345"
+                                app:layout_constraintStart_toEndOf="@+id/tv_nome_descricao_ponto"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/tv_endereco_descricao_ponto"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
                                 android:text="ENDEREÇO:"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:textColor="@color/text_color"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.365" />
+                                app:layout_constraintTop_toBottomOf="@+id/tv_nome_descricao_ponto" />
 
                             <TextView
                                 android:id="@+id/tv_endereco_ponto_selecionado_descricao_ponto"
@@ -130,27 +127,27 @@
                                 android:id="@+id/tv_telefone_ponto_selecionado_descricao_ponto"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="28dp"
+                                android:layout_marginTop="16dp"
                                 android:text="TELEFONE:"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:textColor="@color/text_color"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.344"
-                                app:layout_constraintStart_toStartOf="parent" />
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_endereco_ponto_selecionado_descricao_ponto" />
 
                             <TextView
                                 android:id="@+id/tv_telefone_ponto_selecionado_descricao_ponto"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="28dp"
+                                android:layout_marginTop="16dp"
                                 android:text="4002-8922"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                                 android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.644"
                                 app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_endereco_ponto_selecionado_descricao_ponto"
                                 tools:ignore="DuplicateIds" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -177,13 +174,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AVALIE O PONTO"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/text_color" />
 
                     <RatingBar
                         android:id="@+id/rb_avaliacao_em_estrela_descricao_ponto"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:progressTint="@color/yellow" />
 
                 </LinearLayout>
 
@@ -196,18 +194,22 @@
                 android:layout_marginTop="30dp"
                 android:text="ADICIONE UM COMENTÁRIO"
                 android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/text_color"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editText_adicionar_cometario_descricao_ponto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
+                android:background="@drawable/edit_text_bg"
                 android:ems="10"
-                android:hint="ADICIONE UM COMENTÁRIO"
-                android:inputType="textPersonName" />
+                android:hint="Adicione um comentário"
+                android:inputType="textPersonName"
+                android:paddingLeft="14dp"
+                android:textColorHint="#99FFFFFF" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_comentarios_descricao_ponto"
@@ -216,7 +218,7 @@
 
             <Button
                 android:id="@+id/btn_abrir_trajetoria_descricao_ponto"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/text_color"
