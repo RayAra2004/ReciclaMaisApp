@@ -91,7 +91,7 @@ public class CadastroActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Por favor, selecione a data de nascimento completa", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (telefone.isEmpty() || telefone.length() == 11){
+                if (telefone.isEmpty() || telefone.length() < 11 || telefone.length() > 12){
                     etTelefone.setError("Telefone inválido");
                     return;
                 }
