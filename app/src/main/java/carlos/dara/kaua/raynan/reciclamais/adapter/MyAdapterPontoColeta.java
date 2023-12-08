@@ -46,6 +46,9 @@ public class MyAdapterPontoColeta extends PagingDataAdapter<PontoColeta, MyViewH
         TextView tvNameList = holder.itemView.findViewById(R.id.tv_nome_ponto_coleta_componente_2);
         tvNameList.setText(pontoColeta.nome);
 
+        TextView tvDistancia = holder.itemView.findViewById(R.id.tv_distancia_component_ponto_coleta);
+        tvDistancia.setText(pontoColeta.distancia.toString() + " KM");
+
         String materiaisString = pontoColeta.materiaisRecicladosBD;
         String[] materiaisArray = materiaisString.split(",");
 
