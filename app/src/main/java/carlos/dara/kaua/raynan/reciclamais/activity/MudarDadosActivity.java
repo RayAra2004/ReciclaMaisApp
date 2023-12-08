@@ -2,12 +2,15 @@ package carlos.dara.kaua.raynan.reciclamais.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -21,13 +24,39 @@ public class MudarDadosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mudar_dados);
 
         EditText editTextNome = findViewById(R.id.editText_nome_mudar_dados);
-        Spinner spinnerDiaNascimento = findViewById(R.id.sp_dia_data_de_nascimento_mudar_dados);
-        Spinner spinnerMesNascimento = findViewById(R.id.sp_mes_data_de_nascimento_mudar_dados);
-        Spinner spinnerAnoNascimento = findViewById(R.id.sp_ano_data_de_nascimento_mudar_dados);
         EditText editTextTelefone = findViewById(R.id.editText_telefone_mudar_dados);
         EditText editTextSenha = findViewById(R.id.editText_senha_mudar_dados);
         EditText editTextConfirmeSenha = findViewById(R.id.editText_confirme_sua_senha_mudar_dados);
         Button botaoAtualizarDados = findViewById(R.id.btn_atualizar_mudar_dados);
+        EditText etDataNascimento = findViewById(R.id.etDataNascimento2);
+        ImageButton imbDataNascimento = findViewById(R.id.imbDataNascimento2);
+
+        imbDataNascimento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog( MudarDadosActivity.this);
+                datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
+                        String diaStr = "", mesStr = "";
+                        if(dia < 10){
+                            diaStr = "0" + dia;
+                        }else{
+                            diaStr = String.valueOf(dia);
+                        }
+                        if(mes < 10){
+                            mesStr = "0" + (mes + 1);
+                        }else{
+                            mesStr = String.valueOf(mes + 1);
+                        }
+
+                        String date = diaStr + "/" + mesStr + "/"  + ano;
+                        etDataNascimento.setText(date);
+                    }
+                });
+                datePickerDialog.show();
+            }
+        });
 
         botaoAtualizarDados.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,16 +65,9 @@ public class MudarDadosActivity extends AppCompatActivity {
                 String telefone = editTextTelefone.getText().toString();
                 String senha = editTextSenha.getText().toString();
                 String confimarSenha = editTextConfirmeSenha.getText().toString();
-                String diaSelecionado = spinnerDiaNascimento.getSelectedItem().toString();
-                String mesSelecionado = spinnerMesNascimento.getSelectedItem().toString();
-                String anoSelecinado = spinnerAnoNascimento.getSelectedItem().toString();
 
                 if (nome.isEmpty()){
                     editTextNome.setError("Campo nome é obrigatório");
-                    return;
-                }
-                if (TextUtils.isEmpty(diaSelecionado) || TextUtils.isEmpty(mesSelecionado) || TextUtils.isEmpty(anoSelecinado)){
-                    Toast.makeText(getApplicationContext(),"Por favor, selecione a data de nascimento completa", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (telefone.isEmpty() || telefone.length() < 10){

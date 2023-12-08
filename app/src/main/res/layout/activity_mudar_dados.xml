@@ -70,36 +70,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editText_senha_mudar_dados" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_mudar_dados">
-
-                    <Spinner
-                        android:id="@+id/sp_dia_data_de_nascimento_mudar_dados"
-                        android:layout_width="67dp"
-                        android:layout_height="50dp"
-                        android:layout_marginEnd="20dp" />
-
-                    <Spinner
-                        android:id="@+id/sp_mes_data_de_nascimento_mudar_dados"
-                        android:layout_width="67dp"
-                        android:layout_height="50dp"
-                        android:layout_marginEnd="20dp" />
-
-                    <Spinner
-                        android:id="@+id/sp_ano_data_de_nascimento_mudar_dados"
-                        android:layout_width="67dp"
-                        android:layout_height="50dp" />
-                </LinearLayout>
-
                 <TextView
                     android:id="@+id/tv_telefone_cadastro"
                     android:layout_width="wrap_content"
@@ -111,7 +81,7 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                    app:layout_constraintTop_toBottomOf="@+id/etDataNascimento2" />
 
                 <TextView
                     android:id="@+id/tv_senha_cadastro"
@@ -191,6 +161,32 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_telefone_cadastro" />
+
+                <EditText
+                    android:id="@+id/etDataNascimento2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:ems="10"
+                    android:hint="dd/mm/aaaa"
+                    android:inputType="date"
+                    android:paddingLeft="14dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#99FFFFFF"
+                    app:layout_constraintEnd_toStartOf="@+id/imbDataNascimento2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_mudar_dados" />
+
+                <ImageButton
+                    android:id="@+id/imbDataNascimento2"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/text_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_data_de_nascimento_mudar_dados"
+                    app:srcCompat="@drawable/baseline_date_range_24" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
