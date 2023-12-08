@@ -53,8 +53,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
-                    android:text="LIXO ELETRÔNICO" />
+                    android:backgroundTint="#514869"
+                    android:text="LIXO ELETRÔNICO"
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/btn_lixo_hospitalar_aprenda_reciclar"
@@ -62,8 +63,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
-                    android:text="LIXO HOSPITALAR" />
+                    android:backgroundTint="#514869"
+                    android:text="LIXO HOSPITALAR"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -83,8 +85,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
-                    android:text="MADEIRAS" />
+                    android:backgroundTint="#514869"
+                    android:text="MADEIRAS"
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/btn_lixo_organico_aprenda_reciclar"
@@ -92,8 +95,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
-                    android:text="LIXO ORGÂNIGO" />
+                    android:backgroundTint="#514869"
+                    android:text="LIXO ORGÂNIGO"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -113,8 +117,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
-                    android:text="PLÁSTICO" />
+                    android:backgroundTint="#514869"
+                    android:text="PLÁSTICO"
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/btn_papel_aprenda_reciclar"
@@ -122,8 +127,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
-                    android:text="PAPEL" />
+                    android:backgroundTint="#514869"
+                    android:text="PAPEL"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -144,8 +150,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
-                    android:text="VIDROS" />
+                    android:backgroundTint="#514869"
+                    android:text="VIDROS"
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/btn_metal_aprenda_reciclar"
@@ -153,8 +160,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/background_button"
-                    android:text="METAIS" />
+                    android:backgroundTint="#514869"
+                    android:text="METAIS"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
