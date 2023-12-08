@@ -409,7 +409,7 @@
                 android:background="@drawable/edit_text_bg"
                 android:ems="10"
                 android:hint="Digite o telefone"
-                android:inputType="text"
+                android:inputType="number"
                 android:paddingLeft="14dp"
                 android:textColorHint="#99FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"

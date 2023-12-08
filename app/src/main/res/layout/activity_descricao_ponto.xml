@@ -363,9 +363,11 @@
 
             <Button
                 android:id="@+id/btn_comentar_descricao_ponto"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:backgroundTint="@color/text_color"
+                android:text="Adicionar comentario"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/btn_abrir_trajetoria_descricao_ponto"

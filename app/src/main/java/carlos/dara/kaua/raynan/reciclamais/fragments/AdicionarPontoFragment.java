@@ -65,7 +65,7 @@ public class AdicionarPontoFragment extends Fragment {
     private View view;
     private ArrayList<String> materiaisSelecionados = new ArrayList<>();
 
-    EditText etCidade, etBairro, etNumero, etLogradouro, etCep;
+    EditText etCidade, etBairro, etNumero, etLogradouro, etCep, etTelefone;
     Spinner spEstado, spTipoLogradouro;
 
     public AdicionarPontoFragment() {
@@ -118,6 +118,7 @@ public class AdicionarPontoFragment extends Fragment {
 
         EditText etNome = view.findViewById(R.id.editText_nome_adicionar_ponto);
 
+        etTelefone = view.findViewById(R.id.editText_telefone_adicionar_ponto);
         etCep = view.findViewById(R.id.editText_CEP_adicionar_ponto);
         spTipoLogradouro = view.findViewById(R.id.sp_tpLogradouro_adicionar_ponto);
         etLogradouro = view.findViewById(R.id.editText_logradouro_adicionar_ponto);
@@ -316,7 +317,7 @@ public class AdicionarPontoFragment extends Fragment {
                     Toast.makeText(getContext(), "Por favor, selecione um material", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (TextUtils.isEmpty(nome)){
+                if (TextUtils.isEmpty(nome)) {
                     Toast.makeText(getContext(), "Por favor, preencha o campo nome", Toast.LENGTH_SHORT).show();
                     return;
                 }
