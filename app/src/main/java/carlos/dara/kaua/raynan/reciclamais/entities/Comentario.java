@@ -1,12 +1,12 @@
 package carlos.dara.kaua.raynan.reciclamais.entities;
 
 public class Comentario {
-    Usuario usuario;
-    String nome;
-    Integer nota;
-    String descricao;
+    public Usuario usuario;
+    public String nome;
+    public Integer nota;
+    public String descricao;
 
-    int id;
+    public int id;
 
     public Comentario(Usuario usuario, Integer nota, String descricao) {
         this.usuario = usuario;

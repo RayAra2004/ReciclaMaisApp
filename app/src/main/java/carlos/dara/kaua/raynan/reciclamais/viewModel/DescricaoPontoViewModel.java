@@ -6,15 +6,40 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModelKt;
+import androidx.paging.Pager;
+import androidx.paging.PagingConfig;
+import androidx.paging.PagingData;
+import androidx.paging.PagingLiveData;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import carlos.dara.kaua.raynan.reciclamais.entities.Comentario;
 import carlos.dara.kaua.raynan.reciclamais.entities.PontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.repository.PontoColetaRepository;
+import kotlinx.coroutines.CoroutineScope;
 
 public class DescricaoPontoViewModel extends AndroidViewModel {
-    public DescricaoPontoViewModel(@NonNull Application application){ super(application);}
+
+    int idPontoColeta;
+    LiveData<PagingData<Comentario>> comentarioLD;
+
+    public DescricaoPontoViewModel(@NonNull Application application){
+        super(application);
+    }
+    public DescricaoPontoViewModel(@NonNull Application application, int idPontoColeta){
+        super(application);
+
+        PontoColetaRepository pontoColetaRepository = new PontoColetaRepository(getApplication());
+        CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
+        Pager<Integer, Comentario> pager = new Pager(new PagingConfig(10), () -> new ComentarioPagingSource(pontoColetaRepository, idPontoColeta));
+        comentarioLD = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
+    }
+
+    public LiveData<PagingData<Comentario>> getComentariosLD(){
+        return  comentarioLD;
+    }
 
     public LiveData<PontoColeta> getPontoColetaDetailsLD(String pid) {
 

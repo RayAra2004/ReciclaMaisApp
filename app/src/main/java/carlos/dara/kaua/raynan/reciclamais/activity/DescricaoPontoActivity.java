@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.paging.PagingData;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -18,11 +20,20 @@ import android.widget.Toast;
 import org.w3c.dom.Comment;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
+import carlos.dara.kaua.raynan.reciclamais.adapter.ComentarioComparator;
+import carlos.dara.kaua.raynan.reciclamais.adapter.MyAdapterComentario;
+import carlos.dara.kaua.raynan.reciclamais.adapter.MyAdapterPontoColeta;
+import carlos.dara.kaua.raynan.reciclamais.adapter.PontoColetaComparator;
+import carlos.dara.kaua.raynan.reciclamais.entities.Comentario;
 import carlos.dara.kaua.raynan.reciclamais.entities.PontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.util.ImageCache;
 import carlos.dara.kaua.raynan.reciclamais.viewModel.DescricaoPontoViewModel;
+import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
 
 public class DescricaoPontoActivity extends AppCompatActivity {
+
+    MyAdapterComentario myAdapterComentario;
+    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +41,7 @@ public class DescricaoPontoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_descricao_ponto);
 
         Intent i = getIntent();
-        String id = i.getStringExtra("id");
+        id = i.getStringExtra("id");
 
         DescricaoPontoViewModel descricaoPontoViewModel = new ViewModelProvider(this).get(DescricaoPontoViewModel.class);
         LiveData<PontoColeta> pontoColeta = descricaoPontoViewModel.getPontoColetaDetailsLD(id);
@@ -57,8 +68,24 @@ public class DescricaoPontoActivity extends AppCompatActivity {
                     tvTelefonePontoSelecionado.setText(pontoColeta.telefone.toString());
 
                     RecyclerView rvComentariosPontoSelecionado = findViewById(R.id.rv_comentarios_descricao_ponto);
+                    rvComentariosPontoSelecionado.setHasFixedSize(true);
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getBaseContext());
+                    rvComentariosPontoSelecionado.setLayoutManager(layoutManager);
+
+                    myAdapterComentario = new MyAdapterComentario(DescricaoPontoActivity.this, new ComentarioComparator());
+                    rvComentariosPontoSelecionado.setAdapter(myAdapterComentario);
+
+                    DescricaoPontoViewModel descricaoPontoViewModel1 = new DescricaoPontoViewModel(getApplication(), Integer.parseInt(id));
+                    LiveData<PagingData<Comentario>> comentarioLD = descricaoPontoViewModel1.getComentariosLD();
+
+                    comentarioLD.observe(DescricaoPontoActivity.this, new Observer<PagingData<Comentario>>() {
+                        @Override
+                        public void onChanged(PagingData<Comentario> comentarioPagingData) {
+                            myAdapterComentario.submitData(getLifecycle(), comentarioPagingData);
+                        }
+                    });
                 }else {
-                    Toast.makeText(DescricaoPontoActivity.this, "Não foi possível obter os detalhes do produto", Toast.LENGTH_LONG).show();
+                    Toast.makeText(DescricaoPontoActivity.this, "Não foi possível obter os detalhes do ponto", Toast.LENGTH_LONG).show();
                 }
             }
         });

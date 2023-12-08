@@ -298,19 +298,6 @@ public class PontoColetaRepository {
                 BigInteger telefone = new BigInteger(jsonObject.getString("telefone"));
                 Double notaPonto = Double.parseDouble(jsonObject.getString("nota"));
 
-                JSONArray jsonArray = jsonObject.getJSONArray("comentarios");
-                for(int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jComentario = jsonArray.getJSONObject(i);
-
-                    int cid = Integer.parseInt(jComentario.getString("id"));
-                    String nomeUsuario = jComentario.getString("nomeUsuario");
-                    Integer nota = Integer.parseInt(jComentario.getString("nota"));
-                    String descricao = jComentario.getString("conteudo");
-
-                    Comentario comentario = new Comentario(cid, nomeUsuario, nota, descricao);
-
-                    comentarios.add(comentario);
-                }
                 // Cria um objeto PontoColeta e guarda os detalhes do produto dentro dele.
 
                 Endereco enderecoPonto = new Endereco(cep, tp_logadouro, logradouro, numero, estado, cidade, bairro, latitude, longitude);
@@ -324,5 +311,71 @@ public class PontoColetaRepository {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public List<Comentario> loadComentarios(Integer limit, Integer offSet, Integer idPontoColeta){
+        List<Comentario> comentariosList = new ArrayList<>();
+
+
+        // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
+        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL +"getComentarios.php", "GET", "UTF-8");
+        httpRequest.addParam("limit", limit.toString());
+        httpRequest.addParam("offset", offSet.toString());
+        httpRequest.addParam("id", idPontoColeta.toString());
+
+
+        String result = "";
+        try {
+            // Executa a requisição HTTP. É neste momento que o servidor web é contactado. Ao executar
+            // a requisição é aberto um fluxo de dados entre o servidor e a app (InputStream is).
+            InputStream is = httpRequest.execute();
+
+            result = Util.inputStream2String(is, "UTF-8");
+
+            // Fecha a conexão com o servidor web.
+            httpRequest.finish();
+
+            Log.i("HTTP PONTOS DE COLETA RESULT", result);
+
+            // A classe JSONObject recebe como parâmetro do construtor uma String no formato JSON e
+            // monta internamente uma estrutura de dados similar ao dicionário em python.
+            JSONObject jsonObject = new JSONObject(result);
+
+            // obtem o valor da chave sucesso para verificar se a ação ocorreu da forma esperada ou não.
+            int success = jsonObject.getInt("status");
+
+            // Se sucesso igual a 1, os pontos de coleta são obtidos da String JSON e adicionados à lista de
+            // produtos a ser retornada como resultado.
+            if(success == 1) {
+
+                // A chave produtos é um array de objetos do tipo json (JSONArray), onde cada um desses representa
+                // um ponto de coleta
+                JSONArray jsonArray = jsonObject.getJSONArray("comentarios");
+
+                // Cada elemento do JSONArray é um JSONObject que guarda os dados de um ponto de coleta
+                for(int i = 0; i < jsonArray.length(); i++) {
+
+                    // Obtemos o JSONObject referente a um ponto de coleta
+                    JSONObject jComentario = jsonArray.getJSONObject(i);
+
+                    // Obtemos os dados de um ponto de coleta via JSONObject
+                    int pid = Integer.parseInt(jComentario.getString("id"));
+                    String nome = jComentario.getString("nomeUsuario");
+                    Integer nota = Integer.parseInt(jComentario.getString("nota"));
+                    String descricao = jComentario.getString("conteudo");
+
+                    Comentario comentario = new Comentario(pid, nome, nota, descricao);
+
+                    comentariosList.add(comentario);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e("HTTP RESULT", result);
+        }
+
+        return comentariosList;
     }
 }
