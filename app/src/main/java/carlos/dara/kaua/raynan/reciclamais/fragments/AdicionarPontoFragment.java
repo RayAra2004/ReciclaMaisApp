@@ -311,8 +311,8 @@ public class AdicionarPontoFragment extends Fragment {
                 String estado = spEstado.getSelectedItem().toString();
                 String cidade = etCidade.getText().toString();
                 String bairro = etBairro.getText().toString();
+                String telefone = etTelefone.getText().toString();
 
-                System.out.println(materiaisSelecionados);
                 if(materiaisSelecionados.isEmpty()){
                     Toast.makeText(getContext(), "Por favor, selecione um material", Toast.LENGTH_SHORT).show();
                     return;
@@ -376,7 +376,7 @@ public class AdicionarPontoFragment extends Fragment {
                     return;
                 }
 
-                LiveData<Boolean> resultLD = mainViewModel.addPontoColeta(nome, new BigInteger(cep), tipoLogradouro, logradouro, Integer.parseInt(numero), estado, cidade, bairro, materiaisSelecionados, currentPhotoPath);
+                LiveData<Boolean> resultLD = mainViewModel.addPontoColeta(nome, new BigInteger(cep), tipoLogradouro, logradouro, Integer.parseInt(numero), estado, cidade, bairro, materiaisSelecionados, currentPhotoPath, telefone);
                 resultLD.observe(getActivity(), new Observer<Boolean>() {
                     @Override
                     public void onChanged(Boolean aBoolean) {

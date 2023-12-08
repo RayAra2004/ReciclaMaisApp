@@ -39,7 +39,7 @@ public class PontoColetaRepository {
      * @return true se o produto foi cadastrado junto ao servidor, false caso contrário
      */
     public boolean addPontoColeta(String nome, ArrayList<String> materiaisReciclados,
-                                  @NonNull Endereco endereco, String imgLocation) {
+                                  @NonNull Endereco endereco, String imgLocation, String telefone) {
         // Para cadastrar um produto, é preciso estar logado. Então primeiro otemos o login e senha
         // salvos na app.
         String login = Config.getLogin(context);
@@ -68,6 +68,7 @@ public class PontoColetaRepository {
         httpRequest.addParam("estado", endereco.getEstado());
         httpRequest.addParam("cidade", endereco.getCidade());
         httpRequest.addParam("bairro", endereco.getBairro());
+        httpRequest.addParam("telefone", telefone);
         httpRequest.addFile("img", new File(imgLocation));
 
         // Para esta ação, é preciso estar logado. Então na requisição HTTP setamos o login e senha do
@@ -128,8 +129,6 @@ public class PontoColetaRepository {
      * @return lista de produtos
      */
     public List<PontoColeta> loadPontosColeta(Integer limit, Integer offSet, Double lat, Double lon) {
-        System.out.println(limit);
-        System.out.println(offSet);
         // cria a lista de produtos incicialmente vazia, que será retornada como resultado
         List<PontoColeta> pontosColetaList = new ArrayList<>();
         ArrayList<TipoMaterial> tipoMateriais = new ArrayList<>();
@@ -139,6 +138,8 @@ public class PontoColetaRepository {
         HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL +"getPontosColeta.php", "GET", "UTF-8");
         httpRequest.addParam("limit", limit.toString());
         httpRequest.addParam("offset", offSet.toString());
+        httpRequest.addParam("latitude", lat.toString());
+        httpRequest.addParam("longitude", lon.toString());
 
         // Para esta ação, é preciso estar logado. Então na requisição HTTP setamos o login e senha do
         // usuário. Ao executar a requisição, o login e senha do usuário serão enviados ao servidor web,

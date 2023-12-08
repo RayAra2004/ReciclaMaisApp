@@ -34,6 +34,12 @@ public class MainViewModel extends AndroidViewModel {
 
     public MainViewModel(@NonNull Application application){
         super(application);
+    }
+    public MainViewModel(@NonNull Application application, double lat, double lon){
+        super(application);
+
+        this.lat = lat;
+        this.lon = lon;
 
         PontoColetaRepository pontoColetaRepository = new PontoColetaRepository(getApplication());
         CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
@@ -59,7 +65,7 @@ public class MainViewModel extends AndroidViewModel {
 
     /* ADICIONAR PONTO VIEW MODEL*/
 
-    public LiveData<Boolean> addPontoColeta(String nome, BigInteger cep, String tipoLogradouro, String logradouro, int numero, String estado, String cidade, String bairro, ArrayList<String> materiaisSelecionados, String imgLocation) {
+    public LiveData<Boolean> addPontoColeta(String nome, BigInteger cep, String tipoLogradouro, String logradouro, int numero, String estado, String cidade, String bairro, ArrayList<String> materiaisSelecionados, String imgLocation, String telefone) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Boolean> result = new MutableLiveData<>();
@@ -85,7 +91,7 @@ public class MainViewModel extends AndroidViewModel {
                 // O método addProduct envia os dados de um novo produto ao servidor. Ele retorna
                 // um booleano indicando true caso o produto tenha sido cadastrado e false
                 // em caso contrário
-                boolean b = pontoColetaRepository.addPontoColeta(nome, materiaisSelecionados, endereco, imgLocation);
+                boolean b = pontoColetaRepository.addPontoColeta(nome, materiaisSelecionados, endereco, imgLocation, telefone);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.

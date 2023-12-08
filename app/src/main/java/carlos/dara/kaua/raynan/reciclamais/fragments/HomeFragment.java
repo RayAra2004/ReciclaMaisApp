@@ -2,11 +2,15 @@ package carlos.dara.kaua.raynan.reciclamais.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
+import android.Manifest;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -22,6 +26,11 @@ import android.widget.Button;
 
 
 import java.util.ArrayList;
+import java.util.concurrent.Executor;
+
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
 import carlos.dara.kaua.raynan.reciclamais.activity.MainActivity;
@@ -37,7 +46,9 @@ public class HomeFragment extends Fragment {
     static int ADD_HOME_ACTIVITY_RESULT = 1;
 
     private ArrayList<String> materiaisSelecionados = new ArrayList<>();
+    private FusedLocationProviderClient fusedLocationProviderClient;
 
+    double latitude, longitude;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -50,32 +61,48 @@ public class HomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            fusedLocationProviderClient.getLastLocation().addOnSuccessListener(getActivity(), new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            if (location != null) {
+                                latitude = location.getLatitude();
+                                longitude = location.getLongitude();
+
+                                loadPontoColetaData();
+                            }
+                        }
+                    });
+        }
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (view == null) {
-            view = inflater.inflate(R.layout.fragment_home, container, false);
-
-            RecyclerView rvPontosDeColeta = view.findViewById(R.id.rv_pontos_de_coleta_home);
-            rvPontosDeColeta.setHasFixedSize(true);
-            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-            rvPontosDeColeta.setLayoutManager(layoutManager);
-
-            myAdapterPontoColeta = new MyAdapterPontoColeta((MainActivity) getActivity(), new PontoColetaComparator());
-            rvPontosDeColeta.setAdapter(myAdapterPontoColeta);
-
-            LiveData<PagingData<PontoColeta>> pontosColetaLD = mViewModel.getPontosColetaLd();
-
-            pontosColetaLD.observe(getViewLifecycleOwner(), new Observer<PagingData<PontoColeta>>() {
-                @Override
-                public void onChanged(PagingData<PontoColeta> pontoColetaPagingData) {
-                    myAdapterPontoColeta.submitData(getLifecycle(), pontoColetaPagingData);
-                }
-            });
-        }
-
+        view = inflater.inflate(R.layout.fragment_home, container, false);
         return view;
+    }
+
+    public void loadPontoColetaData(){
+        RecyclerView rvPontosDeColeta = view.findViewById(R.id.rv_pontos_de_coleta_home);
+        rvPontosDeColeta.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        rvPontosDeColeta.setLayoutManager(layoutManager);
+
+        myAdapterPontoColeta = new MyAdapterPontoColeta((MainActivity) getActivity(), new PontoColetaComparator());
+        rvPontosDeColeta.setAdapter(myAdapterPontoColeta);
+
+        MainViewModel mainViewModel = new MainViewModel(getActivity().getApplication(), latitude, longitude);
+
+        LiveData<PagingData<PontoColeta>> pontosColetaLD = mainViewModel.getPontosColetaLd();
+
+        pontosColetaLD.observe(getViewLifecycleOwner(), new Observer<PagingData<PontoColeta>>() {
+            @Override
+            public void onChanged(PagingData<PontoColeta> pontoColetaPagingData) {
+                myAdapterPontoColeta.submitData(getLifecycle(), pontoColetaPagingData);
+            }
+        });
     }
 
     @Override
