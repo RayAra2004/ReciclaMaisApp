@@ -9,7 +9,7 @@ public class PontoColeta {
     public String URLimagem;
     public Double nota;
     public BigInteger telefone;
-    ArrayList<TipoMaterial> materiasReciclados;
+    public ArrayList<TipoMaterial> materiasReciclados;
     public Endereco endereco;
     ArrayList<Comentario> comentarios;
     public String materiaisRecicladosBD;
@@ -41,12 +41,13 @@ public class PontoColeta {
         this.id = id;
     }
 
-    public PontoColeta(Double nota, String URLimagem, String nome, Endereco endereco, BigInteger telefone, ArrayList<Comentario> comentarios){
+    public PontoColeta(Double nota, String URLimagem, String nome, Endereco endereco, BigInteger telefone, ArrayList<Comentario> comentarios, ArrayList<TipoMaterial> tipoMateriais){
         this.nota = nota;
         this.URLimagem = URLimagem;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.comentarios = comentarios;
+        this.materiasReciclados = tipoMateriais;
     }
 }

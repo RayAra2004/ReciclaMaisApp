@@ -57,18 +57,6 @@ public class PontoColetaRepository {
         // Convertendo o StringBuilder para String
         String stringMateriaisReciclados = stringBuilder.toString();
 
-        System.out.println(nome);
-        System.out.println(stringMateriaisReciclados);
-        System.out.println(String.valueOf(endereco.getCep()));
-        System.out.println(endereco.getTp_logradouro());
-        System.out.println(endereco.getLogradouro());
-        System.out.println(String.valueOf(endereco.getNumero()));
-        System.out.println(endereco.getEstado());
-        System.out.println(endereco.getCidade());
-        System.out.println(endereco.getBairro());
-        System.out.println(new File(imgLocation));
-
-
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
         HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "postPontoColeta.php", "POST", "UTF-8");
         httpRequest.addParam("nome", nome);
@@ -297,11 +285,20 @@ public class PontoColetaRepository {
                 Double longitude = Double.parseDouble(jsonObject.getString("longitude"));
                 BigInteger telefone = new BigInteger(jsonObject.getString("telefone"));
                 Double notaPonto = Double.parseDouble(jsonObject.getString("nota"));
+                String materiais = jsonObject.getString("materiais");
+                String[] materiaisArray = materiais.split(",");
 
+                ArrayList<TipoMaterial> tipoMateriais = new ArrayList<>();
+
+                for (int i = 0; i < materiaisArray.length; i++) {
+                    String material = materiaisArray[i].trim();
+                    TipoMaterial tipoMaterial = new TipoMaterial(material);
+                    tipoMateriais.add(tipoMaterial);
+                }
                 // Cria um objeto PontoColeta e guarda os detalhes do produto dentro dele.
 
                 Endereco enderecoPonto = new Endereco(cep, tp_logadouro, logradouro, numero, estado, cidade, bairro, latitude, longitude);
-                PontoColeta pontoColeta = new PontoColeta(notaPonto, img, nome, enderecoPonto, telefone, comentarios);
+                PontoColeta pontoColeta = new PontoColeta(notaPonto, img, nome, enderecoPonto, telefone, comentarios, tipoMateriais);
 
                 return pontoColeta;
             }
@@ -311,6 +308,68 @@ public class PontoColetaRepository {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean postComentario(String comentario, int nota, String idPontoColeta) {
+
+        String login = Config.getLogin(context);
+        String password = Config.getPassword(context);
+
+        // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
+        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "postComentario.php", "POST", "UTF-8");
+        httpRequest.addParam("comentario", comentario);
+        httpRequest.addParam("nota", String.valueOf(nota));
+        httpRequest.addParam("idPontoColeta", idPontoColeta);
+
+        // Para esta ação, é preciso estar logado. Então na requisição HTTP setamos o login e senha do
+        // usuário. Ao executar a requisição, o login e senha do usuário serão enviados ao servidor web,
+        // o qual verificará se o login e senha batem com aquilo que está no BD. Somente depois dessa
+        // verificação de autenticação é que o servidor web irá realizar esta ação.
+        httpRequest.setBasicAuth(login, password);
+
+
+
+        String result = "";
+        try {
+            // Executa a requisição HTTP. É neste momento que o servidor web é contactado. Ao executar
+            // a requisição é aberto um fluxo de dados entre o servidor e a app (InputStream is).
+            InputStream is = httpRequest.execute();
+
+            // Obtém a resposta fornecida pelo servidor. O InputStream é convertido em uma String. Essa
+            // String é a resposta do servidor web em formato JSON.
+            //
+            // Em caso de sucesso, será retornada uma String JSON no formato:
+            //
+            // {"sucesso":1}
+            //
+            // Em caso de falha, será retornada uma String JSON no formato:
+            //
+            // {"sucesso":0,"erro":"Erro ao criar produto"}
+            result = Util.inputStream2String(is, "UTF-8");
+
+            // Fecha a conexão com o servidor web.
+            httpRequest.finish();
+
+            Log.i("HTTP ADD PONTO DE COLETA RESULT", result);
+
+            // A classe JSONObject recebe como parâmetro do construtor uma String no formato JSON e
+            // monta internamente uma estrutura de dados similar ao dicionário em python.
+            JSONObject jsonObject = new JSONObject(result);
+
+            // obtem o valor da chave sucesso para verificar se a ação ocorreu da forma esperada ou não.
+            int success = jsonObject.getInt("status");
+
+            // Se sucesso igual a 1, significa que o produto foi adicionado com sucesso.
+            if(success == 1) {
+                return true;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e("HTTP RESULT", result);
+        }
+        return false;
     }
 
     public List<Comentario> loadComentarios(Integer limit, Integer offSet, Integer idPontoColeta){
