@@ -31,7 +31,7 @@ public class UserRepository {
 
         String[] dataRecortada = dataNascimento.split("/");
 
-        String data = dataRecortada[2] + "-" + dataRecortada[0] + "-" + dataRecortada[1];
+        String data = dataRecortada[2] + "-" + dataRecortada[1] + "-" + dataRecortada[0];
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
         HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "signUpPessoaFisica.php", "POST", "UTF-8");
         httpRequest.addParam("novo_login", newLogin);
