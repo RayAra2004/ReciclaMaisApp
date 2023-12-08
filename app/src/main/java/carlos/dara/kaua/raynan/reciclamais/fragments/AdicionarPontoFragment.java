@@ -321,6 +321,10 @@ public class AdicionarPontoFragment extends Fragment {
                     Toast.makeText(getContext(), "Por favor, preencha o campo nome", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if (telefone.length() < 11 || telefone.length() > 12){
+                    etTelefone.setError("Telefone inválido");
+                    return;
+                }
                 if (TextUtils.isEmpty(cep)){
                     Toast.makeText(getContext(), "Por favor, preencha o campo CEP", Toast.LENGTH_SHORT).show();
                     return;
