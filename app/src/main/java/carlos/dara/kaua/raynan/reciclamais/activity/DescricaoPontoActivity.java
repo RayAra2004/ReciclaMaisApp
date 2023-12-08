@@ -39,6 +39,7 @@ public class DescricaoPontoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
 
+        System.out.println(id);
         DescricaoPontoViewModel descricaoPontoViewModel = new ViewModelProvider(this).get(DescricaoPontoViewModel.class);
         LiveData<PontoColeta> pontoColeta = descricaoPontoViewModel.getPontoColetaDetailsLD(id);
         pontoColeta.observe(this, new Observer<PontoColeta>() {

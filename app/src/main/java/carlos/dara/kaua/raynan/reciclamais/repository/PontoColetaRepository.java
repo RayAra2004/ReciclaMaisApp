@@ -285,7 +285,16 @@ public class PontoColetaRepository {
                 Double latitude = Double.parseDouble(jsonObject.getString("latitude"));
                 Double longitude = Double.parseDouble(jsonObject.getString("longitude"));
                 BigInteger telefone = new BigInteger(jsonObject.getString("telefone"));
-                Double notaPonto = Double.parseDouble(jsonObject.getString("nota"));
+                String notaPontoString = jsonObject.getString("nota");
+                Double notaPonto;
+                if (notaPontoString != null && !notaPontoString.isEmpty() && !notaPontoString.equals("null")) {
+                    // Converta para Double se a String não for "null" ou vazia
+                    notaPonto = Double.parseDouble(notaPontoString);
+                } else {
+                    // Atribua um valor padrão, ou trate de acordo com a lógica do seu aplicativo
+                    notaPonto = 0.0; // Ou qualquer outro valor padrão que faça sentido para o seu caso
+                }
+
                 String materiais = jsonObject.getString("materiais");
                 String[] materiaisArray = materiais.split(",");
 
