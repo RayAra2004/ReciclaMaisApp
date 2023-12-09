@@ -57,7 +57,6 @@ public class PostagemMaterialFragment extends Fragment {
         if(Config.getLogin(requireActivity()).isEmpty()){
             Intent i = new Intent(requireActivity(), LoginActivity.class);
             startActivity(i);
-            requireActivity().finish();
         }
 
         ImageView imvFotoMaterial = view.findViewById(R.id.imv_foto_material_postagem_material);

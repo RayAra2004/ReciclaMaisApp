@@ -97,7 +97,6 @@ public class AdicionarPontoFragment extends Fragment {
             Intent i = new Intent(requireActivity(), LoginActivity.class);
             i.putExtra("fragment", "adicionarPonto");
             startActivity(i);
-            requireActivity().finish();
         }
 
         ImageView imvFotoPonto = view.findViewById(R.id.imv_foto_ponto_adicionar_ponto);

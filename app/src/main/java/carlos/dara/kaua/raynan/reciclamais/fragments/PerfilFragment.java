@@ -54,7 +54,6 @@ public class PerfilFragment extends Fragment {
         if(Config.getLogin(requireActivity()).isEmpty()){
             Intent i = new Intent(requireActivity(), LoginActivity.class);
             startActivity(i);
-            requireActivity().finish();
         }
 
         /*ImageView imvFotoUsuario = view.findViewById(R.id.imv_foto_usuario_perfil);*/
