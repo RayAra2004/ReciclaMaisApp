@@ -65,7 +65,7 @@ public class DescricaoPontoActivity extends AppCompatActivity {
                     tvTelefonePontoSelecionado.setText(pontoColeta.telefone.toString());
 
                     pontoColeta.materiasReciclados.forEach(tipoMaterial -> {
-                        switch (tipoMaterial.nome){
+                        switch (tipoMaterial.nome) {
                             case "Plástico":
                                 findViewById(R.id.tv_plastico_descricao_ponto).setVisibility(View.VISIBLE);
                                 break;
@@ -158,5 +158,31 @@ public class DescricaoPontoActivity extends AppCompatActivity {
         });
 
         Button botaoAbrirTrajetoriaPontoSelecionado = findViewById(R.id.btn_abrir_trajetoria_descricao_ponto);
+        TextView tvEnderecoPontoSelecionado = findViewById(R.id.tv_endereco_ponto_selecionado_descricao_ponto);
+
+        botaoAbrirTrajetoriaPontoSelecionado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Obtenha o endereço do TextView
+                String endereco = tvEnderecoPontoSelecionado.getText().toString();
+
+                // Crie a URI para abrir o Google Maps com a rota
+                String uri = "http://maps.google.com/maps?daddr=" + endereco;
+
+                // Crie um Intent para abrir o Google Maps
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(uri));
+                mapIntent.setPackage("com.google.android.apps.maps");
+
+                // Verifique se há aplicativos que podem responder a este intent
+                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(mapIntent);
+                } else {
+                    // Se não houver aplicativos que possam responder a este intent, exiba uma mensagem
+                    Toast.makeText(DescricaoPontoActivity.this, "Não foi possível abrir o Google Maps.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
     }
 }

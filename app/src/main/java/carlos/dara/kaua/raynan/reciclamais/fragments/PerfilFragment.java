@@ -57,7 +57,7 @@ public class PerfilFragment extends Fragment {
             requireActivity().finish();
         }
 
-        ImageView imvFotoUsuario = view.findViewById(R.id.imv_foto_usuario_perfil);
+        /*ImageView imvFotoUsuario = view.findViewById(R.id.imv_foto_usuario_perfil);*/
         TextView tvNomeUsuario = view.findViewById(R.id.tv_nome_usuario_perfil);
         Button botaoMudarDados = view.findViewById(R.id.btn_mudar_dados_perfil);
         Button botaoAprendaReciclar = view.findViewById(R.id.btn_aprenda_a_reciclar_perfil);
