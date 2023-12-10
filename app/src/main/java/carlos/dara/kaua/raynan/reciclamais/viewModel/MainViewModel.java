@@ -20,9 +20,11 @@ import java.util.concurrent.Executors;
 
 import carlos.dara.kaua.raynan.reciclamais.R;
 import carlos.dara.kaua.raynan.reciclamais.entities.Endereco;
+import carlos.dara.kaua.raynan.reciclamais.entities.Material;
 import carlos.dara.kaua.raynan.reciclamais.entities.PontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.entities.TipoMaterial;
 import carlos.dara.kaua.raynan.reciclamais.repository.PontoColetaRepository;
+import carlos.dara.kaua.raynan.reciclamais.repository.UserRepository;
 import kotlinx.coroutines.CoroutineScope;
 
 public class MainViewModel extends AndroidViewModel {
@@ -92,6 +94,36 @@ public class MainViewModel extends AndroidViewModel {
                 // um booleano indicando true caso o produto tenha sido cadastrado e false
                 // em caso contrário
                 boolean b = pontoColetaRepository.addPontoColeta(nome, materiaisSelecionados, endereco, imgLocation, telefone);
+
+                // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
+                // quem estiver observando o LiveData será avisado de que o resultado está disponível.
+                result.postValue(b);
+            }
+        });
+
+        return result;
+    }
+
+    public LiveData<Boolean> postarMaterial(String img, String nome, Double quilos, String descricaoMaterial, ArrayList<String> tiposMateriais){
+        // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
+        MutableLiveData<Boolean> result = new MutableLiveData<>();
+
+        // Cria uma nova linha de execução (thread). O android obriga que chamadas de rede sejam feitas
+        // em uma linha de execução separada da principal.
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+        // Executa a nova linha de execução. Dentro dessa linha, iremos realizar as requisições ao
+        // servidor web.
+        executorService.execute(new Runnable() {
+            /**
+             * Tudo o que colocármos dentro da função run abaixo será executada dentro da nova linha
+             * de execução.
+             */
+            @Override
+            public void run() {
+
+                UserRepository userRepository = new UserRepository(getApplication());
+                boolean b = userRepository.postarMaterial(img, nome, quilos, descricaoMaterial, tiposMateriais);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.
