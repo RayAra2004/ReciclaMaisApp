@@ -105,7 +105,10 @@ public class CadastroActivity extends AppCompatActivity {
                 }
                 if (!senha.equals(confimarSenha)){
                     etConfirmarSenha.setError("As senhas não coincidem");
+                    return;
                 }
+                view.setEnabled(false);
+
 
                 // O ViewModel possui o método register, que envia as informações para o servidor web.
                 // O servidor web recebe as infos e cadastra um novo usuário. Se o usuário foi cadastrado
@@ -126,12 +129,14 @@ public class CadastroActivity extends AppCompatActivity {
                         // através de uma mensagem do tipo toast e finalizamos a Activity. Quando
                         // finalizamos a Activity, voltamos para a tela de login.
                         if(aBoolean) {
+                            view.setEnabled(true);
                             Toast.makeText(CadastroActivity.this, "Novo usuario registrado com sucesso", Toast.LENGTH_LONG).show();
                             finish();
                         }
                         else {
                             // Se o cadastro não deu certo, apenas continuamos na tela de cadastro e
                             // indicamos com uma mensagem ao usuário que o cadastro não deu certo.
+                            view.setEnabled(true);
                             Toast.makeText(CadastroActivity.this, "Erro ao registrar novo usuário", Toast.LENGTH_LONG).show();
                         }
                     }

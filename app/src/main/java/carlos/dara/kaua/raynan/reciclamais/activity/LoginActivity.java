@@ -60,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (senha.isEmpty() || senha.length() < 8) {
                     editTextSenha.setError("Senha deve conter no mínimo 8 caracteres");
                 }
+                view.setEnabled(false);
 
                 LiveData<Boolean> resultLD = loginViewModel.login(email, senha);
 
@@ -69,12 +70,13 @@ public class LoginActivity extends AppCompatActivity {
                         if (aBoolean) {
                             Config.setLogin(LoginActivity.this, email);
                             Config.setPassword(LoginActivity.this, senha);
-
+                            view.setEnabled(true);
                             Toast.makeText(LoginActivity.this, "Login realizado com sucesso", Toast.LENGTH_LONG).show();
 
                             finish();
 
                         } else {
+                            view.setEnabled(true);
                             Toast.makeText(LoginActivity.this, "Não foi possível realizar o login da aplicação", Toast.LENGTH_LONG).show();
                         }
                     }

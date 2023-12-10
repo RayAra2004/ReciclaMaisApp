@@ -133,19 +133,18 @@ public class DescricaoPontoActivity extends AppCompatActivity {
                     resultLD.observe(DescricaoPontoActivity.this, new Observer<Boolean>() {
                         @Override
                         public void onChanged(Boolean aBoolean) {
-                            view.setEnabled(true);
-                            etAdicionarComentarioPontoSelecionado.setText("");
-                            rbAvaliacaoPontoSelecionado.setRating(0);
-
                             if (aBoolean) {
+                                view.setEnabled(true);
+                                etAdicionarComentarioPontoSelecionado.setText("");
+                                rbAvaliacaoPontoSelecionado.setRating(0);
                                 Toast.makeText(DescricaoPontoActivity.this, "Novo comentário registrado com sucesso", Toast.LENGTH_LONG).show();
                             } else {
+                                view.setEnabled(true);
                                 Toast.makeText(DescricaoPontoActivity.this, "Erro ao registrar novo comentário", Toast.LENGTH_LONG).show();
                             }
                         }
                     });
                 } else {
-                    view.setEnabled(true);
                     if (nota == 0 && comentario.isEmpty()) {
                         Toast.makeText(DescricaoPontoActivity.this, "Dê uma nota e escreva um comentário antes de enviar.", Toast.LENGTH_LONG).show();
                     } else if (nota == 0) {

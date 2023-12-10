@@ -259,6 +259,7 @@ public class PostagemMaterialFragment extends Fragment {
                     view.setEnabled(true);
                     return;
                 }
+                view.setEnabled(false);
 
                 try {
                     int h = (int) getResources().getDimension(R.dimen.img_height);
@@ -278,6 +279,20 @@ public class PostagemMaterialFragment extends Fragment {
                         // finalizamos a Activity, voltamos para a tela home, que mostra a lista de
                         // produtos.
                         if(aBoolean == true) {
+                            view.setEnabled(true);
+                            imvFotoMaterial.setImageDrawable(null);
+                            etTitulo.setText("");
+                            etPeso.setText("");
+                            etDescricaoMaterial.setText("");
+                            materiaisSelecionados.clear();
+                            botaoEletronico.setBackgroundColor(originalColor);
+                            botaoMadeira.setBackgroundColor(originalColor);
+                            botaoHospitalar.setBackgroundColor(originalColor);
+                            botaoOrganico.setBackgroundColor(originalColor);
+                            botaoMetal.setBackgroundColor(originalColor);
+                            botaoPapel.setBackgroundColor(originalColor);
+                            botaoPlastico.setBackgroundColor(originalColor);
+                            botaoVidro.setBackgroundColor(originalColor);
                             Toast.makeText(getActivity(), "Material adicionado com sucesso", Toast.LENGTH_LONG).show();
                             // indica que a Activity terminou com resultado positivo e a finaliza
                             getActivity().setResult(RESULT_OK);
