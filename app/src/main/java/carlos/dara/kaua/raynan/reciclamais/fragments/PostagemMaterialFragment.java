@@ -214,12 +214,12 @@ public class PostagemMaterialFragment extends Fragment {
         botaoEletronico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains("Eletrônico")){
+                if(materiaisSelecionados.contains("Eletrônicos")){
                     botaoEletronico.setBackgroundColor(originalColor);
-                    materiaisSelecionados.remove("Eletrônico");
+                    materiaisSelecionados.remove("Eletrônicos");
                 }else{
                     botaoEletronico.setBackgroundColor(cor_eletronicos);
-                    materiaisSelecionados.add("Eletrônico");
+                    materiaisSelecionados.add("Eletrônicos");
                 }
             }
         });
@@ -246,6 +246,7 @@ public class PostagemMaterialFragment extends Fragment {
                 }
                 if (TextUtils.isEmpty(descricaoMaterial)){
                     Toast.makeText(getContext(),"Por favor, preencha o campo de descricao do material", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 if(materiaisSelecionados.isEmpty()){
                     Toast.makeText(getContext(), "Por favor, selecione um material", Toast.LENGTH_SHORT).show();

@@ -286,12 +286,12 @@ public class AdicionarPontoFragment extends Fragment {
         botaoEletronico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(materiaisSelecionados.contains("Eletrônico")){
+                if(materiaisSelecionados.contains("Eletrônicos")){
                     botaoEletronico.setBackgroundColor(originalColor);
-                    materiaisSelecionados.remove("Eletrônico");
+                    materiaisSelecionados.remove("Eletrônicos");
                 }else{
                     botaoEletronico.setBackgroundColor(cor_eletronicos);
-                    materiaisSelecionados.add("Eletrônico");
+                    materiaisSelecionados.add("Eletrônicos");
                 }
             }
         });
