@@ -66,13 +66,13 @@ public class MyAdapterMaterial extends PagingDataAdapter<Material, MyViewHolder>
         // não baixamos ela de novo
         ImageCache.loadImageUrlToImageView(seusMateriaisActivity, material.imageURL, imvMaterialThumb, w, h);
 
-        Button btnExcluirMaterial = holder.itemView.findViewById(R.id.btn_excluir_postagem_material);
+        /*Button btnExcluirMaterial = holder.itemView.findViewById(R.id.btn_excluir_postagem_material);
         btnExcluirMaterial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mostrarDialogExclusao(holder.itemView.getContext(), material.id);
             }
-        });
+        });*/
     }
 
     private void mostrarDialogExclusao(Context context, Integer id){

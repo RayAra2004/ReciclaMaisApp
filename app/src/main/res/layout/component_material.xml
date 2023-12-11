@@ -65,7 +65,7 @@
             android:id="@+id/tv_estado_componete_material"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#077F48"
+            android:background="@drawable/tag_material_disponivel"
             android:gravity="center"
             android:text="DISPONÍVEL"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
