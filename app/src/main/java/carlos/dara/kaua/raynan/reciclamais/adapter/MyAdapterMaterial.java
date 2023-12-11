@@ -69,10 +69,15 @@ public class MyAdapterMaterial extends PagingDataAdapter<Material, MyViewHolder>
 
         Button btnExcluirMaterial = holder.itemView.findViewById(R.id.btn_foi_coletado_material);
 
-        if("indisponível".equals(material.estado)){
+        if("coletado".equals(material.estado)) {
             btnExcluirMaterial.setVisibility(View.GONE);
             TextView tvPerguntaColetado = holder.itemView.findViewById(R.id.tv_perunta_material);
             tvPerguntaColetado.setText("Material já coletado");
+            tvEstadoList.setBackgroundResource(R.drawable.tag_material_coletado);
+        }else if("em transação".equals(material.estado)){
+            btnExcluirMaterial.setVisibility(View.GONE);
+            TextView tvPerguntaColetado = holder.itemView.findViewById(R.id.tv_perunta_material);
+            tvPerguntaColetado.setText("Material em transação");
         }else{
             btnExcluirMaterial.setOnClickListener(new View.OnClickListener() {
                 @Override
