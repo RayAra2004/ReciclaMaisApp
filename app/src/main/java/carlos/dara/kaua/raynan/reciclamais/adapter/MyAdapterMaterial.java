@@ -82,13 +82,13 @@ public class MyAdapterMaterial extends PagingDataAdapter<Material, MyViewHolder>
             btnExcluirMaterial.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mostrarDialogExclusao(holder.itemView.getContext(), material.id);
+                    dialog = mostrarDialogExclusao(holder.itemView.getContext(), material.id);
                 }
             });
         }
     }
 
-    private void mostrarDialogExclusao(Context context, Integer id){
+    private AlertDialog mostrarDialogExclusao(Context context, Integer id){
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Confirmação");
         builder.setMessage("Você tem certeza que deseja marcar como coletado?");
@@ -110,6 +110,7 @@ public class MyAdapterMaterial extends PagingDataAdapter<Material, MyViewHolder>
 
         AlertDialog dialog = builder.create();
         dialog.show();
+        return dialog;
     }
 
     private void marcarColetado(Integer id){
