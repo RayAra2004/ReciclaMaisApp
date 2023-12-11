@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 public class Material {
      int image;
+     public Integer id;
      String nome;
+     public String estado;
      Double quilos;
      String descricaoMaterial;
      ArrayList<TipoMaterial> tipoMaterial;
+     public String imageURL;
 
-     String imageURL;
     public Material(int image, String nome, Double quilos, String descricaoMaterial, ArrayList<TipoMaterial> tipoMaterial) {
         this.image = image;
         this.nome = nome;
@@ -18,12 +20,10 @@ public class Material {
         this.tipoMaterial = tipoMaterial;
     }
 
-    public Material(String image, String nome, Double quilos, String descricaoMaterial, ArrayList<TipoMaterial> tipoMaterial) {
+    public Material(Integer id, String image, String estado) {
+        this.id = id;
         this.imageURL = image;
-        this.nome = nome;
-        this.quilos = quilos;
-        this.descricaoMaterial = descricaoMaterial;
-        this.tipoMaterial = tipoMaterial;
+        this.estado = estado;
     }
 
 
