@@ -3,6 +3,7 @@ package carlos.dara.kaua.raynan.reciclamais.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.paging.PagingData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,10 +35,12 @@ public class SeusMateriaisActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvMateriaisPostados.setLayoutManager(layoutManager);
 
-        myAdapterMaterial = new MyAdapterMaterial(this, new MaterialComparator());
+        SeusMateriaisViewModel seusMateriaisViewModel = new SeusMateriaisViewModel(getApplication());
+
+        myAdapterMaterial = new MyAdapterMaterial(this, seusMateriaisViewModel, new MaterialComparator());
         rvMateriaisPostados.setAdapter(myAdapterMaterial);
 
-        SeusMateriaisViewModel seusMateriaisViewModel = new SeusMateriaisViewModel(getApplication());
+
 
         LiveData<PagingData<Material>> materialLD = seusMateriaisViewModel.getMateriaisLD();
 

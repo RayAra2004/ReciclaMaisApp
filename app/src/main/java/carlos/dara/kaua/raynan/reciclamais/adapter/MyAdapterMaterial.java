@@ -30,9 +30,10 @@ public class MyAdapterMaterial extends PagingDataAdapter<Material, MyViewHolder>
     SeusMateriaisViewModel seusMateriaisViewModel;
     private AlertDialog dialog;
 
-    public MyAdapterMaterial(SeusMateriaisActivity seusMateriaisActivity, @NonNull DiffUtil.ItemCallback<Material> diffCallback){
+    public MyAdapterMaterial(SeusMateriaisActivity seusMateriaisActivity, SeusMateriaisViewModel seusMateriaisViewModel, @NonNull DiffUtil.ItemCallback<Material> diffCallback){
         super(diffCallback);
         this.seusMateriaisActivity = seusMateriaisActivity;
+        this.seusMateriaisViewModel = seusMateriaisViewModel;
     }
 
     /**
@@ -66,24 +67,31 @@ public class MyAdapterMaterial extends PagingDataAdapter<Material, MyViewHolder>
         // não baixamos ela de novo
         ImageCache.loadImageUrlToImageView(seusMateriaisActivity, material.imageURL, imvMaterialThumb, w, h);
 
-        /*Button btnExcluirMaterial = holder.itemView.findViewById(R.id.btn_excluir_postagem_material);
-        btnExcluirMaterial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mostrarDialogExclusao(holder.itemView.getContext(), material.id);
-            }
-        });*/
+        Button btnExcluirMaterial = holder.itemView.findViewById(R.id.btn_foi_coletado_material);
+
+        if("indisponível".equals(material.estado)){
+            btnExcluirMaterial.setVisibility(View.GONE);
+            TextView tvPerguntaColetado = holder.itemView.findViewById(R.id.tv_perunta_material);
+            tvPerguntaColetado.setText("Material já coletado");
+        }else{
+            btnExcluirMaterial.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mostrarDialogExclusao(holder.itemView.getContext(), material.id);
+                }
+            });
+        }
     }
 
     private void mostrarDialogExclusao(Context context, Integer id){
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Confirmação");
-        builder.setMessage("Você tem certeza que deseja excluir?");
+        builder.setMessage("Você tem certeza que deseja marcar como coletado?");
 
         builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                realizarExclusao(id);
+                marcarColetado(id);
             }
         });
 
@@ -99,14 +107,14 @@ public class MyAdapterMaterial extends PagingDataAdapter<Material, MyViewHolder>
         dialog.show();
     }
 
-    private void realizarExclusao(Integer id){
+    private void marcarColetado(Integer id){
         // O ViewModel possui o método register, que envia as informações para o servidor web.
         // O servidor web recebe as infos e cadastra um novo usuário. Se o usuário foi cadastrado
         // com sucesso, a app recebe o valor true. Se não o servidor retorna o valor false.
         //
         // O método de register retorna um LiveData, que na prática é um container que avisa
         // quando o resultado do servidor chegou.
-        LiveData<Boolean> resultLD = seusMateriaisViewModel.deleteMaterial(id);
+        LiveData<Boolean> resultLD = seusMateriaisViewModel.marcarColetado(id);
 
         // Aqui nós observamos o LiveData. Quando o servidor responder, o resultado indicando
         // se o cadastro deu certo ou não será guardado dentro do LiveData. Neste momento o
@@ -119,11 +127,12 @@ public class MyAdapterMaterial extends PagingDataAdapter<Material, MyViewHolder>
                 // através de uma mensagem do tipo toast e finalizamos a Activity. Quando
                 // finalizamos a Activity, voltamos para a tela de login.
                 if(aBoolean) {
-                    Toast.makeText(seusMateriaisActivity, "Material deletado com sucesso", Toast.LENGTH_LONG).show();
+                    Toast.makeText(seusMateriaisActivity, "Material atualizado com sucesso", Toast.LENGTH_LONG).show();
                     dialog.dismiss();
                 }
                 else {
-                    Toast.makeText(seusMateriaisActivity, "Erro ao deletar material", Toast.LENGTH_LONG).show();
+                    Toast.makeText(seusMateriaisActivity, "Erro ao marcar como coletado", Toast.LENGTH_LONG).show();
+                    dialog.dismiss();
                 }
             }
         });

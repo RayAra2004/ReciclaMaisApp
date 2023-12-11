@@ -300,12 +300,12 @@ public class UserRepository {
         return materialList;
     }
 
-    public boolean deleteMaterial(Integer idMaterial){
+    public boolean marcarColetado(Integer idMaterial){
         String login = Config.getLogin(context);
         String password = Config.getPassword(context);
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "deleteMaterial.php", "POST", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.CONECTDB_APP_URL + "marcarColetadoMaterial.php", "POST", "UTF-8");
         httpRequest.addParam("id", idMaterial.toString());
 
 
