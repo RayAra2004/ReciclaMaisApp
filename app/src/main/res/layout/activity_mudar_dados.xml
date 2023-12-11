@@ -41,35 +41,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editText_nome_mudar_dados" />
 
-                <EditText
-                    android:id="@+id/editText_senha_mudar_dados"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:ems="10"
-                    android:hint="Digite sua senha"
-                    android:inputType="textPassword"
-                    android:paddingLeft="14dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="#99FFFFFF"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_senha_cadastro" />
-
-                <TextView
-                    android:id="@+id/tv_confirme_sua_senha_mudar_dados"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Confirme sua senha"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText_senha_mudar_dados" />
-
                 <TextView
                     android:id="@+id/tv_telefone_cadastro"
                     android:layout_width="wrap_content"
@@ -82,38 +53,6 @@
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/etDataNascimento2" />
-
-                <TextView
-                    android:id="@+id/tv_senha_cadastro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center"
-                    android:text="Senha"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText_telefone_mudar_dados" />
-
-                <EditText
-                    android:id="@+id/editText_confirme_sua_senha_mudar_dados"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:ems="10"
-                    android:hint="Confirme sua senha"
-                    android:inputType="textPassword"
-                    android:paddingLeft="14dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="#99FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_confirme_sua_senha_mudar_dados" />
 
                 <TextView
                     android:id="@+id/tv_nome_cadastro"
@@ -151,6 +90,7 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
                     android:background="@drawable/edit_text_bg"
                     android:ems="10"
                     android:hint="Digite seu telefone "
@@ -158,6 +98,7 @@
                     android:paddingLeft="14dp"
                     android:textColor="@color/white"
                     android:textColorHint="#99FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_telefone_cadastro" />
@@ -203,7 +144,9 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.226" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
