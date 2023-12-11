@@ -359,6 +359,7 @@ public class AdicionarPontoFragment extends Fragment {
                     view.setEnabled(true);
                     return;
                 }
+                view.setEnabled(false);
 
                 // Neste ponto, já verificamos que todos os campos foram preenchidos corretamente.
                 // Antes enviar esses dados ao servidor, nós fazemos uma escala na imagem escolhida
@@ -389,6 +390,26 @@ public class AdicionarPontoFragment extends Fragment {
                         // finalizamos a Activity, voltamos para a tela home, que mostra a lista de
                         // produtos.
                         if(aBoolean == true) {
+                            view.setEnabled(true);
+                            imvFotoPonto.setImageDrawable(null);
+                            etNome.setText("");
+                            etCep.setText("");
+                            spTipoLogradouro.setSelection(0);
+                            etLogradouro.setText("");
+                            etNumero.setText("");
+                            spEstado.setSelection(0);
+                            etCidade.setText("");
+                            etBairro.setText("");
+                            etTelefone.setText("");
+                            materiaisSelecionados.clear();
+                            botaoEletronico.setBackgroundColor(originalColor);
+                            botaoMadeira.setBackgroundColor(originalColor);
+                            botaoHospitalar.setBackgroundColor(originalColor);
+                            botaoOrganico.setBackgroundColor(originalColor);
+                            botaoMetal.setBackgroundColor(originalColor);
+                            botaoPapel.setBackgroundColor(originalColor);
+                            botaoPlastico.setBackgroundColor(originalColor);
+                            botaoVidro.setBackgroundColor(originalColor);
                             Toast.makeText(getActivity(), "Produto adicionado com sucesso", Toast.LENGTH_LONG).show();
                             // indica que a Activity terminou com resultado positivo e a finaliza
                             getActivity().setResult(RESULT_OK);
