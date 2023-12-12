@@ -54,6 +54,8 @@ public class HomeFragment extends Fragment {
     private ArrayList<TipoMaterial> materiaisSelecionadosFiltro = new ArrayList<>();
     double latitude, longitude;
     LiveData<PagingData<PontoColeta>> pontosColetaLD;
+
+    ArrayList<PontoColeta> pontosFiltragem;
     public HomeFragment() {
         // Required empty public constructor
     }
