@@ -26,6 +26,8 @@ import android.widget.Button;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.Executor;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -37,6 +39,8 @@ import carlos.dara.kaua.raynan.reciclamais.activity.MainActivity;
 import carlos.dara.kaua.raynan.reciclamais.adapter.MyAdapterPontoColeta;
 import carlos.dara.kaua.raynan.reciclamais.adapter.PontoColetaComparator;
 import carlos.dara.kaua.raynan.reciclamais.entities.PontoColeta;
+import carlos.dara.kaua.raynan.reciclamais.entities.TipoMaterial;
+import carlos.dara.kaua.raynan.reciclamais.repository.PontoColetaRepository;
 import carlos.dara.kaua.raynan.reciclamais.viewModel.MainViewModel;
 
 public class HomeFragment extends Fragment {
@@ -47,8 +51,9 @@ public class HomeFragment extends Fragment {
 
     private ArrayList<String> materiaisSelecionados = new ArrayList<>();
     private FusedLocationProviderClient fusedLocationProviderClient;
-
+    private ArrayList<TipoMaterial> materiaisSelecionadosFiltro = new ArrayList<>();
     double latitude, longitude;
+    LiveData<PagingData<PontoColeta>> pontosColetaLD;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -95,7 +100,7 @@ public class HomeFragment extends Fragment {
 
         MainViewModel mainViewModel = new MainViewModel(getActivity().getApplication(), latitude, longitude);
 
-        LiveData<PagingData<PontoColeta>> pontosColetaLD = mainViewModel.getPontosColetaLd();
+        pontosColetaLD = mainViewModel.getPontosColetaLd();
 
         pontosColetaLD.observe(getViewLifecycleOwner(), new Observer<PagingData<PontoColeta>>() {
             @Override
@@ -232,6 +237,19 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+    }
+
+    public List<PontoColeta> filterPontoColetaByMaterial(List<PontoColeta> pontoColetaList, List<String> selectedMaterials) {
+        List<PontoColeta> filteredList = new ArrayList<>();
+        for (PontoColeta pontoColeta : pontoColetaList) {
+            for (TipoMaterial material : pontoColeta.getMateriasReciclados()) {
+                if (selectedMaterials.contains(material.nome)) {
+                    filteredList.add(pontoColeta);
+                    break; // Se o ponto coleta pelo menos um material selecionado, adicione-o à lista filtrada e passe para o próximo ponto de coleta
+                }
+            }
+        }
+        return filteredList;
     }
 
 

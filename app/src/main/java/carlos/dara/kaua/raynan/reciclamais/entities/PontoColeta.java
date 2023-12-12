@@ -50,4 +50,8 @@ public class PontoColeta {
         this.comentarios = comentarios;
         this.materiasReciclados = tipoMateriais;
     }
+
+    public ArrayList<TipoMaterial> getMateriasReciclados() {
+        return materiasReciclados;
+    }
 }
